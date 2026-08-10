@@ -1,126 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio</title>
+<title>My Creative Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: #17121f;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #30213d 0%, #17121f 45%, #0d0a12 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+}
 
-        .container {
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-        }
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+}
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            color: #ffb6e6;
-        }
+h1 {
+    color: #ffb6e6;
+    font-size: 52px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255,150,220,.3);
+}
 
-        .subtitle {
-            color: #cfc3d8;
-            margin-bottom: 45px;
-            font-size: 18px;
-        }
+.subtitle {
+    color: #cfc3d8;
+    margin-bottom: 45px;
+    font-size: 18px;
+}
 
-        .folders {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
+.folders {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-        .folder {
-            background: #251c30;
-            border: 2px solid #4b3858;
-            border-radius: 20px;
-            padding: 45px 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.folder {
+    background: rgba(37,28,48,.9);
+    border: 2px solid #4b3858;
+    border-radius: 22px;
+    padding: 42px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-        .folder:hover {
-            transform: translateY(-8px);
-            border-color: #ff9ddd;
-            background: #30243c;
-            box-shadow: 0 10px 30px rgba(255, 157, 221, 0.2);
-        }
+.folder:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #ff9ddd;
+    background: #30243c;
+    box-shadow: 0 15px 35px rgba(255,157,221,.2);
+}
 
-        .icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+.icon {
+    font-size: 58px;
+    margin-bottom: 15px;
+}
 
-        .folder h2 {
-            color: #fff;
-            font-size: 25px;
-        }
+.folder h2 {
+    font-size: 23px;
+}
 
-        @media (max-width: 600px) {
-            .folders {
-                grid-template-columns: 1fr;
-            }
+.gallery {
+    display: none;
+}
 
-            h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
+.back {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 11px 22px;
+    background: #352640;
+    border: 1px solid #5b4267;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.back:hover {
+    background: #ff9ddd;
+    color: #211625;
+}
+
+.gallery h2 {
+    color: #ffb6e6;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.images img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #4b3858;
+    transition: .3s;
+    background: #211827;
+}
+
+.images img:hover {
+    transform: scale(1.03);
+    border-color: #ff9ddd;
+    box-shadow: 0 10px 30px rgba(255,157,221,.18);
+}
+
+.empty {
+    color: #b8aabd;
+    font-size: 18px;
+    padding: 50px;
+    border: 2px dashed #4b3858;
+    border-radius: 20px;
+}
+
+@media (max-width: 800px) {
+    .folders {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .folders,
+    .images {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .images img {
+        height: 320px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>My Portfolio</h1>
+<!-- HOME -->
+<div id="home">
 
-        <p class="subtitle">
-            VTuber • Design • Creative Work
-        </p>
+    <h1>My Creative Portfolio</h1>
 
-        <div class="folders">
+    <p class="subtitle">
+        VTuber • Design • 3D • Creative Work
+    </p>
 
-            <div class="folder">
-                <div class="icon">📁</div>
-                <h2>VTuber</h2>
-            </div>
+    <div class="folders">
 
-            <div class="folder">
-                <div class="icon">📁</div>
-                <h2>Logo</h2>
-            </div>
+        <div class="folder" onclick="openGallery('vtuber')">
+            <div class="icon">📁</div>
+            <h2>VTuber</h2>
+        </div>
 
-            <div class="folder">
-                <div class="icon">📁</div>
-                <h2>Banner</h2>
-            </div>
+        <div class="folder" onclick="openGallery('logo')">
+            <div class="icon">📁</div>
+            <h2>Logo</h2>
+        </div>
 
-            <div class="folder">
-                <div class="icon">📁</div>
-                <h2>Emotes</h2>
-            </div>
+        <div class="folder" onclick="openGallery('banner')">
+            <div class="icon">📁</div>
+            <h2>Banner</h2>
+        </div>
 
+        <div class="folder" onclick="openGallery('emotes')">
+            <div class="icon">📁</div>
+            <h2>Emotes</h2>
+        </div>
+
+        <div class="folder" onclick="openGallery('art3d')">
+            <div class="icon">📁</div>
+            <h2>3D Art</h2>
+        </div>
+
+        <div class="folder" onclick="openGallery('room')">
+            <div class="icon">📁</div>
+            <h2>Room</h2>
+        </div>
+
+        <div class="folder" onclick="openGallery('overlay')">
+            <div class="icon">📁</div>
+            <h2>Overlay</h2>
         </div>
 
     </div>
+</div>
+
+
+<!-- VTUBER -->
+<div id="vtuber" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>VTuber</h2>
+
+    <div class="images">
+
+        <img src="Chibi%20model.jpeg" alt="Chibi Model">
+
+        <img src="model%201.jpeg" alt="Model 1">
+
+        <img src="Character.jpeg" alt="Character">
+
+        <img src="Vtuber%20model.jpeg" alt="VTuber Model">
+
+    </div>
+</div>
+
+
+<!-- LOGO -->
+<div id="logo" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>Logo</h2>
+
+    <div class="empty">
+        Your logo designs will appear here.
+    </div>
+
+</div>
+
+
+<!-- BANNER -->
+<div id="banner" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>Banner</h2>
+
+    <div class="empty">
+        Your banner designs will appear here.
+    </div>
+
+</div>
+
+
+<!-- EMOTES -->
+<div id="emotes" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>Emotes</h2>
+
+    <div class="empty">
+        Your emotes will appear here.
+    </div>
+
+</div>
+
+
+<!-- 3D ART -->
+<div id="art3d" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>3D Art</h2>
+
+    <div class="empty">
+        Your 3D artwork will appear here.
+    </div>
+
+</div>
+
+
+<!-- ROOM -->
+<div id="room" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>Room</h2>
+
+    <div class="empty">
+        Your 3D rooms and environments will appear here.
+    </div>
+
+</div>
+
+
+<!-- OVERLAY -->
+<div id="overlay" class="gallery">
+
+    <div class="back" onclick="goHome()">← Back</div>
+
+    <h2>Overlay</h2>
+
+    <div class="empty">
+        Your stream overlays will appear here.
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openGallery(name) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.querySelectorAll(".gallery").forEach(function(page) {
+        page.style.display = "none";
+    });
+
+    document.getElementById(name).style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+function goHome() {
+
+    document.querySelectorAll(".gallery").forEach(function(page) {
+        page.style.display = "none";
+    });
+
+    document.getElementById("home").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
 
 </body>
 </html>
