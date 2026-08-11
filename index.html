@@ -87,8 +87,10 @@ body::after {
 
 .particle {
     position: absolute;
+
     width: 4px;
     height: 4px;
+
     border-radius: 50%;
 
     background: #ffd5f4;
@@ -99,35 +101,160 @@ body::after {
         0 0 28px rgba(150,90,255,.35);
 
     opacity: 0;
-    animation: particleFloat linear infinite;
+
+    animation:
+        particleFloat linear infinite;
 }
 
-.particle:nth-child(1)  { left: 5%;  top: 85%; animation-duration: 10s; animation-delay: -2s; }
-.particle:nth-child(2)  { left: 12%; top: 65%; animation-duration: 13s; animation-delay: -8s; }
-.particle:nth-child(3)  { left: 19%; top: 92%; animation-duration: 11s; animation-delay: -5s; }
-.particle:nth-child(4)  { left: 27%; top: 72%; animation-duration: 15s; animation-delay: -11s; }
-.particle:nth-child(5)  { left: 34%; top: 88%; animation-duration: 12s; animation-delay: -4s; }
-.particle:nth-child(6)  { left: 42%; top: 60%; animation-duration: 14s; animation-delay: -9s; }
-.particle:nth-child(7)  { left: 49%; top: 94%; animation-duration: 10s; animation-delay: -6s; }
-.particle:nth-child(8)  { left: 56%; top: 78%; animation-duration: 16s; animation-delay: -12s; }
-.particle:nth-child(9)  { left: 63%; top: 90%; animation-duration: 11s; animation-delay: -3s; }
-.particle:nth-child(10) { left: 70%; top: 68%; animation-duration: 14s; animation-delay: -7s; }
-.particle:nth-child(11) { left: 77%; top: 83%; animation-duration: 12s; animation-delay: -10s; }
-.particle:nth-child(12) { left: 84%; top: 58%; animation-duration: 15s; animation-delay: -5s; }
-.particle:nth-child(13) { left: 91%; top: 88%; animation-duration: 10s; animation-delay: -1s; }
-.particle:nth-child(14) { left: 97%; top: 70%; animation-duration: 13s; animation-delay: -9s; }
-.particle:nth-child(15) { left: 9%;  top: 40%; animation-duration: 17s; animation-delay: -13s; }
-.particle:nth-child(16) { left: 23%; top: 50%; animation-duration: 12s; animation-delay: -4s; }
-.particle:nth-child(17) { left: 38%; top: 35%; animation-duration: 15s; animation-delay: -8s; }
-.particle:nth-child(18) { left: 53%; top: 45%; animation-duration: 11s; animation-delay: -2s; }
-.particle:nth-child(19) { left: 68%; top: 30%; animation-duration: 16s; animation-delay: -10s; }
-.particle:nth-child(20) { left: 82%; top: 48%; animation-duration: 13s; animation-delay: -6s; }
+.particle:nth-child(1) {
+    left: 5%;
+    top: 85%;
+    animation-duration: 10s;
+    animation-delay: -2s;
+}
+
+.particle:nth-child(2) {
+    left: 12%;
+    top: 65%;
+    animation-duration: 13s;
+    animation-delay: -8s;
+}
+
+.particle:nth-child(3) {
+    left: 19%;
+    top: 92%;
+    animation-duration: 11s;
+    animation-delay: -5s;
+}
+
+.particle:nth-child(4) {
+    left: 27%;
+    top: 72%;
+    animation-duration: 15s;
+    animation-delay: -11s;
+}
+
+.particle:nth-child(5) {
+    left: 34%;
+    top: 88%;
+    animation-duration: 12s;
+    animation-delay: -4s;
+}
+
+.particle:nth-child(6) {
+    left: 42%;
+    top: 60%;
+    animation-duration: 14s;
+    animation-delay: -9s;
+}
+
+.particle:nth-child(7) {
+    left: 49%;
+    top: 94%;
+    animation-duration: 10s;
+    animation-delay: -6s;
+}
+
+.particle:nth-child(8) {
+    left: 56%;
+    top: 78%;
+    animation-duration: 16s;
+    animation-delay: -12s;
+}
+
+.particle:nth-child(9) {
+    left: 63%;
+    top: 90%;
+    animation-duration: 11s;
+    animation-delay: -3s;
+}
+
+.particle:nth-child(10) {
+    left: 70%;
+    top: 68%;
+    animation-duration: 14s;
+    animation-delay: -7s;
+}
+
+.particle:nth-child(11) {
+    left: 77%;
+    top: 83%;
+    animation-duration: 12s;
+    animation-delay: -10s;
+}
+
+.particle:nth-child(12) {
+    left: 84%;
+    top: 58%;
+    animation-duration: 15s;
+    animation-delay: -5s;
+}
+
+.particle:nth-child(13) {
+    left: 91%;
+    top: 88%;
+    animation-duration: 10s;
+    animation-delay: -1s;
+}
+
+.particle:nth-child(14) {
+    left: 97%;
+    top: 70%;
+    animation-duration: 13s;
+    animation-delay: -9s;
+}
+
+.particle:nth-child(15) {
+    left: 9%;
+    top: 40%;
+    animation-duration: 17s;
+    animation-delay: -13s;
+}
+
+.particle:nth-child(16) {
+    left: 23%;
+    top: 50%;
+    animation-duration: 12s;
+    animation-delay: -4s;
+}
+
+.particle:nth-child(17) {
+    left: 38%;
+    top: 35%;
+    animation-duration: 15s;
+    animation-delay: -8s;
+}
+
+.particle:nth-child(18) {
+    left: 53%;
+    top: 45%;
+    animation-duration: 11s;
+    animation-delay: -2s;
+}
+
+.particle:nth-child(19) {
+    left: 68%;
+    top: 30%;
+    animation-duration: 16s;
+    animation-delay: -10s;
+}
+
+.particle:nth-child(20) {
+    left: 82%;
+    top: 48%;
+    animation-duration: 13s;
+    animation-delay: -6s;
+}
+
 
 @keyframes particleFloat {
 
     0% {
         opacity: 0;
-        transform: translate3d(0, 80px, 0) scale(.55);
+
+        transform:
+            translate3d(0, 80px, 0)
+            scale(.55);
     }
 
     12% {
@@ -136,7 +263,10 @@ body::after {
 
     50% {
         opacity: 1;
-        transform: translate3d(25px, -45vh, 0) scale(1);
+
+        transform:
+            translate3d(25px, -45vh, 0)
+            scale(1);
     }
 
     88% {
@@ -145,18 +275,26 @@ body::after {
 
     100% {
         opacity: 0;
-        transform: translate3d(-20px, -105vh, 0) scale(.35);
+
+        transform:
+            translate3d(-20px, -105vh, 0)
+            scale(.35);
     }
 }
+
 
 @keyframes floatingGlow {
 
     from {
-        transform: translateY(-25px) scale(1);
+        transform:
+            translateY(-25px)
+            scale(1);
     }
 
     to {
-        transform: translateY(35px) scale(1.25);
+        transform:
+            translateY(35px)
+            scale(1.25);
     }
 }
 
@@ -168,6 +306,7 @@ body::after {
 .container {
     width: 100%;
     max-width: 1150px;
+
     margin: auto;
 }
 
@@ -178,12 +317,19 @@ body::after {
 
 .header {
     text-align: center;
-    padding: 35px 15px 15px;
+
+    padding:
+        35px
+        15px
+        15px;
 }
+
 
 .logo {
     font-size: 76px;
+
     font-weight: 900;
+
     letter-spacing: 8px;
 
     color: #ffb9e9;
@@ -193,22 +339,28 @@ body::after {
         0 0 25px rgba(255,100,210,.6),
         0 0 55px rgba(180,90,255,.35);
 
-    animation: logoGlow 3s ease-in-out infinite alternate;
+    animation:
+        logoGlow 3s ease-in-out infinite alternate;
 }
+
 
 @keyframes logoGlow {
 
     from {
+
         text-shadow:
             0 0 8px rgba(255,130,220,.7),
             0 0 25px rgba(255,100,210,.35);
+
     }
 
     to {
+
         text-shadow:
             0 0 15px rgba(255,160,230,1),
             0 0 40px rgba(255,100,210,.7),
             0 0 70px rgba(170,90,255,.4);
+
     }
 }
 
@@ -218,20 +370,27 @@ body::after {
 ========================= */
 
 .subtitle {
+
     margin-top: 12px;
 
     color: #d0c1d8;
 
     font-size: 17px;
+
     letter-spacing: 2px;
 
     display: inline-block;
+
     min-height: 1.5em;
 }
 
+
 .subtitle::after {
+
     content: "|";
+
     display: inline-block;
+
     margin-left: 5px;
 
     color: #ff9ddd;
@@ -239,16 +398,23 @@ body::after {
     text-shadow:
         0 0 10px rgba(255,100,210,.8);
 
-    animation: subtitleCursor .75s ease-in-out infinite;
+    animation:
+        subtitleCursor
+        .75s
+        ease-in-out
+        infinite;
 }
+
 
 @keyframes subtitleCursor {
 
-    0%, 45% {
+    0%,
+    45% {
         opacity: 1;
     }
 
-    50%, 100% {
+    50%,
+    100% {
         opacity: 0;
     }
 }
@@ -259,7 +425,9 @@ body::after {
 ========================= */
 
 .gradient-line {
+
     width: 120px;
+
     height: 3px;
 
     margin: 22px auto;
@@ -276,8 +444,13 @@ body::after {
 
     background-size: 200% 100%;
 
-    animation: movingLine 3s linear infinite;
+    animation:
+        movingLine
+        3s
+        linear
+        infinite;
 }
+
 
 @keyframes movingLine {
 
@@ -296,31 +469,40 @@ body::after {
 ========================= */
 
 .about {
+
     max-width: 800px;
 
-    margin: 20px auto 25px;
+    margin:
+        20px
+        auto
+        25px;
 
     padding: 25px;
 
     text-align: center;
 
-    background: rgba(29,20,39,.72);
+    background:
+        rgba(29,20,39,.72);
 
-    border: 1px solid #493652;
+    border:
+        1px solid #493652;
 
     border-radius: 22px;
 
     box-shadow:
-        0 0 30px rgba(255,100,210,.06);
+        0 0 30px
+        rgba(255,100,210,.06);
 }
 
 
 /* =========================
-   ANIMATED WELCOME TITLE
+   ANIMATED WELCOME
 ========================= */
 
 .about h2 {
+
     position: relative;
+
     display: inline-block;
 
     color: #ffb6e7;
@@ -329,70 +511,106 @@ body::after {
 
     font-size: 26px;
 
-    background: linear-gradient(
-        90deg,
-        #ffb6e7,
-        #ffffff,
-        #d59cff,
-        #ffb6e7
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #ffb6e7,
+            #ffffff,
+            #d59cff,
+            #ffb6e7
+        );
 
     background-size: 250% auto;
 
     -webkit-background-clip: text;
+
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        0 0 18px rgba(255,100,210,.18);
+        0 0 18px
+        rgba(255,100,210,.18);
 
     animation:
-        welcomeShine 4s linear infinite,
-        welcomeFloat 3s ease-in-out infinite;
+        welcomeShine
+        4s
+        linear
+        infinite,
+
+        welcomeFloat
+        3s
+        ease-in-out
+        infinite;
 }
 
+
 .about h2::before {
+
     content: "✦";
 
     position: absolute;
 
     left: -30px;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #ff9ddd;
-    -webkit-text-fill-color: #ff9ddd;
+
+    -webkit-text-fill-color:
+        #ff9ddd;
 
     text-shadow:
-        0 0 8px rgba(255,120,215,.9),
-        0 0 20px rgba(180,90,255,.6);
+        0 0 8px
+        rgba(255,120,215,.9),
+
+        0 0 20px
+        rgba(180,90,255,.6);
 
     animation:
-        welcomeSpark 1.8s ease-in-out infinite;
+        welcomeSpark
+        1.8s
+        ease-in-out
+        infinite;
 }
 
+
 .about h2::after {
+
     content: "✦";
 
     position: absolute;
 
     right: -30px;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #c794ff;
-    -webkit-text-fill-color: #c794ff;
+
+    -webkit-text-fill-color:
+        #c794ff;
 
     text-shadow:
-        0 0 8px rgba(190,130,255,.9),
-        0 0 20px rgba(255,100,210,.5);
+        0 0 8px
+        rgba(190,130,255,.9),
+
+        0 0 20px
+        rgba(255,100,210,.5);
 
     animation:
-        welcomeSpark 1.8s ease-in-out infinite reverse;
+        welcomeSpark
+        1.8s
+        ease-in-out
+        infinite
+        reverse;
 }
+
 
 @keyframes welcomeShine {
 
@@ -405,20 +623,27 @@ body::after {
     }
 }
 
+
 @keyframes welcomeFloat {
 
-    0%, 100% {
-        transform: translateY(0);
+    0%,
+    100% {
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-3px);
+        transform:
+            translateY(-3px);
     }
 }
 
+
 @keyframes welcomeSpark {
 
-    0%, 100% {
+    0%,
+    100% {
+
         opacity: .45;
 
         transform:
@@ -428,6 +653,7 @@ body::after {
     }
 
     50% {
+
         opacity: 1;
 
         transform:
@@ -439,6 +665,7 @@ body::after {
 
 
 .about p {
+
     color: #bdb0c5;
 
     line-height: 1.7;
@@ -446,7 +673,13 @@ body::after {
     font-size: 15px;
 }
 
+
+/* =========================
+   HEARTBEAT COMMISSION
+========================= */
+
 .status {
+
     display: inline-block;
 
     margin-top: 18px;
@@ -457,14 +690,135 @@ body::after {
 
     color: #ffd9f3;
 
-    background: rgba(255,100,210,.10);
+    background:
+        rgba(255,100,210,.10);
 
-    border: 1px solid rgba(255,130,220,.3);
+    border:
+        1px solid
+        rgba(255,130,220,.3);
 
     font-size: 13px;
 
     box-shadow:
-        0 0 15px rgba(255,100,210,.08);
+        0 0 15px
+        rgba(255,100,210,.08);
+
+    transform-origin: center;
+
+    animation:
+        commissionHeartbeat
+        1.65s
+        ease-in-out
+        infinite;
+}
+
+
+.status::before {
+
+    content: "♥";
+
+    display: inline-block;
+
+    margin-right: 7px;
+
+    color: #ff8fd8;
+
+    text-shadow:
+        0 0 7px
+        rgba(255,100,210,.9),
+
+        0 0 15px
+        rgba(255,100,210,.55);
+
+    transform-origin: center;
+
+    animation:
+        heartBeat
+        1.65s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes commissionHeartbeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        box-shadow:
+            0 0 15px
+            rgba(255,100,210,.08);
+    }
+
+    8% {
+
+        transform:
+            scale(1.035);
+
+        box-shadow:
+            0 0 20px
+            rgba(255,100,210,.18);
+    }
+
+    16% {
+
+        transform:
+            scale(1);
+    }
+
+    24% {
+
+        transform:
+            scale(1.025);
+
+        box-shadow:
+            0 0 24px
+            rgba(255,100,210,.22);
+    }
+
+    34% {
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    8% {
+
+        transform:
+            scale(1.35);
+    }
+
+    16% {
+
+        transform:
+            scale(1);
+    }
+
+    24% {
+
+        transform:
+            scale(1.22);
+    }
+
+    34% {
+
+        transform:
+            scale(1);
+    }
 }
 
 
@@ -473,22 +827,31 @@ body::after {
 ========================= */
 
 .buttons {
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 12px;
 
     flex-wrap: wrap;
 
-    margin: 25px 0 45px;
+    margin:
+        25px
+        0
+        45px;
 }
 
+
 .button {
+
     display: inline-block;
 
-    padding: 14px 27px;
+    padding:
+        14px
+        27px;
 
     border-radius: 50px;
 
@@ -498,12 +861,17 @@ body::after {
 
     font-weight: bold;
 
-    border: 1px solid rgba(255,255,255,.12);
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
-    transition: .3s ease;
+    transition:
+        .3s ease;
 }
 
+
 .commission {
+
     background:
         linear-gradient(
             135deg,
@@ -512,34 +880,57 @@ body::after {
         );
 
     box-shadow:
-        0 0 15px rgba(255,100,210,.4),
-        0 0 35px rgba(160,90,255,.18);
+        0 0 15px
+        rgba(255,100,210,.4),
+
+        0 0 35px
+        rgba(160,90,255,.18);
 
     animation:
-        buttonPulse 2.5s ease-in-out infinite alternate;
+        buttonPulse
+        2.5s
+        ease-in-out
+        infinite
+        alternate;
 }
+
 
 @keyframes buttonPulse {
 
     from {
+
         box-shadow:
-            0 0 12px rgba(255,100,210,.4);
+            0 0 12px
+            rgba(255,100,210,.4);
     }
 
     to {
+
         box-shadow:
-            0 0 28px rgba(255,100,210,.65),
-            0 0 50px rgba(150,90,255,.25);
+            0 0 28px
+            rgba(255,100,210,.65),
+
+            0 0 50px
+            rgba(150,90,255,.25);
     }
 }
 
+
 .email {
-    background: #30213b;
-    border-color: #5a4366;
+
+    background:
+        #30213b;
+
+    border-color:
+        #5a4366;
 }
 
+
 .button:hover {
-    transform: translateY(-4px) scale(1.03);
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
 }
 
 
@@ -548,19 +939,25 @@ body::after {
 ========================= */
 
 .folders {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 22px;
 }
 
+
 .folder {
+
     position: relative;
 
     overflow: hidden;
 
-    padding: 38px 20px;
+    padding:
+        38px
+        20px;
 
     text-align: center;
 
@@ -571,65 +968,93 @@ body::after {
             rgba(22,15,29,.95)
         );
 
-    border: 1px solid #4f3a5b;
+    border:
+        1px solid
+        #4f3a5b;
 
     border-radius: 24px;
 
     cursor: pointer;
 
-    transition: .3s ease;
+    transition:
+        .3s ease;
 }
 
+
 .folder::before {
+
     content: "";
 
     position: absolute;
 
     width: 130px;
+
     height: 130px;
 
     right: -55px;
+
     top: -60px;
 
     border-radius: 50%;
 
-    background: rgba(255,100,210,.08);
+    background:
+        rgba(255,100,210,.08);
 
-    transition: .5s ease;
+    transition:
+        .5s ease;
 }
+
 
 .folder:hover::before {
-    transform: scale(2);
 
-    background: rgba(255,100,210,.13);
+    transform:
+        scale(2);
+
+    background:
+        rgba(255,100,210,.13);
 }
+
 
 .folder:hover {
-    transform: translateY(-8px);
 
-    border-color: #ff9ddd;
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #ff9ddd;
 
     box-shadow:
-        0 15px 40px rgba(255,100,210,.15),
-        0 0 20px rgba(170,90,255,.08);
+
+        0 15px 40px
+        rgba(255,100,210,.15),
+
+        0 0 20px
+        rgba(170,90,255,.08);
 }
 
+
 .folder-icon {
+
     font-size: 52px;
 
     margin-bottom: 15px;
 
     filter:
         drop-shadow(
-            0 0 10px rgba(255,150,220,.35)
+            0 0 10px
+            rgba(255,150,220,.35)
         );
 }
 
+
 .folder h3 {
+
     font-size: 21px;
 }
 
+
 .folder p {
+
     margin-top: 8px;
 
     color: #a99bad;
@@ -643,59 +1068,81 @@ body::after {
 ========================= */
 
 .gallery {
+
     display: none;
 }
 
+
 .gallery-header {
+
     text-align: center;
 
     margin-bottom: 32px;
 }
 
+
 .gallery-header h2 {
+
     color: #ffb5e6;
 
     font-size: 42px;
 
     text-shadow:
-        0 0 18px rgba(255,100,210,.3);
+        0 0 18px
+        rgba(255,100,210,.3);
 }
 
+
 .gallery-header p {
+
     margin-top: 8px;
 
     color: #a99bad;
 }
 
+
 .back {
+
     display: inline-block;
 
     margin-bottom: 28px;
 
-    padding: 11px 22px;
+    padding:
+        11px
+        22px;
 
     border-radius: 12px;
 
     color: white;
 
-    background: #30213b;
+    background:
+        #30213b;
 
-    border: 1px solid #594367;
+    border:
+        1px solid
+        #594367;
 
     cursor: pointer;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
+
 .back:hover {
-    background: #ff9ddd;
 
-    color: #211523;
+    background:
+        #ff9ddd;
 
-    border-color: #ff9ddd;
+    color:
+        #211523;
+
+    border-color:
+        #ff9ddd;
 
     box-shadow:
-        0 0 20px rgba(255,100,210,.3);
+        0 0 20px
+        rgba(255,100,210,.3);
 }
 
 
@@ -704,54 +1151,75 @@ body::after {
 ========================= */
 
 .images {
+
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 22px;
 }
 
+
 .image-card {
+
     overflow: hidden;
 
-    background: #16101d;
+    background:
+        #16101d;
 
-    border: 1px solid #4b3756;
+    border:
+        1px solid
+        #4b3756;
 
     border-radius: 20px;
 
     cursor: pointer;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
+
 
 .image-card:hover {
-    transform: translateY(-5px);
 
-    border-color: #ff9ddd;
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #ff9ddd;
 
     box-shadow:
-        0 12px 35px rgba(255,120,210,.18);
+        0 12px 35px
+        rgba(255,120,210,.18);
 }
 
+
 .image-card img {
+
     display: block;
 
     width: 100%;
+
     height: 390px;
 
     object-fit: cover;
 
-    transition: .45s;
+    transition:
+        .45s;
 
     user-select: none;
+
     -webkit-user-select: none;
 
     -webkit-user-drag: none;
 }
 
+
 .image-card:hover img {
-    transform: scale(1.035);
+
+    transform:
+        scale(1.035);
 }
 
 
@@ -760,6 +1228,7 @@ body::after {
 ========================= */
 
 .lightbox {
+
     display: none;
 
     position: fixed;
@@ -769,15 +1238,20 @@ body::after {
     z-index: 9999;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
 
-    background: rgba(3,2,6,.96);
+    background:
+        rgba(3,2,6,.96);
 }
 
+
 .lightbox img {
+
     max-width: 95%;
+
     max-height: 90vh;
 
     object-fit: contain;
@@ -785,19 +1259,27 @@ body::after {
     border-radius: 15px;
 
     user-select: none;
+
     -webkit-user-select: none;
 
     -webkit-user-drag: none;
 
     box-shadow:
-        0 0 35px rgba(255,110,215,.3),
-        0 0 70px rgba(140,90,255,.18);
+
+        0 0 35px
+        rgba(255,110,215,.3),
+
+        0 0 70px
+        rgba(140,90,255,.18);
 }
 
+
 .close {
+
     position: fixed;
 
     top: 15px;
+
     right: 25px;
 
     font-size: 45px;
@@ -807,8 +1289,11 @@ body::after {
     cursor: pointer;
 }
 
+
 .close:hover {
-    color: #ff9ddd;
+
+    color:
+        #ff9ddd;
 }
 
 
@@ -817,19 +1302,26 @@ body::after {
 ========================= */
 
 .footer {
+
     margin-top: 60px;
 
-    padding: 25px 10px;
+    padding:
+        25px
+        10px;
 
     text-align: center;
 
-    color: #75677d;
+    color:
+        #75677d;
 
     font-size: 14px;
 }
 
+
 .footer-name {
-    color: #d6a5ca;
+
+    color:
+        #d6a5ca;
 }
 
 
@@ -838,17 +1330,21 @@ body::after {
 ========================= */
 
 .top-button {
+
     position: fixed;
 
     right: 20px;
+
     bottom: 20px;
 
     width: 45px;
+
     height: 45px;
 
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -865,7 +1361,8 @@ body::after {
     cursor: pointer;
 
     box-shadow:
-        0 0 20px rgba(255,100,210,.3);
+        0 0 20px
+        rgba(255,100,210,.3);
 
     z-index: 1000;
 }
@@ -878,65 +1375,116 @@ body::after {
 @media (max-width: 800px) {
 
     .folders {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
 
+
 @media (max-width: 550px) {
 
     body {
-        padding: 18px 12px;
+
+        padding:
+            18px
+            12px;
     }
+
 
     .logo {
-        font-size: 48px;
 
-        letter-spacing: 5px;
+        font-size:
+            48px;
+
+        letter-spacing:
+            5px;
     }
+
 
     .subtitle {
-        font-size: 13px;
+
+        font-size:
+            13px;
     }
+
 
     .about {
-        padding: 20px 15px;
+
+        padding:
+            20px
+            15px;
     }
+
 
     .about h2 {
-        font-size: 22px;
+
+        font-size:
+            22px;
     }
+
 
     .about h2::before {
-        left: -20px;
+
+        left:
+            -20px;
     }
+
 
     .about h2::after {
-        right: -20px;
+
+        right:
+            -20px;
     }
+
 
     .folders {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
+
+
+    .folder {
+
+        padding:
+            30px
+            18px;
+    }
+
 
     .images {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
+
 
     .image-card img {
-        height: 320px;
+
+        height:
+            320px;
     }
+
 
     .gallery-header h2 {
-        font-size: 34px;
+
+        font-size:
+            34px;
     }
 
+
     .button {
-        width: 100%;
 
-        max-width: 280px;
+        width:
+            100%;
 
-        text-align: center;
+        max-width:
+            280px;
+
+        text-align:
+            center;
     }
 
 }
@@ -949,8 +1497,12 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
 
     .particle,
-    .about h2 {
-        animation: none;
+    .about h2,
+    .status,
+    .status::before {
+
+        animation:
+            none;
     }
 
 }
@@ -966,7 +1518,10 @@ body::after {
      GLOWING PARTICLES
 ========================= -->
 
-<div class="particle-field" aria-hidden="true">
+<div
+    class="particle-field"
+    aria-hidden="true"
+>
 
     <span class="particle"></span>
     <span class="particle"></span>
@@ -1000,13 +1555,19 @@ body::after {
      HEADER
 ========================= -->
 
-<header class="header" id="home">
+<header
+    class="header"
+    id="home"
+>
 
     <div class="logo">
         WOXIN
     </div>
 
-    <div class="subtitle" id="animatedBio"></div>
+    <div
+        class="subtitle"
+        id="animatedBio"
+    ></div>
 
     <div class="gradient-line"></div>
 
@@ -1024,13 +1585,18 @@ body::after {
     </h2>
 
     <p>
-        Welcome! I'm Woxin, a creative artist specializing in
-        VTuber designs, logos, banners, emotes, overlays,
-        3D art rooms and creative scenes.
+
+        Welcome! I'm Woxin, a creative artist
+        specializing in VTuber designs, logos,
+        banners, emotes, overlays, 3D art rooms
+        and creative scenes.
+
     </p>
 
     <div class="status">
-        ✦ Available for Commissions ✦
+
+        Available for Commissions
+
     </div>
 
 </section>
@@ -1060,7 +1626,7 @@ body::after {
 
 
 <!-- =========================
-     FOLDERS
+     HOME FOLDERS
 ========================= -->
 
 <div id="homeFolders">
@@ -1068,7 +1634,12 @@ body::after {
 <div class="folders">
 
 
-<div class="folder" onclick="openGallery('vtuber')">
+<!-- VTUBER -->
+
+<div
+    class="folder"
+    onclick="openGallery('vtuber')"
+>
 
     <div class="folder-icon">
         📁
@@ -1085,7 +1656,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('logo')">
+<!-- LOGO -->
+
+<div
+    class="folder"
+    onclick="openGallery('logo')"
+>
 
     <div class="folder-icon">
         📁
@@ -1102,7 +1678,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('banner')">
+<!-- BANNER -->
+
+<div
+    class="folder"
+    onclick="openGallery('banner')"
+>
 
     <div class="folder-icon">
         📁
@@ -1119,7 +1700,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('emotes')">
+<!-- EMOTES -->
+
+<div
+    class="folder"
+    onclick="openGallery('emotes')"
+>
 
     <div class="folder-icon">
         📁
@@ -1136,7 +1722,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('art3d')">
+<!-- 3D ART ROOM -->
+
+<div
+    class="folder"
+    onclick="openGallery('art3d')"
+>
 
     <div class="folder-icon">
         📁
@@ -1153,7 +1744,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('artscene')">
+<!-- ART SCENE -->
+
+<div
+    class="folder"
+    onclick="openGallery('artscene')"
+>
 
     <div class="folder-icon">
         📁
@@ -1170,7 +1766,12 @@ body::after {
 </div>
 
 
-<div class="folder" onclick="openGallery('overlay')">
+<!-- OVERLAY -->
+
+<div
+    class="folder"
+    onclick="openGallery('overlay')"
+>
 
     <div class="folder-icon">
         📁
@@ -1187,6 +1788,50 @@ body::after {
 </div>
 
 
+<!-- VTUBER ID CARD -->
+
+<div
+    class="folder"
+    onclick="openGallery('vtuberid')"
+>
+
+    <div class="folder-icon">
+        🪪
+    </div>
+
+    <h3>
+        VTuber ID Card
+    </h3>
+
+    <p>
+        VTuber ID Card Designs
+    </p>
+
+</div>
+
+
+<!-- 3D VTUBER MODEL -->
+
+<div
+    class="folder"
+    onclick="openGallery('vtuber3d')"
+>
+
+    <div class="folder-icon">
+        🧊
+    </div>
+
+    <h3>
+        3D VTuber Model
+    </h3>
+
+    <p>
+        3D VTuber Model Designs
+    </p>
+
+</div>
+
+
 </div>
 </div>
 
@@ -1195,7 +1840,10 @@ body::after {
      VTUBER
 ========================= -->
 
-<div id="vtuber" class="gallery">
+<div
+    id="vtuber"
+    class="gallery"
+>
 
 <div
     class="back"
@@ -1350,11 +1998,18 @@ body::after {
      LOGO
 ========================= -->
 
-<div id="logo" class="gallery">
+<div
+    id="logo"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1373,57 +2028,101 @@ body::after {
 
 
 <div class="image-card">
-<img src="Logo%202.jpeg"
-alt="Logo 2"
-onclick="showImage(this.src)">
+
+<img
+    src="Logo%202.jpeg"
+    alt="Logo 2"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="logo1.jpeg"
-alt="Logo 1"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="logo%209.jpeg"
-alt="Logo 9"
-onclick="showImage(this.src)">
+
+<img
+    src="logo1.jpeg"
+    alt="Logo 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="logo%208.jpeg"
-alt="Logo 8"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="logo%207.jpeg"
-alt="Logo 7"
-onclick="showImage(this.src)">
+
+<img
+    src="logo%209.jpeg"
+    alt="Logo 9"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="logo%206.jpeg"
-alt="Logo 6"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="logo5.jpeg"
-alt="Logo 5"
-onclick="showImage(this.src)">
+
+<img
+    src="logo%208.jpeg"
+    alt="Logo 8"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="logo%204.jpeg"
-alt="Logo 4"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Logo3.jpeg"
-alt="Logo 3"
-onclick="showImage(this.src)">
+
+<img
+    src="logo%207.jpeg"
+    alt="Logo 7"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="logo%206.jpeg"
+    alt="Logo 6"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="logo5.jpeg"
+    alt="Logo 5"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="logo%204.jpeg"
+    alt="Logo 4"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Logo3.jpeg"
+    alt="Logo 3"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1435,11 +2134,18 @@ onclick="showImage(this.src)">
      BANNER
 ========================= -->
 
-<div id="banner" class="gallery">
+<div
+    id="banner"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1458,63 +2164,112 @@ onclick="showImage(this.src)">
 
 
 <div class="image-card">
-<img src="Banner%201.jpeg"
-alt="Banner 1"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%201.jpeg"
+    alt="Banner 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Banner%202.jpeg"
-alt="Banner 2"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Banner%204.jpeg"
-alt="Banner 4"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%202.jpeg"
+    alt="Banner 2"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Banner%205.jpeg"
-alt="Banner 5"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Banner%206.jpeg"
-alt="Banner 6"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%204.jpeg"
+    alt="Banner 4"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Banner%207.jpeg"
-alt="Banner 7"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Banner%209.jpeg"
-alt="Banner 9"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%205.jpeg"
+    alt="Banner 5"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Banner%2010.jpeg"
-alt="Banner 10"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Banner%2011.jpeg"
-alt="Banner 11"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%206.jpeg"
+    alt="Banner 6"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
+
 <div class="image-card">
-<img src="Banner%2012.jpeg"
-alt="Banner 12"
-onclick="showImage(this.src)">
+
+<img
+    src="Banner%207.jpeg"
+    alt="Banner 7"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Banner%209.jpeg"
+    alt="Banner 9"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Banner%2010.jpeg"
+    alt="Banner 10"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Banner%2011.jpeg"
+    alt="Banner 11"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Banner%2012.jpeg"
+    alt="Banner 12"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1526,11 +2281,18 @@ onclick="showImage(this.src)">
      EMOTES
 ========================= -->
 
-<div id="emotes" class="gallery">
+<div
+    id="emotes"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1549,69 +2311,123 @@ onclick="showImage(this.src)">
 
 
 <div class="image-card">
-<img src="Emotes%201.jpeg"
-alt="Emotes 1"
-onclick="showImage(this.src)">
+
+<img
+    src="Emotes%201.jpeg"
+    alt="Emotes 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Emote%202.jpeg"
-alt="Emote 2"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Emotes%203.jpeg"
-alt="Emotes 3"
-onclick="showImage(this.src)">
+
+<img
+    src="Emote%202.jpeg"
+    alt="Emote 2"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Emotes%204.jpeg"
-alt="Emotes 4"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Emotes%205.jpeg"
-alt="Emotes 5"
-onclick="showImage(this.src)">
+
+<img
+    src="Emotes%203.jpeg"
+    alt="Emotes 3"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Emotes%206.jpeg"
-alt="Emotes 6"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Emotes%207.jpeg"
-alt="Emotes 7"
-onclick="showImage(this.src)">
+
+<img
+    src="Emotes%204.jpeg"
+    alt="Emotes 4"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Emotes%208.jpeg"
-alt="Emotes 8"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Emotes%209.jpeg"
-alt="Emotes 9"
-onclick="showImage(this.src)">
+
+<img
+    src="Emotes%205.jpeg"
+    alt="Emotes 5"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Emotes%2010.jpeg"
-alt="Emotes 10"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Emotes%2011.jpeg"
-alt="Emotes 11"
-onclick="showImage(this.src)">
+
+<img
+    src="Emotes%206.jpeg"
+    alt="Emotes 6"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Emotes%207.jpeg"
+    alt="Emotes 7"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Emotes%208.jpeg"
+    alt="Emotes 8"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Emotes%209.jpeg"
+    alt="Emotes 9"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Emotes%2010.jpeg"
+    alt="Emotes 10"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Emotes%2011.jpeg"
+    alt="Emotes 11"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1623,11 +2439,18 @@ onclick="showImage(this.src)">
      3D ART ROOM
 ========================= -->
 
-<div id="art3d" class="gallery">
+<div
+    id="art3d"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1646,27 +2469,46 @@ onclick="showImage(this.src)">
 
 
 <div class="image-card">
-<img src="3D%20art%20room%201.jpeg"
-alt="3D Art Room 1"
-onclick="showImage(this.src)">
+
+<img
+    src="3D%20art%20room%201.jpeg"
+    alt="3D Art Room 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="3D%20art%20room%202.jpeg"
-alt="3D Art Room 2"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="3D%20art%20room%203.jpeg"
-alt="3D Art Room 3"
-onclick="showImage(this.src)">
+
+<img
+    src="3D%20art%20room%202.jpeg"
+    alt="3D Art Room 2"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
+
 <div class="image-card">
-<img src="3D%20art%20room%204.jpeg"
-alt="3D Art Room 4"
-onclick="showImage(this.src)">
+
+<img
+    src="3D%20art%20room%203.jpeg"
+    alt="3D Art Room 3"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="3D%20art%20room%204.jpeg"
+    alt="3D Art Room 4"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1678,11 +2520,18 @@ onclick="showImage(this.src)">
      ART SCENE
 ========================= -->
 
-<div id="artscene" class="gallery">
+<div
+    id="artscene"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1701,63 +2550,112 @@ onclick="showImage(this.src)">
 
 
 <div class="image-card">
-<img src="Artscene%201.jpeg"
-alt="Art Scene 1"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%201.jpeg"
+    alt="Art Scene 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Artscene%202.jpeg"
-alt="Art Scene 2"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Artscene%203.jpeg"
-alt="Art Scene 3"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%202.jpeg"
+    alt="Art Scene 2"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Artscene%204.jpeg"
-alt="Art Scene 4"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Artscene%205.jpeg"
-alt="Art Scene 5"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%203.jpeg"
+    alt="Art Scene 3"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Artscene%206.jpeg"
-alt="Art Scene 6"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Artscene%207.jpeg"
-alt="Art Scene 7"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%204.jpeg"
+    alt="Art Scene 4"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Artscene%208.jpeg"
-alt="Art Scene 8"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Artscene%209.jpeg"
-alt="Art Scene 9"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%205.jpeg"
+    alt="Art Scene 5"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
+
 <div class="image-card">
-<img src="Artscene%2010.jpeg"
-alt="Art Scene 10"
-onclick="showImage(this.src)">
+
+<img
+    src="Artscene%206.jpeg"
+    alt="Art Scene 6"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Artscene%207.jpeg"
+    alt="Art Scene 7"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Artscene%208.jpeg"
+    alt="Art Scene 8"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Artscene%209.jpeg"
+    alt="Art Scene 9"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Artscene%2010.jpeg"
+    alt="Art Scene 10"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1769,11 +2667,18 @@ onclick="showImage(this.src)">
      OVERLAY
 ========================= -->
 
-<div id="overlay" class="gallery">
+<div
+    id="overlay"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
+<div
+    class="back"
+    onclick="goHome()"
+>
     ← Back to Portfolio
 </div>
+
 
 <div class="gallery-header">
 
@@ -1792,21 +2697,35 @@ onclick="showImage(this.src)">
 
 
 <div class="image-card">
-<img src="Overlay%201.jpeg"
-alt="Overlay 1"
-onclick="showImage(this.src)">
+
+<img
+    src="Overlay%201.jpeg"
+    alt="Overlay 1"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
-<div class="image-card">
-<img src="Overlay%202.jpeg"
-alt="Overlay 2"
-onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="Overlay%203.jpeg"
-alt="Overlay 3"
-onclick="showImage(this.src)">
+
+<img
+    src="Overlay%202.jpeg"
+    alt="Overlay 2"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Overlay%203.jpeg"
+    alt="Overlay 3"
+    onclick="showImage(this.src)"
+>
+
 </div>
 
 
@@ -1815,7 +2734,169 @@ onclick="showImage(this.src)">
 
 
 <!-- =========================
-     FULLSCREEN IMAGE
+     VTUBER ID CARD
+========================= -->
+
+<div
+    id="vtuberid"
+    class="gallery"
+>
+
+<div
+    class="back"
+    onclick="goHome()"
+>
+    ← Back to Portfolio
+</div>
+
+
+<div class="gallery-header">
+
+    <h2>
+        VTuber ID Card
+    </h2>
+
+    <p>
+        VTuber ID card and profile designs
+    </p>
+
+</div>
+
+
+<div class="images">
+
+
+<div class="image-card">
+
+<img
+    src="Vtuber%20ID%20Card%201.jpeg"
+    alt="VTuber ID Card 1"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Vtuber%20ID%20Card%202.jpeg"
+    alt="VTuber ID Card 2"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Vtuber%20ID%20Card%203.jpeg"
+    alt="VTuber ID Card 3"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="Vtuber%20ID%20Card%204.jpeg"
+    alt="VTuber ID Card 4"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+</div>
+</div>
+
+
+<!-- =========================
+     3D VTUBER MODEL
+========================= -->
+
+<div
+    id="vtuber3d"
+    class="gallery"
+>
+
+<div
+    class="back"
+    onclick="goHome()"
+>
+    ← Back to Portfolio
+</div>
+
+
+<div class="gallery-header">
+
+    <h2>
+        3D VTuber Model
+    </h2>
+
+    <p>
+        3D VTuber model designs and showcases
+    </p>
+
+</div>
+
+
+<div class="images">
+
+
+<div class="image-card">
+
+<img
+    src="3D%20VTuber%20Model%201.jpeg"
+    alt="3D VTuber Model 1"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="3D%20VTuber%20Model%202.jpeg"
+    alt="3D VTuber Model 2"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="3D%20VTuber%20Model%203.jpeg"
+    alt="3D VTuber Model 3"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+    src="3D%20VTuber%20Model%204.jpeg"
+    alt="3D VTuber Model 4"
+    onclick="showImage(this.src)"
+>
+
+</div>
+
+
+</div>
+</div>
+
+
+<!-- =========================
+     LIGHTBOX
 ========================= -->
 
 <div
@@ -1844,15 +2925,22 @@ onclick="showImage(this.src)">
 <footer class="footer">
 
     <p>
+
         © 2026
+
         <span class="footer-name">
             Woxin
         </span>
+
         • Creative Portfolio
+
     </p>
 
+
     <p style="margin-top:8px;">
+
         ✦ VTuber • Design • 3D • Creative Work ✦
+
     </p>
 
 </footer>
@@ -1878,24 +2966,38 @@ onclick="showImage(this.src)">
 
 
 /* =========================
-   ANIMATED BIO / TYPEWRITER
+   ANIMATED BIO
 ========================= */
 
 const bioTexts = [
+
     "VTuber • Design • 3D • Creative Work",
+
     "VTuber Designs • Logos • Banners • Emotes",
+
     "3D Art Rooms • Art Scenes • Stream Overlays"
+
 ];
 
-const animatedBio = document.getElementById("animatedBio");
+
+const animatedBio =
+    document.getElementById(
+        "animatedBio"
+    );
+
 
 let bioIndex = 0;
+
 let bioCharIndex = 0;
+
 let deletingBio = false;
+
 
 function animateBio() {
 
-    const currentText = bioTexts[bioIndex];
+    const currentText =
+        bioTexts[bioIndex];
+
 
     if (!deletingBio) {
 
@@ -1905,9 +3007,14 @@ function animateBio() {
                 bioCharIndex + 1
             );
 
+
         bioCharIndex++;
 
-        if (bioCharIndex === currentText.length) {
+
+        if (
+            bioCharIndex ===
+            currentText.length
+        ) {
 
             deletingBio = true;
 
@@ -1919,12 +3026,15 @@ function animateBio() {
             return;
         }
 
+
         setTimeout(
             animateBio,
             70
         );
 
+
     } else {
+
 
         animatedBio.textContent =
             currentText.substring(
@@ -1932,14 +3042,20 @@ function animateBio() {
                 bioCharIndex - 1
             );
 
+
         bioCharIndex--;
 
-        if (bioCharIndex === 0) {
+
+        if (
+            bioCharIndex === 0
+        ) {
 
             deletingBio = false;
 
             bioIndex =
-                (bioIndex + 1) % bioTexts.length;
+                (bioIndex + 1)
+                % bioTexts.length;
+
 
             setTimeout(
                 animateBio,
@@ -1949,12 +3065,16 @@ function animateBio() {
             return;
         }
 
+
         setTimeout(
             animateBio,
             40
         );
+
     }
+
 }
+
 
 animateBio();
 
@@ -1965,25 +3085,47 @@ animateBio();
 
 function openGallery(name) {
 
-    document.getElementById("home").style.display = "none";
+    document
+        .getElementById("home")
+        .style.display = "none";
 
-    document.querySelector(".about").style.display = "none";
 
-    document.querySelector(".buttons").style.display = "none";
+    document
+        .querySelector(".about")
+        .style.display = "none";
 
-    document.getElementById("homeFolders").style.display = "none";
+
+    document
+        .querySelector(".buttons")
+        .style.display = "none";
+
+
+    document
+        .getElementById("homeFolders")
+        .style.display = "none";
+
 
     document
         .querySelectorAll(".gallery")
-        .forEach(function(page) {
+        .forEach(
+            function(page) {
 
-            page.style.display = "none";
+                page.style.display =
+                    "none";
 
-        });
+            }
+        );
 
-    document.getElementById(name).style.display = "block";
 
-    window.scrollTo(0, 0);
+    document
+        .getElementById(name)
+        .style.display = "block";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 }
 
 
@@ -1995,37 +3137,63 @@ function goHome() {
 
     document
         .querySelectorAll(".gallery")
-        .forEach(function(page) {
+        .forEach(
+            function(page) {
 
-            page.style.display = "none";
+                page.style.display =
+                    "none";
 
-        });
+            }
+        );
 
-    document.getElementById("home").style.display = "block";
 
-    document.querySelector(".about").style.display = "block";
+    document
+        .getElementById("home")
+        .style.display =
+        "block";
 
-    document.querySelector(".buttons").style.display = "flex";
 
-    document.getElementById("homeFolders").style.display = "block";
+    document
+        .querySelector(".about")
+        .style.display =
+        "block";
 
-    window.scrollTo(0, 0);
+
+    document
+        .querySelector(".buttons")
+        .style.display =
+        "flex";
+
+
+    document
+        .getElementById("homeFolders")
+        .style.display =
+        "block";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 }
 
 
 /* =========================
-   IMAGE FULLSCREEN
+   FULLSCREEN IMAGE
 ========================= */
 
 function showImage(src) {
 
     document
         .getElementById("lightbox")
-        .style.display = "flex";
+        .style.display =
+        "flex";
+
 
     document
         .getElementById("lightboxImage")
-        .src = src;
+        .src =
+        src;
 }
 
 
@@ -2037,11 +3205,14 @@ function closeImage() {
 
     document
         .getElementById("lightbox")
-        .style.display = "none";
+        .style.display =
+        "none";
+
 
     document
         .getElementById("lightboxImage")
-        .src = "";
+        .src =
+        "";
 }
 
 
@@ -2054,15 +3225,22 @@ window.addEventListener(
     function() {
 
         const button =
-            document.getElementById("topButton");
+            document.getElementById(
+                "topButton"
+            );
 
-        if (window.scrollY > 400) {
 
-            button.style.display = "flex";
+        if (
+            window.scrollY > 400
+        ) {
+
+            button.style.display =
+                "flex";
 
         } else {
 
-            button.style.display = "none";
+            button.style.display =
+                "none";
         }
 
     }
@@ -2086,8 +3264,6 @@ function goTop() {
    IMAGE PROTECTION
 ========================= */
 
-/* Right click disabled */
-
 document.addEventListener(
     "contextmenu",
     function(event) {
@@ -2098,15 +3274,14 @@ document.addEventListener(
 );
 
 
-/* Prevent image dragging */
-
 document.addEventListener(
     "dragstart",
     function(event) {
 
         if (
             event.target &&
-            event.target.tagName === "IMG"
+            event.target.tagName ===
+            "IMG"
         ) {
 
             event.preventDefault();
@@ -2117,15 +3292,14 @@ document.addEventListener(
 );
 
 
-/* Prevent selecting images */
-
 document.addEventListener(
     "selectstart",
     function(event) {
 
         if (
             event.target &&
-            event.target.tagName === "IMG"
+            event.target.tagName ===
+            "IMG"
         ) {
 
             event.preventDefault();
@@ -2149,7 +3323,8 @@ document.addEventListener(
 
         if (
             event.ctrlKey &&
-            event.key.toLowerCase() === "s"
+            event.key.toLowerCase() ===
+            "s"
         ) {
 
             event.preventDefault();
@@ -2161,7 +3336,8 @@ document.addEventListener(
 
         if (
             event.ctrlKey &&
-            event.key.toLowerCase() === "u"
+            event.key.toLowerCase() ===
+            "u"
         ) {
 
             event.preventDefault();
@@ -2174,7 +3350,8 @@ document.addEventListener(
         if (
             event.ctrlKey &&
             event.shiftKey &&
-            event.key.toLowerCase() === "i"
+            event.key.toLowerCase() ===
+            "i"
         ) {
 
             event.preventDefault();
@@ -2187,7 +3364,8 @@ document.addEventListener(
         if (
             event.ctrlKey &&
             event.shiftKey &&
-            event.key.toLowerCase() === "j"
+            event.key.toLowerCase() ===
+            "j"
         ) {
 
             event.preventDefault();
@@ -2198,7 +3376,8 @@ document.addEventListener(
         /* F12 */
 
         if (
-            event.key === "F12"
+            event.key ===
+            "F12"
         ) {
 
             event.preventDefault();
@@ -2206,10 +3385,11 @@ document.addEventListener(
         }
 
 
-        /* Escape closes image */
+        /* Escape */
 
         if (
-            event.key === "Escape"
+            event.key ===
+            "Escape"
         ) {
 
             closeImage();
@@ -2220,6 +3400,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 </body>
 </html>
