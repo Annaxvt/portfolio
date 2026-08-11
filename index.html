@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <meta
     name="description"
@@ -11,19 +17,21 @@
 
 <title>WOXIN AUTOMATION | Creative Technology & Digital Solutions</title>
 
+
 <style>
 
 /* =========================================================
    WOXIN AUTOMATION
-   PREMIUM FUTURISTIC BACKGROUND VERSION
+   COMPLETE PORTFOLIO WEBSITE
    ========================================================= */
 
 :root {
-    --bg: #050711;
-    --bg2: #080c18;
 
-    --panel: rgba(13, 18, 32, 0.76);
-    --panel2: rgba(18, 25, 44, 0.88);
+    --bg: #050711;
+    --bg2: #080d1a;
+
+    --panel: rgba(12, 17, 31, 0.82);
+    --panel2: rgba(17, 24, 43, 0.90);
 
     --line: rgba(148, 163, 184, 0.16);
 
@@ -33,10 +41,12 @@
     --cyan: #59e7ff;
     --violet: #9b7cff;
     --pink: #ff6fba;
+
     --green: #63ff9c;
 
     --shadow:
-        0 24px 80px rgba(0,0,0,.38);
+        0 24px 80px rgba(0,0,0,.42);
+
 }
 
 
@@ -55,7 +65,9 @@ html {
 }
 
 body {
+
     min-height: 100vh;
+
     overflow-x: hidden;
 
     color: var(--text);
@@ -72,56 +84,65 @@ body {
 
     background:
         radial-gradient(
-            circle at 12% 10%,
+            circle at 15% 10%,
             rgba(89,231,255,.10),
-            transparent 24%
+            transparent 25%
         ),
 
         radial-gradient(
-            circle at 88% 15%,
-            rgba(155,124,255,.12),
-            transparent 26%
-        ),
-
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(255,111,186,.06),
+            circle at 85% 12%,
+            rgba(155,124,255,.13),
             transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(89,231,255,.035),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(255,111,186,.08),
+            transparent 30%
         ),
 
         linear-gradient(
             135deg,
             #03050c 0%,
-            #070a14 45%,
-            #050711 100%
+            #070b16 45%,
+            #050812 100%
         );
 
-    position: relative;
 }
 
 
 /* =========================================================
-   PREMIUM BACKGROUND SYSTEM
+   PROFESSIONAL BACKGROUND
    ========================================================= */
 
 body::before {
+
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
+
     z-index: 0;
 
-    background:
+    background-image:
+
         linear-gradient(
-            rgba(255,255,255,.025) 1px,
+            rgba(89,231,255,.025) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,.025) 1px,
+            rgba(89,231,255,.025) 1px,
             transparent 1px
         );
 
@@ -132,233 +153,82 @@ body::before {
         linear-gradient(
             to bottom,
             black,
-            rgba(0,0,0,.65),
-            transparent
+            transparent 90%
         );
 
-    opacity: .45;
-
-    animation:
-        gridMove 18s linear infinite;
-}
-
-@keyframes gridMove {
-
-    from {
-        transform:
-            translate3d(0,0,0);
-    }
-
-    to {
-        transform:
-            translate3d(70px,70px,0);
-    }
 }
 
 
-/* =========================================================
-   AMBIENT GLOW ORBS
-   ========================================================= */
+/* Large atmospheric glow */
 
-.background-orbs {
+body::after {
+
+    content: "";
+
     position: fixed;
-    inset: 0;
 
-    overflow: hidden;
+    width: 650px;
+    height: 650px;
+
+    left: -250px;
+    top: 15%;
 
     pointer-events: none;
 
     z-index: 0;
-}
-
-.orb {
-    position: absolute;
 
     border-radius: 50%;
 
-    filter: blur(80px);
-
-    opacity: .20;
-
-    mix-blend-mode: screen;
-}
-
-.orb-1 {
-    width: 380px;
-    height: 380px;
-
-    left: -120px;
-    top: 8%;
-
     background:
         radial-gradient(
             circle,
-            rgba(89,231,255,.65),
-            transparent 70%
+            rgba(89,231,255,.055),
+            transparent 68%
         );
 
-    animation:
-        orbFloat1 15s ease-in-out infinite;
-}
-
-.orb-2 {
-    width: 450px;
-    height: 450px;
-
-    right: -160px;
-    top: 18%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(155,124,255,.65),
-            transparent 70%
-        );
+    filter: blur(25px);
 
     animation:
-        orbFloat2 19s ease-in-out infinite;
+        backgroundFloat 12s ease-in-out infinite alternate;
+
 }
 
-.orb-3 {
-    width: 330px;
-    height: 330px;
+@keyframes backgroundFloat {
 
-    left: 35%;
-    bottom: -150px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,111,186,.45),
-            transparent 70%
-        );
-
-    animation:
-        orbFloat3 17s ease-in-out infinite;
-}
-
-@keyframes orbFloat1 {
-
-    0%,
-    100% {
+    from {
         transform:
-            translate(0,0)
+            translate3d(0,0,0)
             scale(1);
     }
 
-    50% {
+    to {
         transform:
-            translate(90px,60px)
+            translate3d(180px,80px,0)
             scale(1.15);
     }
-}
 
-@keyframes orbFloat2 {
-
-    0%,
-    100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-100px,80px)
-            scale(1.12);
-    }
-}
-
-@keyframes orbFloat3 {
-
-    0%,
-    100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(50px,-90px)
-            scale(1.18);
-    }
 }
 
 
 /* =========================================================
-   SCAN LIGHT
-   ========================================================= */
-
-.scan-light {
-    position: fixed;
-    left: -20%;
-    top: -30%;
-
-    width: 35%;
-    height: 170%;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(89,231,255,.035),
-            rgba(155,124,255,.045),
-            transparent
-        );
-
-    transform:
-        rotate(18deg);
-
-    filter:
-        blur(12px);
-
-    animation:
-        scanMove 14s ease-in-out infinite;
-}
-
-@keyframes scanMove {
-
-    0% {
-        left: -35%;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    55% {
-        opacity: .8;
-    }
-
-    100% {
-        left: 120%;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   NOISE
+   BACKGROUND NOISE
    ========================================================= */
 
 .noise {
+
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
 
-    opacity: .028;
+    opacity: .035;
 
-    z-index: 2;
+    z-index: 1;
 
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+
 }
 
 
@@ -367,8 +237,10 @@ body::before {
    ========================================================= */
 
 .aurora {
+
     position: fixed;
-    inset: -25%;
+
+    inset: -20%;
 
     z-index: 0;
 
@@ -378,19 +250,19 @@ body::before {
         conic-gradient(
             from 180deg at 50% 50%,
             transparent,
-            rgba(89,231,255,.045),
+            rgba(89,231,255,.035),
             transparent,
-            rgba(155,124,255,.055),
+            rgba(155,124,255,.045),
             transparent,
-            rgba(255,111,186,.035),
+            rgba(255,111,186,.025),
             transparent
         );
 
-    filter:
-        blur(65px);
+    filter: blur(60px);
 
     animation:
-        auroraSpin 28s linear infinite;
+        auroraSpin 30s linear infinite;
+
 }
 
 @keyframes auroraSpin {
@@ -399,25 +271,30 @@ body::before {
         transform:
             rotate(360deg);
     }
+
 }
 
 
 /* =========================================================
-   PARTICLES
+   GLOWING PARTICLES
    ========================================================= */
 
 .particles {
+
     position: fixed;
+
     inset: 0;
 
     overflow: hidden;
 
     pointer-events: none;
 
-    z-index: 3;
+    z-index: 1;
+
 }
 
 .p {
+
     position: absolute;
 
     width: 3px;
@@ -434,6 +311,7 @@ body::before {
         floatParticle 12s linear infinite;
 
     opacity: 0;
+
 }
 
 .p:nth-child(1) {
@@ -510,7 +388,6 @@ body::before {
 
     50% {
         opacity: 1;
-
         transform:
             translate(25px,-50vh);
     }
@@ -521,10 +398,10 @@ body::before {
 
     100% {
         opacity: 0;
-
         transform:
             translate(-20px,-110vh);
     }
+
 }
 
 
@@ -533,9 +410,10 @@ body::before {
    ========================================================= */
 
 .wrap {
+
     position: relative;
 
-    z-index: 5;
+    z-index: 2;
 
     width:
         min(
@@ -544,6 +422,7 @@ body::before {
         );
 
     margin: auto;
+
 }
 
 
@@ -552,6 +431,7 @@ body::before {
    ========================================================= */
 
 .nav {
+
     position: sticky;
 
     top: 14px;
@@ -573,20 +453,22 @@ body::before {
     border:
         1px solid var(--line);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
-        rgba(7,9,18,.68);
+        rgba(5,8,17,.70);
 
     backdrop-filter:
-        blur(20px);
+        blur(22px);
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,.18);
+        0 10px 40px rgba(0,0,0,.22);
 
 }
 
 .brand {
+
     display: flex;
 
     align-items: center;
@@ -596,9 +478,11 @@ body::before {
     font-weight: 900;
 
     letter-spacing: .08em;
+
 }
 
 .brand-mark {
+
     width: 38px;
     height: 38px;
 
@@ -620,34 +504,43 @@ body::before {
         0 0 25px rgba(89,231,255,.2);
 
     font-size: 15px;
+
 }
 
 .navlinks {
+
     display: flex;
 
     gap: 6px;
+
 }
 
 .navlinks a {
+
     padding:
         10px 13px;
 
     color:
         var(--muted);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    border-radius: 11px;
+    border-radius:
+        11px;
 
     transition:
         .25s;
+
 }
 
 .navlinks a:hover {
+
     color: #fff;
 
     background:
         rgba(255,255,255,.06);
+
 }
 
 
@@ -656,13 +549,18 @@ body::before {
    ========================================================= */
 
 .hero {
-    min-height: 78vh;
 
-    display: grid;
+    min-height:
+        78vh;
 
-    place-items: center;
+    display:
+        grid;
 
-    text-align: center;
+    place-items:
+        center;
+
+    text-align:
+        center;
 
     padding:
         90px 0 70px;
@@ -670,11 +568,15 @@ body::before {
 }
 
 .eyebrow {
-    display: inline-flex;
 
-    align-items: center;
+    display:
+        inline-flex;
 
-    gap: 8px;
+    align-items:
+        center;
+
+    gap:
+        8px;
 
     padding:
         8px 13px;
@@ -682,7 +584,8 @@ body::before {
     border:
         1px solid rgba(89,231,255,.18);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
         rgba(89,231,255,.06);
@@ -690,14 +593,19 @@ body::before {
     color:
         #b9f6ff;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    letter-spacing: .12em;
+    letter-spacing:
+        .12em;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
+
 }
 
 .dot {
+
     width: 7px;
     height: 7px;
 
@@ -711,6 +619,7 @@ body::before {
 
     animation:
         pulseDot 1.8s infinite;
+
 }
 
 @keyframes pulseDot {
@@ -722,10 +631,13 @@ body::before {
         opacity:
             .5;
     }
+
 }
 
 .welcome-line {
-    margin-top: 18px;
+
+    margin-top:
+        18px;
 
     font-size:
         clamp(16px,2vw,22px);
@@ -733,22 +645,28 @@ body::before {
     color:
         #dce6f6;
 
-    font-weight: 650;
+    font-weight:
+        650;
 
     animation:
         welcomeGlow 3s ease-in-out infinite;
+
 }
 
 @keyframes welcomeGlow {
 
     50% {
+
         text-shadow:
             0 0 22px rgba(89,231,255,.25),
             0 0 35px rgba(155,124,255,.15);
+
     }
+
 }
 
 .hero h1 {
+
     margin:
         20px auto 12px;
 
@@ -784,20 +702,25 @@ body::before {
 
     animation:
         titleGlow 4s ease-in-out infinite;
+
 }
 
 @keyframes titleGlow {
 
     50% {
+
         filter:
             drop-shadow(
                 0 0 30px
                 rgba(89,231,255,.22)
             );
+
     }
+
 }
 
 .hero h2 {
+
     font-size:
         clamp(18px,2.4vw,29px);
 
@@ -809,10 +732,13 @@ body::before {
 
     letter-spacing:
         .02em;
+
 }
 
 .type {
-    height: 28px;
+
+    height:
+        28px;
 
     margin:
         18px 0 0;
@@ -822,15 +748,19 @@ body::before {
 
     font-size:
         15px;
+
 }
 
 .cursor {
-    display: inline-block;
+
+    display:
+        inline-block;
 
     width: 2px;
     height: 16px;
 
-    margin-left: 5px;
+    margin-left:
+        5px;
 
     background:
         var(--cyan);
@@ -840,22 +770,24 @@ body::before {
 
     animation:
         blinkCursor .8s infinite;
+
 }
 
 @keyframes blinkCursor {
 
     50% {
-        opacity:
-            0;
+        opacity: 0;
     }
+
 }
 
 
 /* =========================================================
-   HEART STATUS
+   HEARTBEAT STATUS
    ========================================================= */
 
 .heart-status {
+
     margin:
         25px auto 0;
 
@@ -888,9 +820,11 @@ body::before {
 
     font-size:
         12px;
+
 }
 
 .heart-status .heart {
+
     display:
         inline-block;
 
@@ -902,6 +836,7 @@ body::before {
             0 0 10px
             rgba(255,111,186,.55)
         );
+
 }
 
 @keyframes heartBeat {
@@ -931,6 +866,7 @@ body::before {
         transform:
             scale(1);
     }
+
 }
 
 
@@ -939,6 +875,7 @@ body::before {
    ========================================================= */
 
 .hero-actions {
+
     display:
         flex;
 
@@ -953,9 +890,11 @@ body::before {
 
     margin-top:
         30px;
+
 }
 
 .btn {
+
     display:
         inline-flex;
 
@@ -985,17 +924,21 @@ body::before {
 
     cursor:
         pointer;
+
 }
 
 .btn:hover {
+
     transform:
         translateY(-3px);
 
     box-shadow:
         0 14px 35px rgba(0,0,0,.25);
+
 }
 
 .btn.primary {
+
     border-color:
         transparent;
 
@@ -1016,6 +959,7 @@ body::before {
     box-shadow:
         0 12px 35px
         rgba(89,231,255,.16);
+
 }
 
 
@@ -1024,11 +968,14 @@ body::before {
    ========================================================= */
 
 .section {
+
     padding:
         80px 0;
+
 }
 
 .section-head {
+
     display:
         flex;
 
@@ -1043,9 +990,11 @@ body::before {
 
     margin-bottom:
         28px;
+
 }
 
 .kicker {
+
     color:
         #7ddff0;
 
@@ -1057,9 +1006,11 @@ body::before {
 
     letter-spacing:
         .18em;
+
 }
 
 .section h3 {
+
     font-size:
         clamp(30px,5vw,48px);
 
@@ -1068,9 +1019,11 @@ body::before {
 
     margin-top:
         7px;
+
 }
 
 .section-head p {
+
     max-width:
         470px;
 
@@ -1082,6 +1035,7 @@ body::before {
 
     font-size:
         14px;
+
 }
 
 
@@ -1090,6 +1044,7 @@ body::before {
    ========================================================= */
 
 .glass {
+
     border:
         1px solid var(--line);
 
@@ -1097,7 +1052,7 @@ body::before {
         linear-gradient(
             145deg,
             rgba(19,26,46,.78),
-            rgba(9,13,25,.7)
+            rgba(7,11,23,.76)
         );
 
     border-radius:
@@ -1108,6 +1063,7 @@ body::before {
 
     backdrop-filter:
         blur(18px);
+
 }
 
 
@@ -1116,6 +1072,7 @@ body::before {
    ========================================================= */
 
 .about {
+
     display:
         grid;
 
@@ -1124,14 +1081,18 @@ body::before {
 
     gap:
         22px;
+
 }
 
 .about-copy {
+
     padding:
         32px;
+
 }
 
 .about-copy p {
+
     color:
         #aeb8ca;
 
@@ -1140,9 +1101,11 @@ body::before {
 
     margin-top:
         16px;
+
 }
 
 .stats {
+
     display:
         grid;
 
@@ -1154,9 +1117,11 @@ body::before {
 
     overflow:
         hidden;
+
 }
 
 .stat {
+
     padding:
         28px;
 
@@ -1165,17 +1130,21 @@ body::before {
 
     min-height:
         130px;
+
 }
 
 .stat b {
+
     display:
         block;
 
     font-size:
         30px;
+
 }
 
 .stat span {
+
     display:
         block;
 
@@ -1187,6 +1156,7 @@ body::before {
 
     font-size:
         13px;
+
 }
 
 
@@ -1195,6 +1165,7 @@ body::before {
    ========================================================= */
 
 .work-grid {
+
     display:
         grid;
 
@@ -1203,17 +1174,25 @@ body::before {
 
     gap:
         16px;
+
 }
 
+
+/* =========================================================
+   PORTFOLIO CARD
+   NO EMOJIS
+   ========================================================= */
+
 .folder {
+
     position:
         relative;
 
     min-height:
-        260px;
+        330px;
 
     padding:
-        24px;
+        0 24px 24px;
 
     overflow:
         hidden;
@@ -1223,9 +1202,11 @@ body::before {
 
     transition:
         .35s;
+
 }
 
 .folder:hover {
+
     transform:
         translateY(-8px);
 
@@ -1235,19 +1216,21 @@ body::before {
     box-shadow:
         0 25px 70px rgba(0,0,0,.42),
         0 0 35px rgba(89,231,255,.06);
+
 }
 
 
 /* =========================================================
-   FOLDER IMAGE COVER
+   PORTFOLIO IMAGE
    ========================================================= */
 
 .folder-cover {
+
     height:
-        115px;
+        180px;
 
     margin:
-        -24px -24px 18px;
+        0 -24px 22px;
 
     position:
         relative;
@@ -1261,11 +1244,16 @@ body::before {
     background-position:
         center;
 
+    background-repeat:
+        no-repeat;
+
     border-bottom:
         1px solid var(--line);
+
 }
 
 .folder-cover::before {
+
     content:
         "";
 
@@ -1278,12 +1266,14 @@ body::before {
     background:
         linear-gradient(
             180deg,
-            rgba(7,9,18,.05),
-            rgba(7,9,18,.72)
+            rgba(5,8,17,.02),
+            rgba(5,8,17,.76)
         );
+
 }
 
 .folder-cover::after {
+
     content:
         "";
 
@@ -1297,7 +1287,7 @@ body::before {
         linear-gradient(
             120deg,
             transparent 35%,
-            rgba(255,255,255,.18) 50%,
+            rgba(255,255,255,.17) 50%,
             transparent 65%
         );
 
@@ -1305,7 +1295,8 @@ body::before {
         translateX(-120%);
 
     animation:
-        coverShine 4s linear infinite;
+        coverShine 5s linear infinite;
+
 }
 
 @keyframes coverShine {
@@ -1320,96 +1311,42 @@ body::before {
         transform:
             translateX(120%);
     }
+
 }
 
-.folder-top {
-    position:
-        relative;
 
-    display:
-        flex;
+/* Zoom image on hover */
 
-    align-items:
-        center;
+.folder:hover .folder-cover {
 
-    justify-content:
-        space-between;
+    background-size:
+        106%;
+
 }
 
-.folder-icon {
-    width:
-        58px;
 
-    height:
-        58px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        17px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(89,231,255,.12),
-            rgba(155,124,255,.14)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.1);
-
-    font-size:
-        29px;
-
-    transition:
-        .35s;
-}
-
-.folder:hover .folder-icon {
-    transform:
-        rotate(-4deg)
-        scale(1.08);
-
-    box-shadow:
-        0 0 28px
-        rgba(89,231,255,.15);
-}
-
-.arrow {
-    color:
-        #72809a;
-
-    transition:
-        .3s;
-}
-
-.folder:hover .arrow {
-    color:
-        #fff;
-
-    transform:
-        translate(3px,-3px);
-}
+/* =========================================================
+   PORTFOLIO TEXT
+   ========================================================= */
 
 .folder h4 {
+
     position:
         relative;
 
     margin-top:
-        25px;
+        0;
 
     font-size:
         22px;
 
     letter-spacing:
         -.03em;
+
 }
 
 .folder p {
+
     position:
         relative;
 
@@ -1421,17 +1358,19 @@ body::before {
 
     font-size:
         13px;
+
+    line-height:
+        1.6;
+
 }
 
 .folder small {
-    position:
-        absolute;
 
-    bottom:
-        22px;
+    display:
+        block;
 
-    left:
-        24px;
+    margin-top:
+        18px;
 
     color:
         #718099;
@@ -1444,6 +1383,7 @@ body::before {
 
     text-transform:
         uppercase;
+
 }
 
 
@@ -1452,11 +1392,14 @@ body::before {
    ========================================================= */
 
 .availability {
+
     margin-top:
         30px;
+
 }
 
 .commission-pill {
+
     display:
         inline-flex;
 
@@ -1486,9 +1429,11 @@ body::before {
 
     font-weight:
         800;
+
 }
 
 .online-dot {
+
     width:
         7px;
 
@@ -1503,14 +1448,17 @@ body::before {
 
     box-shadow:
         0 0 12px var(--green);
+
 }
 
 .heartbeat {
+
     display:
         inline-block;
 
     animation:
         heartBeat 1.15s ease-in-out infinite;
+
 }
 
 
@@ -1519,6 +1467,7 @@ body::before {
    ========================================================= */
 
 .reviews {
+
     display:
         grid;
 
@@ -1527,33 +1476,41 @@ body::before {
 
     gap:
         14px;
+
 }
 
 .review-card {
+
     padding:
         28px;
 
     transition:
         .3s;
+
 }
 
 .review-card:hover {
+
     transform:
         translateY(-5px);
 
     border-color:
         rgba(89,231,255,.25);
+
 }
 
 .review-stars {
+
     color:
         #ffd36e;
 
     letter-spacing:
         3px;
+
 }
 
 .review-card p {
+
     color:
         #aeb8ca;
 
@@ -1565,9 +1522,11 @@ body::before {
 
     margin:
         13px 0;
+
 }
 
 .review-author {
+
     margin-top:
         16px;
 
@@ -1579,9 +1538,11 @@ body::before {
 
     font-size:
         12px;
+
 }
 
 .review-author span {
+
     display:
         block;
 
@@ -1593,6 +1554,7 @@ body::before {
 
     margin-top:
         4px;
+
 }
 
 
@@ -1601,11 +1563,14 @@ body::before {
    ========================================================= */
 
 .form-section {
+
     padding:
         80px 0;
+
 }
 
 .form-grid {
+
     display:
         grid;
 
@@ -1614,19 +1579,25 @@ body::before {
 
     gap:
         18px;
+
 }
 
 .contact-card {
+
     padding:
         30px;
+
 }
 
 .contact-card h3 {
+
     margin-top:
         8px;
+
 }
 
 .contact-card > p {
+
     margin-top:
         12px;
 
@@ -1638,9 +1609,11 @@ body::before {
 
     font-size:
         13px;
+
 }
 
 .contact-list {
+
     display:
         grid;
 
@@ -1649,9 +1622,11 @@ body::before {
 
     margin-top:
         20px;
+
 }
 
 .contact-item {
+
     padding:
         14px;
 
@@ -1663,9 +1638,11 @@ body::before {
 
     background:
         rgba(255,255,255,.025);
+
 }
 
 .contact-item small {
+
     display:
         block;
 
@@ -1683,27 +1660,35 @@ body::before {
 
     margin-bottom:
         4px;
+
 }
 
 .contact-item a {
+
     color:
         #c9f8ff;
+
 }
 
 .commission-form {
+
     padding:
         30px;
+
 }
 
 .commission-form form {
+
     display:
         grid;
 
     gap:
         14px;
+
 }
 
 .form-row {
+
     display:
         grid;
 
@@ -1712,9 +1697,11 @@ body::before {
 
     gap:
         14px;
+
 }
 
 .commission-form label {
+
     display:
         block;
 
@@ -1729,11 +1716,13 @@ body::before {
 
     margin-bottom:
         6px;
+
 }
 
 .commission-form input,
 .commission-form select,
 .commission-form textarea {
+
     width:
         100%;
 
@@ -1757,39 +1746,47 @@ body::before {
 
     transition:
         .25s;
+
 }
 
 .commission-form input::placeholder,
 .commission-form textarea::placeholder {
+
     color:
         #647086;
+
 }
 
 .commission-form input:focus,
 .commission-form select:focus,
 .commission-form textarea:focus {
+
     border-color:
         rgba(89,231,255,.45);
 
     box-shadow:
         0 0 0 3px
         rgba(89,231,255,.06);
+
 }
 
 .commission-form textarea {
+
     min-height:
         135px;
 
     resize:
         vertical;
+
 }
 
 
 /* =========================================================
-   REFERENCE BOX
+   REFERENCE LINK BOX
    ========================================================= */
 
 .reference-box {
+
     display:
         flex;
 
@@ -1813,17 +1810,21 @@ body::before {
 
     transition:
         .3s;
+
 }
 
 .reference-box:hover {
+
     border-color:
         rgba(89,231,255,.55);
 
     background:
         rgba(89,231,255,.045);
+
 }
 
 .reference-icon {
+
     width:
         44px;
 
@@ -1855,14 +1856,18 @@ body::before {
     box-shadow:
         0 0 22px
         rgba(89,231,255,.12);
+
 }
 
 .reference-content {
+
     width:
         100%;
+
 }
 
 .reference-content strong {
+
     display:
         block;
 
@@ -1871,9 +1876,11 @@ body::before {
 
     font-size:
         14px;
+
 }
 
 .reference-content p {
+
     color:
         #718099;
 
@@ -1885,9 +1892,11 @@ body::before {
 
     margin-bottom:
         12px;
+
 }
 
 .reference-content input {
+
     width:
         100%;
 
@@ -1905,6 +1914,7 @@ body::before {
 
     color:
         #fff;
+
 }
 
 
@@ -1913,6 +1923,7 @@ body::before {
    ========================================================= */
 
 .submit-btn {
+
     width:
         100%;
 
@@ -1932,9 +1943,11 @@ body::before {
 
     font-weight:
         900;
+
 }
 
 .submit-btn:disabled {
+
     opacity:
         .6;
 
@@ -1943,6 +1956,7 @@ body::before {
 
     transform:
         none;
+
 }
 
 
@@ -1951,6 +1965,7 @@ body::before {
    ========================================================= */
 
 .form-status {
+
     display:
         none;
 
@@ -1968,9 +1983,11 @@ body::before {
 
     margin-top:
         5px;
+
 }
 
 .form-status.success {
+
     display:
         block;
 
@@ -1982,9 +1999,11 @@ body::before {
 
     border:
         1px solid rgba(99,255,156,.22);
+
 }
 
 .form-status.error {
+
     display:
         block;
 
@@ -1996,6 +2015,7 @@ body::before {
 
     border:
         1px solid rgba(255,80,130,.22);
+
 }
 
 
@@ -2004,19 +2024,24 @@ body::before {
    ========================================================= */
 
 .gallery {
+
     display:
         none;
 
     padding:
         100px 0 60px;
+
 }
 
 .gallery.active {
+
     display:
         block;
+
 }
 
 .gallery-head {
+
     display:
         flex;
 
@@ -2031,9 +2056,11 @@ body::before {
 
     margin-bottom:
         26px;
+
 }
 
 .back {
+
     border:
         1px solid var(--line);
 
@@ -2054,17 +2081,21 @@ body::before {
 
     transition:
         .3s;
+
 }
 
 .back:hover {
+
     background:
         rgba(255,255,255,.08);
 
     transform:
         translateY(-2px);
+
 }
 
 .gallery h2 {
+
     font-size:
         clamp(36px,6vw,62px);
 
@@ -2073,17 +2104,21 @@ body::before {
 
     margin-top:
         15px;
+
 }
 
 .gallery-head p {
+
     color:
         var(--muted);
 
     margin-top:
         7px;
+
 }
 
 .images {
+
     display:
         grid;
 
@@ -2092,9 +2127,11 @@ body::before {
 
     gap:
         18px;
+
 }
 
 .image-card {
+
     overflow:
         hidden;
 
@@ -2112,9 +2149,11 @@ body::before {
 
     transition:
         .35s;
+
 }
 
 .image-card:hover {
+
     transform:
         translateY(-5px);
 
@@ -2124,9 +2163,11 @@ body::before {
     box-shadow:
         0 20px 55px
         rgba(0,0,0,.4);
+
 }
 
 .image-card img {
+
     display:
         block;
 
@@ -2141,11 +2182,14 @@ body::before {
 
     transition:
         .5s;
+
 }
 
 .image-card:hover img {
+
     transform:
         scale(1.035);
+
 }
 
 
@@ -2154,6 +2198,7 @@ body::before {
    ========================================================= */
 
 .lightbox {
+
     display:
         none;
 
@@ -2180,14 +2225,18 @@ body::before {
 
     backdrop-filter:
         blur(15px);
+
 }
 
 .lightbox.show {
+
     display:
         flex;
+
 }
 
 .lightbox img {
+
     max-width:
         94vw;
 
@@ -2203,9 +2252,11 @@ body::before {
     box-shadow:
         0 0 70px
         rgba(89,231,255,.13);
+
 }
 
 .close {
+
     position:
         absolute;
 
@@ -2244,6 +2295,7 @@ body::before {
 
     background:
         rgba(255,255,255,.05);
+
 }
 
 
@@ -2252,6 +2304,7 @@ body::before {
    ========================================================= */
 
 .cta {
+
     padding:
         52px;
 
@@ -2259,6 +2312,7 @@ body::before {
         center;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(89,231,255,.13),
@@ -2270,17 +2324,21 @@ body::before {
             rgba(21,28,48,.9),
             rgba(10,14,26,.85)
         );
+
 }
 
 .cta h3 {
+
     font-size:
         clamp(32px,5vw,58px);
 
     letter-spacing:
         -.05em;
+
 }
 
 .cta p {
+
     max-width:
         620px;
 
@@ -2292,6 +2350,7 @@ body::before {
 
     line-height:
         1.7;
+
 }
 
 
@@ -2300,6 +2359,7 @@ body::before {
    ========================================================= */
 
 .footer {
+
     padding:
         35px 0 55px;
 
@@ -2311,11 +2371,14 @@ body::before {
 
     font-size:
         12px;
+
 }
 
 .footer strong {
+
     color:
         #b9c4d6;
+
 }
 
 
@@ -2324,6 +2387,7 @@ body::before {
    ========================================================= */
 
 .top {
+
     position:
         fixed;
 
@@ -2362,14 +2426,17 @@ body::before {
 
     cursor:
         pointer;
+
 }
 
 .top.show {
+
     display:
         grid;
 
     place-items:
         center;
+
 }
 
 
@@ -2380,145 +2447,182 @@ body::before {
 @media (max-width: 900px) {
 
     .work-grid {
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
     .about {
+
         grid-template-columns:
             1fr;
+
     }
 
     .reviews {
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
     .form-grid {
+
         grid-template-columns:
             1fr;
+
     }
+
 }
 
 
 @media (max-width: 620px) {
 
     .wrap {
+
         width:
             min(
                 100% - 22px,
                 1180px
             );
+
     }
 
     .nav {
+
         top:
             8px;
+
     }
 
     .navlinks {
+
         display:
             none;
+
     }
 
     .hero {
+
         min-height:
             72vh;
 
         padding:
             70px 0 50px;
+
     }
 
     .hero h1 {
+
         font-size:
             18vw;
+
     }
 
     .section {
+
         padding:
             60px 0;
+
     }
 
     .section-head,
     .gallery-head {
+
         display:
             block;
+
     }
 
     .section-head p {
+
         margin-top:
             14px;
+
     }
 
     .work-grid,
     .images {
+
         grid-template-columns:
             1fr;
+
+    }
+
+    .folder {
+
+        min-height:
+            315px;
+
+    }
+
+    .folder-cover {
+
+        height:
+            190px;
+
     }
 
     .stats {
+
         grid-template-columns:
             1fr 1fr;
+
     }
 
     .stat {
+
         min-height:
             110px;
 
         padding:
             20px;
+
     }
 
     .reviews {
+
         grid-template-columns:
             1fr;
+
     }
 
     .form-row {
+
         grid-template-columns:
             1fr;
+
     }
 
     .cta {
+
         padding:
             35px 20px;
+
     }
 
     .image-card img {
+
         height:
             330px;
+
     }
 
     .gallery {
+
         padding-top:
             75px;
+
     }
 
     .reference-box {
+
         flex-direction:
             column;
+
     }
 
-    .orb-1 {
-        width:
-            260px;
-
-        height:
-            260px;
-    }
-
-    .orb-2 {
-        width:
-            300px;
-
-        height:
-            300px;
-    }
-
-    body::before {
-        background-size:
-            48px 48px;
-    }
 }
 
 
@@ -2531,6 +2635,7 @@ body::before {
     *,
     *::before,
     *::after {
+
         animation-duration:
             .01ms !important;
 
@@ -2539,36 +2644,26 @@ body::before {
 
         scroll-behavior:
             auto !important;
+
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <!-- =========================================================
-     PREMIUM BACKGROUND
+     BACKGROUND
      ========================================================= -->
-
-<div class="background-orbs" aria-hidden="true">
-
-    <div class="orb orb-1"></div>
-
-    <div class="orb orb-2"></div>
-
-    <div class="orb orb-3"></div>
-
-</div>
-
-
-<div class="scan-light" aria-hidden="true"></div>
 
 <div class="noise"></div>
 
 <div class="aurora"></div>
-
 
 <div class="particles" aria-hidden="true">
 
@@ -2603,6 +2698,7 @@ body::before {
 
         <span>
             WOXIN
+
             <span style="color:#8d9bb2">
                 AUTOMATION
             </span>
@@ -2949,10 +3045,13 @@ body::before {
             </p>
 
             <div class="review-author">
+
                 VTuber Client
+
                 <span>
                     VTuber Design Project
                 </span>
+
             </div>
 
         </div>
@@ -2971,10 +3070,13 @@ body::before {
             </p>
 
             <div class="review-author">
+
                 Creator Client
+
                 <span>
                     Branding & Stream Graphics
                 </span>
+
             </div>
 
         </div>
@@ -2993,10 +3095,13 @@ body::before {
             </p>
 
             <div class="review-author">
+
                 Creative Client
+
                 <span>
                     Art & Creative Scene
                 </span>
+
             </div>
 
         </div>
@@ -3029,7 +3134,7 @@ body::before {
 
 
         <p>
-            Send your project details, budget,
+            Send your project details,
             deadline and reference links directly
             to Woxin Automation.
         </p>
@@ -3039,6 +3144,8 @@ body::before {
 
     <div class="form-grid">
 
+
+        <!-- CONTACT INFORMATION -->
 
         <div class="glass contact-card">
 
@@ -3128,6 +3235,8 @@ body::before {
         </div>
 
 
+        <!-- FORM -->
+
         <div class="glass commission-form">
 
 
@@ -3151,6 +3260,8 @@ body::before {
                     id="replyto"
                 >
 
+
+                <!-- NAME + EMAIL -->
 
                 <div class="form-row">
 
@@ -3191,6 +3302,8 @@ body::before {
 
                 </div>
 
+
+                <!-- DISCORD + PROJECT TYPE -->
 
                 <div class="form-row">
 
@@ -3280,6 +3393,8 @@ body::before {
                 </div>
 
 
+                <!-- BUDGET + DEADLINE -->
+
                 <div class="form-row">
 
 
@@ -3341,6 +3456,8 @@ body::before {
                 </div>
 
 
+                <!-- PROJECT DETAILS -->
+
                 <div>
 
                     <label for="message">
@@ -3356,6 +3473,8 @@ body::before {
 
                 </div>
 
+
+                <!-- REFERENCE LINKS -->
 
                 <div>
 
@@ -3397,10 +3516,13 @@ body::before {
 
                         </div>
 
+
                     </div>
 
                 </div>
 
+
+                <!-- ADDITIONAL NOTES -->
 
                 <div>
 
@@ -3418,6 +3540,8 @@ body::before {
                 </div>
 
 
+                <!-- SUBMIT -->
+
                 <button
                     class="btn submit-btn"
                     id="submitBtn"
@@ -3426,6 +3550,8 @@ body::before {
                     Send Commission Request ↗
                 </button>
 
+
+                <!-- STATUS -->
 
                 <div
                     class="form-status"
@@ -3483,6 +3609,7 @@ body::before {
 
 </section>
 
+
 </main>
 
 
@@ -3503,6 +3630,7 @@ body::before {
     VTuber • Creative • Digital Solutions
 
 </footer>
+
 
 </div>
 
@@ -3549,6 +3677,7 @@ body::before {
 
 <script>
 
+
 /* =========================================================
    PORTFOLIO DATA
    ========================================================= */
@@ -3561,9 +3690,6 @@ const galleries = {
 
         desc:
             "Character and VTuber design work",
-
-        icon:
-            "🎭",
 
         images: [
 
@@ -3591,9 +3717,6 @@ const galleries = {
         desc:
             "Identity and logo design collection",
 
-        icon:
-            "🎨",
-
         images: [
 
             "Logo%202.jpeg",
@@ -3617,9 +3740,6 @@ const galleries = {
 
         desc:
             "Social and streaming banner designs",
-
-        icon:
-            "🖼️",
 
         images: [
 
@@ -3645,9 +3765,6 @@ const galleries = {
 
         desc:
             "Stream and VTuber emote designs",
-
-        icon:
-            "😎",
 
         images: [
 
@@ -3675,9 +3792,6 @@ const galleries = {
         desc:
             "3D room and environment designs",
 
-        icon:
-            "🏠",
-
         images: [
 
             "3D%20art%20room%201.jpeg",
@@ -3696,9 +3810,6 @@ const galleries = {
 
         desc:
             "Creative scene and environment work",
-
-        icon:
-            "🌌",
 
         images: [
 
@@ -3725,9 +3836,6 @@ const galleries = {
         desc:
             "Streaming and broadcast overlay designs",
 
-        icon:
-            "🖥️",
-
         images: [
 
             "Overlay%201.jpeg",
@@ -3745,9 +3853,6 @@ const galleries = {
 
         desc:
             "VTuber profile and ID card designs",
-
-        icon:
-            "🪪",
 
         images: [
 
@@ -3768,9 +3873,6 @@ const galleries = {
         desc:
             "3D VTuber model showcases",
 
-        icon:
-            "🧊",
-
         images: [
 
             "3D%20VTuber%20Model%201.jpeg",
@@ -3787,13 +3889,15 @@ const galleries = {
 
 /* =========================================================
    CREATE PORTFOLIO FOLDERS
+   NO EMOJIS
    ========================================================= */
 
 const folders =
     document.getElementById("folders");
 
+
 Object.entries(galleries).forEach(
-    ([key, gallery], index) => {
+    ([key, gallery]) => {
 
         const card =
             document.createElement("article");
@@ -3818,19 +3922,6 @@ Object.entries(galleries).forEach(
             ></div>
 
 
-            <div class="folder-top">
-
-                <div class="folder-icon">
-                    ${gallery.icon}
-                </div>
-
-                <span class="arrow">
-                    ↗
-                </span>
-
-            </div>
-
-
             <h4>
                 ${gallery.title}
             </h4>
@@ -3842,8 +3933,6 @@ Object.entries(galleries).forEach(
 
 
             <small>
-                ${String(index + 1).padStart(2, "0")}
-                /
                 ${gallery.images.length}
                 projects
             </small>
@@ -3907,7 +3996,6 @@ function openGallery(key) {
 
 
                     <h2>
-                        ${gallery.icon}
                         ${gallery.title}
                     </h2>
 
@@ -3975,6 +4063,7 @@ function goHome() {
 const typed =
     document.getElementById("typed");
 
+
 const typingLines = [
 
     "VTuber Designs • Logos • Banners",
@@ -3986,6 +4075,7 @@ const typingLines = [
     "Creative Ideas • Clean Execution • Professional Results"
 
 ];
+
 
 let typingLineIndex = 0;
 
@@ -4019,12 +4109,15 @@ function typeAnimation() {
 
             deletingText = true;
 
+
             setTimeout(
                 typeAnimation,
                 1700
             );
 
+
             return;
+
         }
 
 
@@ -4053,6 +4146,7 @@ function typeAnimation() {
 
             deletingText = false;
 
+
             typingLineIndex =
                 (
                     typingLineIndex + 1
@@ -4065,7 +4159,9 @@ function typeAnimation() {
                 400
             );
 
+
             return;
+
         }
 
 
@@ -4078,6 +4174,7 @@ function typeAnimation() {
 
 }
 
+
 typeAnimation();
 
 
@@ -4088,8 +4185,10 @@ typeAnimation();
 const lightbox =
     document.getElementById("lightbox");
 
+
 const lightboxImage =
     document.getElementById("lightboxImage");
+
 
 const closeLightbox =
     document.getElementById("closeLightbox");
@@ -4100,12 +4199,15 @@ function showImage(source) {
     lightboxImage.src =
         source;
 
+
     lightbox.classList.add(
         "show"
     );
 
+
     document.body.style.overflow =
         "hidden";
+
 }
 
 
@@ -4115,11 +4217,14 @@ function closeImage() {
         "show"
     );
 
+
     lightboxImage.src =
         "";
 
+
     document.body.style.overflow =
         "";
+
 }
 
 
@@ -4217,20 +4322,24 @@ const commissionForm =
         "commissionForm"
     );
 
+
 const submitButton =
     document.getElementById(
         "submitBtn"
     );
+
 
 const formStatus =
     document.getElementById(
         "formStatus"
     );
 
+
 const emailField =
     document.getElementById(
         "email"
     );
+
 
 const replyTo =
     document.getElementById(
@@ -4311,11 +4420,8 @@ commissionForm.addEventListener(
 
 
                 formStatus.scrollIntoView({
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "center"
+                    behavior: "smooth",
+                    block: "center"
                 });
 
             }
@@ -4393,9 +4499,12 @@ commissionForm.addEventListener(
         }
 
     }
+
 );
 
 </script>
 
+
 </body>
+
 </html>
