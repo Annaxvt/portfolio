@@ -16,6 +16,7 @@
 /* =========================================================
    WOXIN AUTOMATION
    COMPLETE PORTFOLIO WEBSITE
+   SERVICES SECTION REMOVED
    ========================================================= */
 
 :root {
@@ -39,7 +40,6 @@
     --shadow:
         0 24px 80px rgba(0,0,0,.38);
 }
-
 
 /* =========================================================
    RESET
@@ -105,7 +105,6 @@ select {
     font: inherit;
 }
 
-
 /* =========================================================
    BACKGROUND NOISE
    ========================================================= */
@@ -123,7 +122,6 @@ select {
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
-
 
 /* =========================================================
    AURORA
@@ -153,13 +151,10 @@ select {
 }
 
 @keyframes auroraSpin {
-
     to {
         transform: rotate(360deg);
     }
-
 }
-
 
 /* =========================================================
    GLOWING PARTICLES
@@ -256,7 +251,6 @@ select {
 }
 
 @keyframes floatParticle {
-
     0% {
         opacity: 0;
         transform: translateY(40px);
@@ -281,9 +275,7 @@ select {
         transform:
             translate(-20px, -110vh);
     }
-
 }
-
 
 /* =========================================================
    MAIN WRAPPER
@@ -302,7 +294,6 @@ select {
 
     margin: auto;
 }
-
 
 /* =========================================================
    NAVIGATION
@@ -404,7 +395,6 @@ select {
         rgba(255,255,255,.06);
 }
 
-
 /* =========================================================
    HERO
    ========================================================= */
@@ -467,12 +457,10 @@ select {
 }
 
 @keyframes pulseDot {
-
     50% {
         transform: scale(1.6);
         opacity: .5;
     }
-
 }
 
 .welcome-line {
@@ -491,13 +479,11 @@ select {
 }
 
 @keyframes welcomeGlow {
-
     50% {
         text-shadow:
             0 0 22px rgba(89,231,255,.25),
             0 0 35px rgba(155,124,255,.15);
     }
-
 }
 
 .hero h1 {
@@ -539,7 +525,6 @@ select {
 }
 
 @keyframes titleGlow {
-
     50% {
         filter:
             drop-shadow(
@@ -547,7 +532,6 @@ select {
                 rgba(89,231,255,.22)
             );
     }
-
 }
 
 .hero h2 {
@@ -594,13 +578,10 @@ select {
 }
 
 @keyframes blinkCursor {
-
     50% {
         opacity: 0;
     }
-
 }
-
 
 /* =========================================================
    HEARTBEAT STATUS
@@ -653,7 +634,6 @@ select {
 }
 
 @keyframes heartBeat {
-
     0%,
     100% {
         transform: scale(1);
@@ -674,9 +654,7 @@ select {
     70% {
         transform: scale(1);
     }
-
 }
-
 
 /* =========================================================
    BUTTONS
@@ -758,7 +736,6 @@ select {
         rgba(89,231,255,.16);
 }
 
-
 /* =========================================================
    SECTIONS
    ========================================================= */
@@ -824,7 +801,6 @@ select {
         14px;
 }
 
-
 /* =========================================================
    GLASS
    ========================================================= */
@@ -849,7 +825,6 @@ select {
     backdrop-filter:
         blur(18px);
 }
-
 
 /* =========================================================
    ABOUT
@@ -929,108 +904,6 @@ select {
         13px;
 }
 
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-.services {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:
-        14px;
-}
-
-.service {
-    padding:
-        23px;
-
-    min-height:
-        180px;
-
-    transition:
-        .35s;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-}
-
-.service::after {
-    content: "";
-
-    position:
-        absolute;
-
-    width:
-        120px;
-
-    height:
-        120px;
-
-    right:
-        -60px;
-
-    bottom:
-        -60px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(89,231,255,.12);
-
-    filter:
-        blur(15px);
-
-    transition:
-        .4s;
-}
-
-.service:hover {
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(89,231,255,.3);
-}
-
-.service:hover::after {
-    transform:
-        scale(1.7);
-}
-
-.service-icon {
-    font-size:
-        28px;
-}
-
-.service h4 {
-    margin:
-        18px 0 8px;
-
-    font-size:
-        17px;
-}
-
-.service p {
-    color:
-        var(--muted);
-
-    font-size:
-        13px;
-
-    line-height:
-        1.6;
-}
-
-
 /* =========================================================
    PORTFOLIO FOLDERS
    ========================================================= */
@@ -1077,7 +950,6 @@ select {
         0 25px 70px rgba(0,0,0,.42),
         0 0 35px rgba(89,231,255,.06);
 }
-
 
 /* =========================================================
    FOLDER IMAGE COVER
@@ -1150,7 +1022,6 @@ select {
 }
 
 @keyframes coverShine {
-
     0% {
         transform:
             translateX(-120%);
@@ -1161,7 +1032,6 @@ select {
         transform:
             translateX(120%);
     }
-
 }
 
 .folder-top {
@@ -1288,7 +1158,6 @@ select {
         uppercase;
 }
 
-
 /* =========================================================
    AVAILABILITY
    ========================================================= */
@@ -1354,7 +1223,6 @@ select {
     animation:
         heartBeat 1.15s ease-in-out infinite;
 }
-
 
 /* =========================================================
    REVIEWS
@@ -1436,7 +1304,6 @@ select {
     margin-top:
         4px;
 }
-
 
 /* =========================================================
    COMMISSION AREA
@@ -1626,7 +1493,6 @@ select {
         vertical;
 }
 
-
 /* =========================================================
    REFERENCE LINK BOX
    ========================================================= */
@@ -1749,7 +1615,6 @@ select {
         #fff;
 }
 
-
 /* =========================================================
    FORM BUTTON
    ========================================================= */
@@ -1786,7 +1651,6 @@ select {
     transform:
         none;
 }
-
 
 /* =========================================================
    FORM STATUS
@@ -1839,7 +1703,6 @@ select {
     border:
         1px solid rgba(255,80,130,.22);
 }
-
 
 /* =========================================================
    GALLERY
@@ -1990,7 +1853,6 @@ select {
         scale(1.035);
 }
 
-
 /* =========================================================
    LIGHTBOX
    ========================================================= */
@@ -2088,7 +1950,6 @@ select {
         rgba(255,255,255,.05);
 }
 
-
 /* =========================================================
    CONTACT CTA
    ========================================================= */
@@ -2136,7 +1997,6 @@ select {
         1.7;
 }
 
-
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -2159,7 +2019,6 @@ select {
     color:
         #b9c4d6;
 }
-
 
 /* =========================================================
    TOP BUTTON
@@ -2214,17 +2073,11 @@ select {
         center;
 }
 
-
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 900px) {
-
-    .services {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
 
     .work-grid {
         grid-template-columns:
@@ -2245,9 +2098,7 @@ select {
         grid-template-columns:
             1fr;
     }
-
 }
-
 
 @media (max-width: 620px) {
 
@@ -2298,7 +2149,6 @@ select {
             14px;
     }
 
-    .services,
     .work-grid,
     .images {
         grid-template-columns:
@@ -2347,9 +2197,7 @@ select {
         flex-direction:
             column;
     }
-
 }
-
 
 /* =========================================================
    ACCESSIBILITY
@@ -2369,15 +2217,12 @@ select {
         scroll-behavior:
             auto !important;
     }
-
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      BACKGROUND
@@ -2402,9 +2247,7 @@ select {
 
 </div>
 
-
 <div class="wrap">
-
 
 <!-- =========================================================
      NAVIGATION
@@ -2427,15 +2270,10 @@ select {
 
     </a>
 
-
     <div class="navlinks">
 
         <a href="#about">
             About
-        </a>
-
-        <a href="#services">
-            Services
         </a>
 
         <a href="#work">
@@ -2454,9 +2292,7 @@ select {
 
 </nav>
 
-
 <main id="main">
-
 
 <!-- =========================================================
      HERO
@@ -2474,21 +2310,17 @@ select {
 
         </div>
 
-
         <div class="welcome-line">
             Welcome to Woxin Automation
         </div>
-
 
         <h1 class="welcome-title">
             WOXIN
         </h1>
 
-
         <h2>
             AUTOMATION
         </h2>
-
 
         <div class="type">
 
@@ -2497,7 +2329,6 @@ select {
             <span class="cursor"></span>
 
         </div>
-
 
         <div class="heart-status">
 
@@ -2509,7 +2340,6 @@ select {
 
         </div>
 
-
         <div class="hero-actions">
 
             <a
@@ -2520,7 +2350,6 @@ select {
             >
                 Start a Project ↗
             </a>
-
 
             <a
                 class="btn"
@@ -2534,7 +2363,6 @@ select {
     </div>
 
 </section>
-
 
 <!-- =========================================================
      ABOUT
@@ -2557,7 +2385,6 @@ select {
 
         </div>
 
-
         <p>
             Woxin Automation is a modern technology and creative company
             combining automation, digital solutions and high-quality design
@@ -2566,9 +2393,7 @@ select {
 
     </div>
 
-
     <div class="about">
-
 
         <div class="glass about-copy">
 
@@ -2576,13 +2401,11 @@ select {
                 WOXIN AUTOMATION
             </div>
 
-
             <p>
                 Woxin Automation brings together creative design,
                 digital solutions and modern technology to turn ideas
                 into professional, memorable digital experiences.
             </p>
-
 
             <p>
                 We specialize in VTuber designs, logos, banners,
@@ -2590,14 +2413,12 @@ select {
                 creative scenes, branding and custom digital assets.
             </p>
 
-
             <p>
                 Our approach is simple:
                 understand the vision,
                 refine the details and create work
                 that feels unique to the client.
             </p>
-
 
             <p>
                 <strong>
@@ -2608,7 +2429,6 @@ select {
             </p>
 
         </div>
-
 
         <div class="glass stats">
 
@@ -2624,7 +2444,6 @@ select {
 
             </div>
 
-
             <div class="stat">
 
                 <b>
@@ -2637,7 +2456,6 @@ select {
 
             </div>
 
-
             <div class="stat">
 
                 <b>
@@ -2649,7 +2467,6 @@ select {
                 </span>
 
             </div>
-
 
             <div class="stat">
 
@@ -2669,115 +2486,6 @@ select {
 
 </section>
 
-
-<!-- =========================================================
-     SERVICES
-     ========================================================= -->
-
-<section class="section" id="services">
-
-    <div class="section-head">
-
-        <div>
-
-            <div class="kicker">
-                02 / What we do
-            </div>
-
-            <h3>
-                Services with a purpose.
-            </h3>
-
-        </div>
-
-
-        <p>
-            Flexible creative and technology services
-            designed for creators, brands and modern businesses.
-        </p>
-
-    </div>
-
-
-    <div class="services">
-
-
-        <div class="glass service">
-
-            <div class="service-icon">
-                ⚙️
-            </div>
-
-            <h4>
-                Automation
-            </h4>
-
-            <p>
-                Smart workflows, repetitive-task automation
-                and digital systems designed to improve efficiency.
-            </p>
-
-        </div>
-
-
-        <div class="glass service">
-
-            <div class="service-icon">
-                🤖
-            </div>
-
-            <h4>
-                AI & Digital Systems
-            </h4>
-
-            <p>
-                Modern digital experiences and intelligent
-                processes built around real business needs.
-            </p>
-
-        </div>
-
-
-        <div class="glass service">
-
-            <div class="service-icon">
-                ✦
-            </div>
-
-            <h4>
-                Creative Design
-            </h4>
-
-            <p>
-                Logos, banners, emotes, overlays,
-                branding and polished digital assets.
-            </p>
-
-        </div>
-
-
-        <div class="glass service">
-
-            <div class="service-icon">
-                ◈
-            </div>
-
-            <h4>
-                3D & VTuber
-            </h4>
-
-            <p>
-                VTuber visuals, 3D environments,
-                model showcases and creative scene design.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
 <!-- =========================================================
      PORTFOLIO
      ========================================================= -->
@@ -2789,7 +2497,7 @@ select {
         <div>
 
             <div class="kicker">
-                03 / Selected work
+                02 / Selected work
             </div>
 
             <h3>
@@ -2798,7 +2506,6 @@ select {
 
         </div>
 
-
         <p>
             Choose a category to explore the work.
             Every collection opens in a dedicated gallery.
@@ -2806,12 +2513,10 @@ select {
 
     </div>
 
-
     <div
         class="work-grid"
         id="folders"
     ></div>
-
 
     <div class="availability">
 
@@ -2831,7 +2536,6 @@ select {
 
 </section>
 
-
 <!-- =========================================================
      REVIEWS
      ========================================================= -->
@@ -2843,7 +2547,7 @@ select {
         <div>
 
             <div class="kicker">
-                04 / Client reviews
+                03 / Client reviews
             </div>
 
             <h3>
@@ -2851,7 +2555,6 @@ select {
             </h3>
 
         </div>
-
 
         <p>
             Thoughtful communication,
@@ -2861,9 +2564,7 @@ select {
 
     </div>
 
-
     <div class="reviews">
-
 
         <div class="glass review-card">
 
@@ -2886,7 +2587,6 @@ select {
 
         </div>
 
-
         <div class="glass review-card">
 
             <div class="review-stars">
@@ -2907,7 +2607,6 @@ select {
             </div>
 
         </div>
-
 
         <div class="glass review-card">
 
@@ -2930,11 +2629,9 @@ select {
 
         </div>
 
-
     </div>
 
 </section>
-
 
 <!-- =========================================================
      COMMISSION FORM
@@ -2947,7 +2644,7 @@ select {
         <div>
 
             <div class="kicker">
-                05 / Start a project
+                04 / Start a project
             </div>
 
             <h3>
@@ -2955,7 +2652,6 @@ select {
             </h3>
 
         </div>
-
 
         <p>
             Send your project details, budget,
@@ -2965,9 +2661,7 @@ select {
 
     </div>
 
-
     <div class="form-grid">
-
 
         <!-- CONTACT INFORMATION -->
 
@@ -2977,11 +2671,9 @@ select {
                 Woxin Automation
             </div>
 
-
             <h3>
                 Let's build something memorable.
             </h3>
-
 
             <p>
                 For VTuber designs, logos, banners,
@@ -2991,9 +2683,7 @@ select {
                 as possible.
             </p>
 
-
             <div class="contact-list">
-
 
                 <div class="contact-item">
 
@@ -3008,7 +2698,6 @@ select {
                     </a>
 
                 </div>
-
 
                 <div class="contact-item">
 
@@ -3026,7 +2715,6 @@ select {
 
                 </div>
 
-
                 <div class="contact-item">
 
                     <small>
@@ -3039,9 +2727,7 @@ select {
 
                 </div>
 
-
             </div>
-
 
             <div style="margin-top:20px">
 
@@ -3058,11 +2744,9 @@ select {
 
         </div>
 
-
         <!-- FORM -->
 
         <div class="glass commission-form">
-
 
             <form
                 id="commissionForm"
@@ -3070,13 +2754,11 @@ select {
                 method="POST"
             >
 
-
                 <input
                     type="hidden"
                     name="_subject"
                     value="New Woxin Automation Commission Request"
                 >
-
 
                 <input
                     type="hidden"
@@ -3084,11 +2766,9 @@ select {
                     id="replyto"
                 >
 
-
                 <!-- NAME + EMAIL -->
 
                 <div class="form-row">
-
 
                     <div>
 
@@ -3106,7 +2786,6 @@ select {
 
                     </div>
 
-
                     <div>
 
                         <label for="email">
@@ -3123,14 +2802,11 @@ select {
 
                     </div>
 
-
                 </div>
-
 
                 <!-- DISCORD + PROJECT TYPE -->
 
                 <div class="form-row">
-
 
                     <div>
 
@@ -3147,7 +2823,6 @@ select {
                         >
 
                     </div>
-
 
                     <div>
 
@@ -3213,14 +2888,11 @@ select {
 
                     </div>
 
-
                 </div>
-
 
                 <!-- BUDGET + DEADLINE -->
 
                 <div class="form-row">
-
 
                     <div>
 
@@ -3261,7 +2933,6 @@ select {
 
                     </div>
 
-
                     <div>
 
                         <label for="deadline">
@@ -3276,9 +2947,7 @@ select {
 
                     </div>
 
-
                 </div>
-
 
                 <!-- PROJECT DETAILS -->
 
@@ -3297,7 +2966,6 @@ select {
 
                 </div>
 
-
                 <!-- REFERENCE LINKS -->
 
                 <div>
@@ -3306,21 +2974,17 @@ select {
                         Reference Images
                     </label>
 
-
                     <div class="reference-box">
-
 
                         <div class="reference-icon">
                             ↗
                         </div>
-
 
                         <div class="reference-content">
 
                             <strong>
                                 Share your reference images
                             </strong>
-
 
                             <p>
                                 Upload your images to Google Drive,
@@ -3330,21 +2994,18 @@ select {
                                 multiple reference images.
                             </p>
 
-
                             <input
                                 id="referenceLinks"
                                 name="reference_links"
                                 type="url"
-                                placeholder="https://drive.google.com/... "
+                                placeholder="https://drive.google.com/..."
                             >
 
                         </div>
 
-
                     </div>
 
                 </div>
-
 
                 <!-- ADDITIONAL NOTES -->
 
@@ -3363,7 +3024,6 @@ select {
 
                 </div>
 
-
                 <!-- SUBMIT -->
 
                 <button
@@ -3374,14 +3034,12 @@ select {
                     Send Commission Request ↗
                 </button>
 
-
                 <!-- STATUS -->
 
                 <div
                     class="form-status"
                     id="formStatus"
                 ></div>
-
 
             </form>
 
@@ -3390,7 +3048,6 @@ select {
     </div>
 
 </section>
-
 
 <!-- =========================================================
      FINAL CONTACT
@@ -3404,12 +3061,10 @@ select {
             WOXIN AUTOMATION
         </div>
 
-
         <h3>
             Have an idea?
             Let's create it.
         </h3>
-
 
         <p>
             Tell us what you're building,
@@ -3418,7 +3073,6 @@ select {
             We'll turn the idea into a clean,
             practical and memorable digital solution.
         </p>
-
 
         <a
             class="btn primary"
@@ -3433,9 +3087,7 @@ select {
 
 </section>
 
-
 </main>
-
 
 <!-- =========================================================
      FOOTER
@@ -3455,9 +3107,7 @@ select {
 
 </footer>
 
-
 </div>
-
 
 <!-- =========================================================
      BACK TO TOP
@@ -3470,7 +3120,6 @@ select {
 >
     ↑
 </div>
-
 
 <!-- =========================================================
      LIGHTBOX
@@ -3489,7 +3138,6 @@ select {
         ×
     </button>
 
-
     <img
         id="lightboxImage"
         src=""
@@ -3498,9 +3146,7 @@ select {
 
 </div>
 
-
 <script>
-
 
 /* =========================================================
    PORTFOLIO DATA
@@ -3536,7 +3182,6 @@ const galleries = {
 
     },
 
-
     logo: {
 
         title: "Logo",
@@ -3562,7 +3207,6 @@ const galleries = {
         ]
 
     },
-
 
     banner: {
 
@@ -3590,7 +3234,6 @@ const galleries = {
         ]
 
     },
-
 
     emotes: {
 
@@ -3620,7 +3263,6 @@ const galleries = {
 
     },
 
-
     art3d: {
 
         title: "3D Art Room",
@@ -3641,7 +3283,6 @@ const galleries = {
         ]
 
     },
-
 
     artscene: {
 
@@ -3670,7 +3311,6 @@ const galleries = {
 
     },
 
-
     overlay: {
 
         title: "Overlay",
@@ -3690,7 +3330,6 @@ const galleries = {
         ]
 
     },
-
 
     vtuberid: {
 
@@ -3712,7 +3351,6 @@ const galleries = {
         ]
 
     },
-
 
     vtuber3d: {
 
@@ -3737,7 +3375,6 @@ const galleries = {
 
 };
 
-
 /* =========================================================
    CREATE PORTFOLIO FOLDERS
    ========================================================= */
@@ -3745,21 +3382,17 @@ const galleries = {
 const folders =
     document.getElementById("folders");
 
-
 Object.entries(galleries).forEach(
     ([key, gallery], index) => {
 
         const card =
             document.createElement("article");
 
-
         card.className =
             "glass folder";
 
-
         const coverImage =
             gallery.images[0];
-
 
         card.innerHTML = `
 
@@ -3770,7 +3403,6 @@ Object.entries(galleries).forEach(
                     url('${coverImage}');
                 "
             ></div>
-
 
             <div class="folder-top">
 
@@ -3784,16 +3416,13 @@ Object.entries(galleries).forEach(
 
             </div>
 
-
             <h4>
                 ${gallery.title}
             </h4>
 
-
             <p>
                 ${gallery.desc}
             </p>
-
 
             <small>
                 ${String(index + 1).padStart(2, "0")}
@@ -3804,18 +3433,15 @@ Object.entries(galleries).forEach(
 
         `;
 
-
         card.addEventListener(
             "click",
             () => openGallery(key)
         );
 
-
         folders.appendChild(card);
 
     }
 );
-
 
 /* =========================================================
    OPEN GALLERY
@@ -3826,10 +3452,8 @@ function openGallery(key) {
     const gallery =
         galleries[key];
 
-
     const main =
         document.getElementById("main");
-
 
     main.innerHTML = `
 
@@ -3850,7 +3474,6 @@ function openGallery(key) {
                         ← Back to Woxin
                     </button>
 
-
                     <div
                         class="kicker"
                         style="margin-top:24px"
@@ -3859,12 +3482,10 @@ function openGallery(key) {
                         ${gallery.title}
                     </div>
 
-
                     <h2>
                         ${gallery.icon}
                         ${gallery.title}
                     </h2>
-
 
                     <p>
                         ${gallery.desc}
@@ -3873,7 +3494,6 @@ function openGallery(key) {
                 </div>
 
             </div>
-
 
             <div class="images">
 
@@ -3902,14 +3522,12 @@ function openGallery(key) {
 
     `;
 
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
 }
-
 
 /* =========================================================
    GO HOME
@@ -3921,14 +3539,12 @@ function goHome() {
 
 }
 
-
 /* =========================================================
    ANIMATED HERO TEXT
    ========================================================= */
 
 const typed =
     document.getElementById("typed");
-
 
 const typingLines = [
 
@@ -3942,19 +3558,16 @@ const typingLines = [
 
 ];
 
-
 let typingLineIndex = 0;
 
 let typingCharacterIndex = 0;
 
 let deletingText = false;
 
-
 function typeAnimation() {
 
     const currentLine =
         typingLines[typingLineIndex];
-
 
     if (!deletingText) {
 
@@ -3964,9 +3577,7 @@ function typeAnimation() {
                 typingCharacterIndex + 1
             );
 
-
         typingCharacterIndex++;
-
 
         if (
             typingCharacterIndex ===
@@ -3984,7 +3595,6 @@ function typeAnimation() {
 
         }
 
-
         setTimeout(
             typeAnimation,
             55
@@ -4000,9 +3610,7 @@ function typeAnimation() {
                 typingCharacterIndex - 1
             );
 
-
         typingCharacterIndex--;
-
 
         if (
             typingCharacterIndex === 0
@@ -4016,7 +3624,6 @@ function typeAnimation() {
                 ) %
                 typingLines.length;
 
-
             setTimeout(
                 typeAnimation,
                 400
@@ -4025,7 +3632,6 @@ function typeAnimation() {
             return;
 
         }
-
 
         setTimeout(
             typeAnimation,
@@ -4036,9 +3642,7 @@ function typeAnimation() {
 
 }
 
-
 typeAnimation();
-
 
 /* =========================================================
    LIGHTBOX
@@ -4047,14 +3651,11 @@ typeAnimation();
 const lightbox =
     document.getElementById("lightbox");
 
-
 const lightboxImage =
     document.getElementById("lightboxImage");
 
-
 const closeLightbox =
     document.getElementById("closeLightbox");
-
 
 function showImage(source) {
 
@@ -4070,7 +3671,6 @@ function showImage(source) {
 
 }
 
-
 function closeImage() {
 
     lightbox.classList.remove(
@@ -4085,12 +3685,10 @@ function closeImage() {
 
 }
 
-
 closeLightbox.addEventListener(
     "click",
     closeImage
 );
-
 
 lightbox.addEventListener(
     "click",
@@ -4107,7 +3705,6 @@ lightbox.addEventListener(
     }
 );
 
-
 document.addEventListener(
     "keydown",
     function(event) {
@@ -4123,14 +3720,12 @@ document.addEventListener(
     }
 );
 
-
 /* =========================================================
    BACK TO TOP
    ========================================================= */
 
 const topButton =
     document.getElementById("topBtn");
-
 
 window.addEventListener(
     "scroll",
@@ -4157,7 +3752,6 @@ window.addEventListener(
     }
 );
 
-
 topButton.addEventListener(
     "click",
     function() {
@@ -4170,7 +3764,6 @@ topButton.addEventListener(
     }
 );
 
-
 /* =========================================================
    COMMISSION FORM
    ========================================================= */
@@ -4180,30 +3773,25 @@ const commissionForm =
         "commissionForm"
     );
 
-
 const submitButton =
     document.getElementById(
         "submitBtn"
     );
-
 
 const formStatus =
     document.getElementById(
         "formStatus"
     );
 
-
 const emailField =
     document.getElementById(
         "email"
     );
 
-
 const replyTo =
     document.getElementById(
         "replyto"
     );
-
 
 commissionForm.addEventListener(
     "submit",
@@ -4211,22 +3799,17 @@ commissionForm.addEventListener(
 
         event.preventDefault();
 
-
         submitButton.disabled =
             true;
-
 
         submitButton.textContent =
             "Sending Request...";
 
-
         formStatus.className =
             "form-status";
 
-
         formStatus.textContent =
             "";
-
 
         /*
          * This sends the client's email
@@ -4236,12 +3819,10 @@ commissionForm.addEventListener(
         replyTo.value =
             emailField.value;
 
-
         const formData =
             new FormData(
                 commissionForm
             );
-
 
         try {
 
@@ -4266,7 +3847,6 @@ commissionForm.addEventListener(
                     }
                 );
 
-
             if (
                 response.ok
             ) {
@@ -4274,13 +3854,10 @@ commissionForm.addEventListener(
                 formStatus.className =
                     "form-status success";
 
-
                 formStatus.textContent =
                     "✓ Your commission request has been sent successfully! Woxin Automation will contact you by email or Discord.";
 
-
                 commissionForm.reset();
-
 
                 formStatus.scrollIntoView({
                     behavior: "smooth",
@@ -4294,12 +3871,10 @@ commissionForm.addEventListener(
                 let errorMessage =
                     "Something went wrong while sending the form. Please try again.";
 
-
                 try {
 
                     const data =
                         await response.json();
-
 
                     if (
                         data &&
@@ -4323,10 +3898,8 @@ commissionForm.addEventListener(
                     ignored
                 ) {}
 
-
                 formStatus.className =
                     "form-status error";
-
 
                 formStatus.textContent =
                     "✕ " +
@@ -4343,18 +3916,15 @@ commissionForm.addEventListener(
             formStatus.className =
                 "form-status error";
 
-
             formStatus.textContent =
                 "✕ Unable to send right now. Please check your internet connection and try again.";
 
         }
 
-
         finally {
 
             submitButton.disabled =
                 false;
-
 
             submitButton.textContent =
                 "Send Commission Request ↗";
@@ -4365,7 +3935,6 @@ commissionForm.addEventListener(
 );
 
 </script>
-
 
 </body>
 </html>
