@@ -1,319 +1,3012 @@
-<!-- ================================
-     WOXIN AUTOMATION COMMISSION FORM
-     ================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<form
-    action="https://formspree.io/f/xaewoayq"
-    method="POST"
-    enctype="multipart/form-data"
-    id="commissionForm"
->
+<title>Woxin Automation — Creative VTuber Studio</title>
 
-    <!-- Hidden Subject -->
-    <input
-        type="hidden"
-        name="_subject"
-        value="New Woxin Automation Commission Request"
-    >
+<meta name="description" content="Woxin Automation — VTuber designs, logos, banners, emotes, overlays, 3D models, art rooms and creative scenes.">
 
-    <!-- NAME -->
-    <div class="form-group">
-        <label for="client-name">Your Name</label>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <input
-            type="text"
-            id="client-name"
-            name="name"
-            placeholder="Enter your name"
-            autocomplete="name"
-            required
-        >
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+<style>
 
-    <!-- EMAIL -->
-    <div class="form-group">
-        <label for="client-email">Email Address</label>
+/* =========================================================
+   ROOT
+========================================================= */
 
-        <input
-            type="email"
-            id="client-email"
-            name="email"
-            placeholder="your@email.com"
-            autocomplete="email"
-            required
-        >
-    </div>
+:root{
+    --bg:#06060b;
+    --bg2:#0d0a15;
+    --card:rgba(18,15,28,.78);
 
+    --pink:#ff4fc8;
+    --pink2:#ff82da;
+    --purple:#965cff;
+    --cyan:#55eaff;
 
-    <!-- DISCORD -->
-    <div class="form-group">
-        <label for="client-discord">Discord Username</label>
+    --white:#fff;
+    --text:#ddd9e7;
+    --muted:#9691a3;
 
-        <input
-            type="text"
-            id="client-discord"
-            name="discord"
-            placeholder="example_username"
-            required
-        >
-    </div>
+    --border:rgba(255,255,255,.09);
 
+    --shadow:0 25px 80px rgba(0,0,0,.5);
+}
 
-    <!-- PROJECT TYPE -->
-    <div class="form-group">
-        <label for="project-type">What do you need?</label>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        <select
-            id="project-type"
-            name="project"
-            required
-        >
-            <option value="" disabled selected>
-                Select a service
-            </option>
+html{
+    scroll-behavior:smooth;
+}
 
-            <option value="VTuber Model">
-                VTuber Model
-            </option>
+body{
+    background:
+        radial-gradient(circle at 10% 10%,rgba(150,92,255,.12),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(255,79,200,.10),transparent 30%),
+        linear-gradient(135deg,#050509,#0b0812,#07070c);
 
-            <option value="3D VTuber Model">
-                3D VTuber Model
-            </option>
+    color:var(--white);
+    font-family:Inter,sans-serif;
+    overflow-x:hidden;
+}
 
-            <option value="VTuber ID Card">
-                VTuber ID Card
-            </option>
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-3;
 
-            <option value="Logo Design">
-                Logo Design
-            </option>
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
 
-            <option value="Banner Design">
-                Banner Design
-            </option>
+    background-size:60px 60px;
+}
 
-            <option value="Emotes">
-                Emotes
-            </option>
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-            <option value="Stream Overlay">
-                Stream Overlay
-            </option>
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
 
-            <option value="3D Art Room">
-                3D Art Room
-            </option>
-
-            <option value="Creative Scene">
-                Creative Scene
-            </option>
-
-            <option value="Other">
-                Other
-            </option>
-        </select>
-    </div>
+::selection{
+    background:var(--pink);
+    color:white;
+}
 
 
-    <!-- BUDGET -->
-    <div class="form-group">
-        <label for="client-budget">
-            Estimated Budget
-        </label>
+/* =========================================================
+   PARTICLES
+========================================================= */
 
-        <select
-            id="client-budget"
-            name="budget"
-        >
-            <option value="" disabled selected>
-                Select your budget
-            </option>
-
-            <option value="$50 - $100">
-                $50 - $100
-            </option>
-
-            <option value="$100 - $250">
-                $100 - $250
-            </option>
-
-            <option value="$250 - $500">
-                $250 - $500
-            </option>
-
-            <option value="$500 - $1000">
-                $500 - $1000
-            </option>
-
-            <option value="$1000+">
-                $1000+
-            </option>
-
-            <option value="Not sure yet">
-                I'm not sure yet
-            </option>
-        </select>
-    </div>
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    pointer-events:none;
+}
 
 
-    <!-- DEADLINE -->
-    <div class="form-group">
-        <label for="project-deadline">
-            Desired Deadline
-        </label>
+/* =========================================================
+   NAVBAR
+========================================================= */
 
-        <input
-            type="date"
-            id="project-deadline"
-            name="deadline"
-        >
-    </div>
+.navbar{
+    position:fixed;
+    z-index:1000;
+
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(1180px,calc(100% - 30px));
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 15px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:rgba(9,7,15,.76);
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-family:Orbitron,sans-serif;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.brand-logo{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    box-shadow:0 0 25px rgba(255,79,200,.35);
+}
+
+.brand-name{
+    background:linear-gradient(90deg,#fff,#ff80d7,#b596ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    gap:5px;
+    align-items:center;
+}
+
+.nav-links a{
+    padding:10px 13px;
+
+    color:#bdb8ca;
+
+    font-size:12px;
+    font-weight:700;
+
+    border-radius:10px;
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+    background:rgba(255,255,255,.06);
+}
+
+.nav-links .nav-contact{
+    color:white;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    box-shadow:0 0 20px rgba(255,79,200,.2);
+}
+
+.menu{
+    display:none;
+
+    border:0;
+    background:none;
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
 
 
-    <!-- PROJECT DETAILS -->
-    <div class="form-group">
-        <label for="project-details">
-            Tell Me About Your Project
-        </label>
+/* =========================================================
+   HERO
+========================================================= */
 
-        <textarea
-            id="project-details"
-            name="message"
-            rows="7"
-            placeholder="Tell me about your project, character, style, colors, animations, ideas, etc."
-            required
-        ></textarea>
-    </div>
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:150px 20px 90px;
+
+    text-align:center;
+}
+
+.hero-inner{
+    width:min(1000px,100%);
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,79,200,.25);
+
+    background:rgba(255,79,200,.055);
+
+    color:#f2c6e7;
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+    box-shadow:0 0 15px var(--pink);
+
+    animation:dotPulse 1.4s infinite;
+}
+
+@keyframes dotPulse{
+    50%{
+        transform:scale(1.5);
+        opacity:.45;
+    }
+}
+
+.hero h1{
+    font-family:Orbitron,sans-serif;
+
+    font-size:clamp(48px,8vw,94px);
+
+    line-height:.98;
+
+    letter-spacing:-4px;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #fff 5%,
+            #ff78d5 35%,
+            #a777ff 70%,
+            #62e9ff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow{
+    50%{
+        filter:drop-shadow(0 0 25px rgba(255,79,200,.25));
+    }
+}
+
+.hero-description{
+    max-width:750px;
+
+    margin:0 auto 32px;
+
+    color:var(--muted);
+
+    font-size:17px;
+    line-height:1.8;
+}
+
+.hero-description strong{
+    color:#eee8f3;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 21px;
+
+    border-radius:13px;
+
+    font-size:13px;
+    font-weight:800;
+
+    border:1px solid var(--border);
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.primary{
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    box-shadow:0 12px 35px rgba(255,79,200,.22);
+}
+
+.secondary{
+    background:rgba(255,255,255,.045);
+}
+
+.scroll{
+    position:absolute;
+    bottom:22px;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    color:#777181;
+
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    animation:scrollFloat 2s infinite;
+}
+
+@keyframes scrollFloat{
+    50%{
+        transform:translate(-50%,7px);
+    }
+}
 
 
-    <!-- REFERENCE IMAGES -->
-    <div class="form-group">
-        <label for="reference-files">
-            Reference Images
-        </label>
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
-        <input
-            type="file"
-            id="reference-files"
-            name="references"
-            accept=".png,.jpg,.jpeg,.webp"
-            multiple
-        >
+section{
+    width:min(1150px,calc(100% - 30px));
 
-        <small>
-            Upload PNG, JPG, JPEG or WEBP reference images.
-        </small>
-    </div>
+    margin:auto;
+
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+.section-label{
+    color:var(--pink);
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-family:Orbitron,sans-serif;
+
+    font-size:clamp(30px,5vw,48px);
+
+    margin-bottom:13px;
+}
+
+.section-title p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.7;
+}
 
 
-    <!-- ADDITIONAL NOTES -->
-    <div class="form-group">
-        <label for="additional-notes">
-            Additional Notes
-        </label>
+/* =========================================================
+   ABOUT
+========================================================= */
 
-        <textarea
-            id="additional-notes"
-            name="notes"
-            rows="4"
-            placeholder="Anything else you'd like me to know?"
-        ></textarea>
-    </div>
+.about{
+    display:grid;
+
+    grid-template-columns:.7fr 1.3fr;
+
+    gap:35px;
+
+    padding:40px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,79,200,.07),
+            rgba(150,92,255,.06)
+        );
+
+    box-shadow:var(--shadow);
+}
+
+.about:after{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-150px;
+    top:-180px;
+
+    background:radial-gradient(circle,rgba(255,79,200,.15),transparent 70%);
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-orb{
+    width:220px;
+    height:220px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    font-size:70px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ff91df,
+            #9b5cff 55%,
+            #171022
+        );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 65px rgba(255,79,200,.25),
+        inset 0 0 40px rgba(255,255,255,.1);
+
+    animation:orb 5s ease-in-out infinite;
+}
+
+@keyframes orb{
+    50%{
+        transform:translateY(-9px);
+    }
+}
+
+.bio h3{
+    font-family:Orbitron,sans-serif;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.bio p{
+    color:#aaa5b6;
+
+    line-height:1.85;
+
+    margin-bottom:17px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.skill{
+    padding:8px 11px;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.035);
+
+    color:#d7d1e1;
+
+    font-size:11px;
+
+    animation:skill 3s ease-in-out infinite;
+}
+
+.skill:nth-child(2){animation-delay:.2s}
+.skill:nth-child(3){animation-delay:.4s}
+.skill:nth-child(4){animation-delay:.6s}
+.skill:nth-child(5){animation-delay:.8s}
+
+@keyframes skill{
+    50%{
+        transform:translateY(-4px);
+    }
+}
 
 
-    <!-- SUBMIT BUTTON -->
-    <button
-        type="submit"
-        class="submit-btn"
-        id="submitButton"
-    >
-        Send Commission Request
+/* =========================================================
+   PORTFOLIO FOLDERS
+========================================================= */
+
+.folder-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.folder{
+    min-height:250px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:1px solid var(--border);
+    border-radius:21px;
+
+    background:rgba(255,255,255,.035);
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.folder:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(255,79,200,.35);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.45),
+        0 0 30px rgba(255,79,200,.08);
+}
+
+
+/* Folder visual */
+
+.folder-art{
+    height:145px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.18),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #25142e,
+            #171125 55%,
+            #0d1725
+        );
+}
+
+.folder-art:before{
+    content:"";
+
+    position:absolute;
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,79,200,.25),
+            transparent 65%
+        );
+
+    filter:blur(4px);
+}
+
+.folder-art:after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.3),
+        transparent
+    );
+
+    transform:rotate(-35deg);
+
+    animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+    from{
+        left:-300px;
+    }
+
+    to{
+        left:400px;
+    }
+}
+
+.folder-symbol{
+    position:relative;
+    z-index:2;
+
+    width:90px;
+    height:90px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:23px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    box-shadow:0 0 40px rgba(255,79,200,.18);
+
+    font-size:43px;
+
+    transition:.3s;
+}
+
+.folder:hover .folder-symbol{
+    transform:
+        scale(1.08)
+        rotate(-3deg);
+}
+
+.folder-label{
+    position:absolute;
+
+    top:13px;
+    right:13px;
+
+    z-index:5;
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    background:rgba(0,0,0,.35);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    font-size:9px;
+    font-weight:700;
+
+    color:#ddd7e5;
+}
+
+.folder-info{
+    padding:20px;
+}
+
+.folder-info h3{
+    font-family:Orbitron,sans-serif;
+
+    font-size:16px;
+
+    margin-bottom:7px;
+}
+
+.folder-info p{
+    color:#858091;
+
+    font-size:12px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+}
+
+.service{
+    padding:25px;
+
+    min-height:185px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:rgba(255,255,255,.035);
+
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+
+    background:rgba(255,79,200,.055);
+
+    border-color:rgba(255,79,200,.25);
+}
+
+.service-icon{
+    font-size:30px;
+
+    margin-bottom:16px;
+}
+
+.service h3{
+    font-size:15px;
+
+    margin-bottom:9px;
+}
+
+.service p{
+    color:#858091;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   COMMISSION HEARTBEAT
+========================================================= */
+
+.availability{
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:45px 25px;
+
+    border:1px solid rgba(255,79,200,.17);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,79,200,.09),
+            rgba(150,92,255,.08)
+        );
+}
+
+.heart{
+    display:inline-block;
+
+    font-size:48px;
+
+    margin-bottom:12px;
+
+    animation:heartbeat 1.15s infinite;
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1)}
+    14%{transform:scale(1.25)}
+    28%{transform:scale(1)}
+    42%{transform:scale(1.18)}
+    70%{transform:scale(1)}
+    100%{transform:scale(1)}
+}
+
+.availability h2{
+    font-family:Orbitron,sans-serif;
+
+    font-size:clamp(25px,4vw,38px);
+
+    margin-bottom:12px;
+}
+
+.availability p{
+    max-width:600px;
+
+    margin:0 auto 22px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+.status{
+    display:inline-flex;
+
+    align-items:center;
+    gap:8px;
+
+    padding:8px 13px;
+
+    border-radius:999px;
+
+    color:#76ffab;
+
+    background:rgba(74,255,145,.07);
+
+    border:1px solid rgba(74,255,145,.18);
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#5dff9c;
+
+    box-shadow:0 0 12px #5dff9c;
+
+    animation:status 1.4s infinite;
+}
+
+@keyframes status{
+    50%{
+        opacity:.35;
+    }
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.review{
+    padding:27px;
+
+    border:1px solid var(--border);
+    border-radius:20px;
+
+    background:rgba(255,255,255,.035);
+
+    transition:.3s;
+}
+
+.review:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(255,79,200,.25);
+}
+
+.stars{
+    color:#ffd56e;
+
+    letter-spacing:3px;
+
+    margin-bottom:17px;
+}
+
+.review p{
+    color:#aaa5b5;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.client{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.client-avatar{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+}
+
+.client strong{
+    font-size:12px;
+}
+
+.client small{
+    display:block;
+
+    color:#706a7b;
+
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:.75fr 1.25fr;
+
+    gap:24px;
+
+    align-items:start;
+}
+
+.contact-info,
+.form-container{
+    padding:32px;
+
+    border:1px solid var(--border);
+    border-radius:23px;
+
+    background:rgba(255,255,255,.035);
+
+    box-shadow:var(--shadow);
+}
+
+.contact-info h3,
+.form-container h3{
+    font-family:Orbitron,sans-serif;
+
+    font-size:23px;
+
+    margin-bottom:12px;
+}
+
+.contact-info>p,
+.form-subtitle{
+    color:#858091;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:13px;
+
+    margin-bottom:9px;
+
+    border:1px solid rgba(255,255,255,.055);
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.contact-icon{
+    width:36px;
+    height:36px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:10px;
+
+    background:rgba(255,79,200,.09);
+}
+
+.contact-item small{
+    display:block;
+
+    color:#706a7b;
+
+    font-size:9px;
+
+    margin-bottom:3px;
+}
+
+.contact-item span{
+    color:#ddd8e6;
+
+    font-size:11px;
+
+    word-break:break-word;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-row{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+
+    color:#ddd8e6;
+
+    font-size:11px;
+    font-weight:700;
+
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+
+    padding:13px 14px;
+
+    outline:none;
+
+    color:white;
+
+    background:rgba(5,5,10,.65);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:11px;
+
+    font-size:12px;
+
+    transition:.25s;
+}
+
+.form-group textarea{
+    min-height:125px;
+
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:rgba(255,79,200,.5);
+
+    box-shadow:
+        0 0 0 3px rgba(255,79,200,.07);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    color:#5f5a68;
+}
+
+.form-group select option{
+    background:#11101a;
+    color:white;
+}
+
+.file-box{
+    padding:14px;
+
+    border:1px dashed rgba(255,79,200,.25);
+
+    border-radius:12px;
+
+    background:rgba(255,79,200,.025);
+}
+
+.form-group input[type=file]{
+    border:0;
+    padding:5px;
+    background:none;
+}
+
+.form-group input[type=file]::file-selector-button{
+    border:0;
+
+    padding:8px 12px;
+
+    margin-right:8px;
+
+    border-radius:8px;
+
+    color:white;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    font-size:10px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.help{
+    color:#625d6c;
+
+    font-size:9px;
+
+    line-height:1.6;
+
+    margin-top:6px;
+}
+
+.submit{
+    width:100%;
+
+    border:0;
+
+    padding:15px;
+
+    border-radius:13px;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    color:white;
+
+    font-size:12px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 35px rgba(255,79,200,.2);
+
+    transition:.25s;
+}
+
+.submit:hover{
+    transform:translateY(-2px);
+
+    box-shadow:0 16px 45px rgba(255,79,200,.34);
+}
+
+.submit:disabled{
+    opacity:.6;
+    cursor:wait;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.success{
+    display:none;
+
+    text-align:center;
+
+    padding:55px 25px;
+
+    border:1px solid rgba(80,255,150,.2);
+
+    border-radius:20px;
+
+    background:rgba(80,255,150,.035);
+}
+
+.success-icon{
+    width:65px;
+    height:65px;
+
+    display:grid;
+    place-items:center;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    color:#70ffa6;
+
+    background:rgba(80,255,150,.08);
+
+    border:1px solid rgba(80,255,150,.2);
+
+    font-size:30px;
+}
+
+.success h3{
+    font-family:Orbitron,sans-serif;
+
+    margin-bottom:10px;
+}
+
+.success p{
+    max-width:500px;
+
+    margin:auto;
+
+    color:#8d8798;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    width:min(1150px,calc(100% - 30px));
+
+    margin:auto;
+
+    padding:30px 0 45px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-brand{
+    font-family:Orbitron,sans-serif;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+footer p{
+    color:#625d6d;
+
+    font-size:10px;
+}
+
+.footer-links{
+    display:flex;
+    gap:8px;
+}
+
+.footer-link{
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    color:#aaa4b3;
+
+    font-size:13px;
+
+    transition:.25s;
+}
+
+.footer-link:hover{
+    color:white;
+
+    border-color:rgba(255,79,200,.3);
+
+    background:rgba(255,79,200,.08);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        left:0;
+        right:0;
+        top:64px;
+
+        padding:10px;
+
+        flex-direction:column;
+
+        border:1px solid var(--border);
+        border-radius:15px;
+
+        background:rgba(8,7,13,.97);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .about,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .folder-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .reviews{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .about{
+        padding:25px;
+    }
+
+    .profile-orb{
+        width:170px;
+        height:170px;
+        font-size:55px;
+    }
+
+    .folder-grid,
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .contact-info,
+    .form-container{
+        padding:23px;
+    }
+
+    footer{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     PARTICLE CANVAS
+========================================================= -->
+
+<canvas id="particles"></canvas>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="brand">
+
+        <div class="brand-logo">
+            W
+        </div>
+
+        <span class="brand-name">
+            WOXIN AUTOMATION
+        </span>
+
+    </a>
+
+    <button class="menu" id="menu">
+        ☰
     </button>
 
-</form>
+    <div class="nav-links" id="navLinks">
 
+        <a href="#home">Home</a>
 
-<!-- ================================
-     SUCCESS MESSAGE
-     ================================ -->
+        <a href="#about">About</a>
 
-<div
-    id="formSuccess"
-    class="form-success"
-    style="display:none;"
->
+        <a href="#portfolio">Portfolio</a>
 
-    <div class="success-icon">
-        ✓
+        <a href="#services">Services</a>
+
+        <a href="#reviews">Reviews</a>
+
+        <a href="#contact" class="nav-contact">
+            Contact
+        </a>
+
     </div>
 
-    <h3>
-        Request Received!
-    </h3>
+</nav>
 
-    <p>
-        Thank you for contacting Woxin Automation.
-        Your commission request has been successfully submitted.
-    </p>
 
-    <p>
-        I'll review your project and get back to you soon.
-    </p>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-    <div class="contact-success">
-        <strong>Discord:</strong>
-        Woxinart_automation
+<header class="hero" id="home">
+
+    <div class="hero-inner">
+
+        <div class="badge">
+            <span class="badge-dot"></span>
+            Creative VTuber Studio
+        </div>
+
+        <h1>
+            WOXIN<br>
+            AUTOMATION
+        </h1>
+
+        <p class="hero-description">
+
+            Welcome to <strong>Woxin Automation</strong> —
+            a creative studio specializing in
+            <strong>VTuber designs, logos, banners, emotes,
+            overlays, 3D models, art rooms and creative scenes.</strong>
+
+            Bringing ideas to life through distinctive
+            digital art and visual identity.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#portfolio" class="btn primary">
+                Explore Portfolio
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Start a Project
+            </a>
+
+        </div>
+
     </div>
 
-</div>
+    <div class="scroll">
+        Scroll to explore
+    </div>
+
+</header>
 
 
-<!-- ================================
-     FORM SUBMISSION SCRIPT
-     ================================ -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+
+        <div class="section-label">
+            About Woxin
+        </div>
+
+        <h2>
+            Creative Ideas.
+            Beautiful Results.
+        </h2>
+
+        <p>
+            Professional creative services for VTubers,
+            streamers, creators and digital brands.
+        </p>
+
+    </div>
+
+
+    <div class="about reveal">
+
+        <div class="profile">
+
+            <div class="profile-orb">
+                🎨
+            </div>
+
+        </div>
+
+
+        <div class="bio">
+
+            <h3>
+                Hi, I'm Woxin.
+            </h3>
+
+            <p>
+                Woxin Automation is a creative studio focused
+                on building memorable digital identities for
+                VTubers, streamers and online creators.
+            </p>
+
+            <p>
+                From character concepts and VTuber assets to
+                logos, banners, emotes, overlays, 3D art rooms
+                and creative scenes, every project is crafted
+                around the creator's personality and vision.
+            </p>
+
+            <div class="skills">
+
+                <span class="skill">VTuber Design</span>
+                <span class="skill">Digital Art</span>
+                <span class="skill">Branding</span>
+                <span class="skill">3D Art</span>
+                <span class="skill">Animation</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PORTFOLIO
+========================================================= -->
+
+<section id="portfolio">
+
+    <div class="section-title reveal">
+
+        <div class="section-label">
+            Portfolio
+        </div>
+
+        <h2>
+            Explore My Work
+        </h2>
+
+        <p>
+            Browse the different creative categories
+            available through Woxin Automation.
+        </p>
+
+    </div>
+
+
+    <div class="folder-grid">
+
+
+        <!-- 01 VTUBER MODEL -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    VTUBER
+                </span>
+
+                <div class="folder-symbol">
+                    🎭
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    VTuber Models
+                </h3>
+
+                <p>
+                    Character designs, expressions,
+                    model concepts and VTuber assets.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 02 ID CARD -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    ID CARD
+                </span>
+
+                <div class="folder-symbol">
+                    🪪
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    VTuber ID Cards
+                </h3>
+
+                <p>
+                    Stylish character cards and profile
+                    graphics built around your identity.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 03 3D MODEL -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    3D
+                </span>
+
+                <div class="folder-symbol">
+                    🧊
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    3D VTuber Models
+                </h3>
+
+                <p>
+                    3D character concepts, assets and
+                    model-ready creative designs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 04 LOGO -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    BRANDING
+                </span>
+
+                <div class="folder-symbol">
+                    ✦
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    Logo Design
+                </h3>
+
+                <p>
+                    Unique logos designed to represent
+                    your character or brand.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 05 BANNER -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    SOCIAL
+                </span>
+
+                <div class="folder-symbol">
+                    🖼️
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    Banners & Profiles
+                </h3>
+
+                <p>
+                    Professional social media banners,
+                    headers and profile visuals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 06 EMOTES -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    EMOTES
+                </span>
+
+                <div class="folder-symbol">
+                    😎
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    Custom Emotes
+                </h3>
+
+                <p>
+                    Expressive custom emotes for streams,
+                    Discord and online communities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 07 OVERLAYS -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    STREAM
+                </span>
+
+                <div class="folder-symbol">
+                    🖥️
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    Stream Overlays
+                </h3>
+
+                <p>
+                    Complete visual assets for polished
+                    and professional streams.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 08 3D ROOM -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    3D ART
+                </span>
+
+                <div class="folder-symbol">
+                    🏠
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    3D Art Rooms
+                </h3>
+
+                <p>
+                    Custom environments and immersive
+                    creator spaces.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 09 CREATIVE SCENES -->
+
+        <div class="folder reveal">
+
+            <div class="folder-art">
+
+                <span class="folder-label">
+                    SCENES
+                </span>
+
+                <div class="folder-symbol">
+                    🌌
+                </div>
+
+            </div>
+
+            <div class="folder-info">
+
+                <h3>
+                    Creative Scenes
+                </h3>
+
+                <p>
+                    Atmospheric backgrounds and scenes
+                    designed for storytelling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+    <div class="section-title reveal">
+
+        <div class="section-label">
+            Services
+        </div>
+
+        <h2>
+            What We Create
+        </h2>
+
+        <p>
+            Creative solutions designed to give your
+            online identity a professional look.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🎭
+            </div>
+
+            <h3>
+                VTuber Design
+            </h3>
+
+            <p>
+                Character concepts, expressions,
+                assets and model designs.
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                ✨
+            </div>
+
+            <h3>
+                Branding
+            </h3>
+
+            <p>
+                Logos, banners, profile graphics
+                and creator branding.
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🎮
+            </div>
+
+            <h3>
+                Stream Graphics
+            </h3>
+
+            <p>
+                Overlays, alerts, panels, screens
+                and stream assets.
+            </p>
+
+        </div>
+
+
+        <div class="service reveal">
+
+            <div class="service-icon">
+                🌌
+            </div>
+
+            <h3>
+                3D & Creative Scenes
+            </h3>
+
+            <p>
+                3D rooms, environments and
+                atmospheric creative scenes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMMISSION STATUS
+========================================================= -->
+
+<section>
+
+    <div class="availability reveal">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h2>
+            Available for Commissions
+        </h2>
+
+        <p>
+            Have an idea in mind?
+            Let's turn it into something
+            visually unforgettable.
+        </p>
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            Currently accepting projects
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section id="reviews">
+
+    <div class="section-title reveal">
+
+        <div class="section-label">
+            Client Reviews
+        </div>
+
+        <h2>
+            What Clients Say
+        </h2>
+
+        <p>
+            Feedback from clients and creative collaborations.
+        </p>
+
+    </div>
+
+
+    <div class="reviews">
+
+
+        <div class="review reveal">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “The final design turned out amazing.
+                The attention to detail and overall style
+                was exactly what I wanted.”
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        Client
+                    </strong>
+
+                    <small>
+                        VTuber Project
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review reveal">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Very creative and professional.
+                Communication throughout the project
+                was smooth and easy.”
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        Client
+                    </strong>
+
+                    <small>
+                        Branding Project
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review reveal">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “The artwork captured the personality
+                I wanted perfectly. I loved the final result.”
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        Client
+                    </strong>
+
+                    <small>
+                        Creative Project
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT + FORM
+========================================================= -->
+
+<section id="contact">
+
+    <div class="section-title reveal">
+
+        <div class="section-label">
+            Start A Project
+        </div>
+
+        <h2>
+            Let's Create Something Amazing
+        </h2>
+
+        <p>
+            Tell us about your project and we'll get back to you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-info reveal">
+
+            <h3>
+                Contact Woxin
+            </h3>
+
+            <p>
+                For commissions, collaborations or questions,
+                contact Woxin Automation through email or Discord.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <small>
+                        EMAIL
+                    </small>
+
+                    <span>
+                        Gfx1628@gmail.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    💬
+                </div>
+
+                <div>
+
+                    <small>
+                        DISCORD
+                    </small>
+
+                    <span>
+                        Woxinart_automation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ❤️
+                </div>
+
+                <div>
+
+                    <small>
+                        COMMISSION STATUS
+                    </small>
+
+                    <span>
+                        Currently accepting projects
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-container reveal">
+
+            <h3>
+                Commission Form
+            </h3>
+
+            <p class="form-subtitle">
+                Give us some information about your project
+                so we can understand exactly what you need.
+            </p>
+
+
+            <form
+                id="commissionForm"
+                action="https://formspree.io/f/xaewoayq"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Woxin Automation Commission Request"
+                >
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="your@email.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DISCORD -->
+
+                <div class="form-group">
+
+                    <label>
+                        Discord Username *
+                    </label>
+
+                    <input
+                        type="text"
+                        name="discord"
+                        placeholder="Your Discord username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PROJECT TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Project Type *
+                    </label>
+
+                    <select
+                        name="project_type"
+                        required
+                    >
+
+                        <option
+                            value=""
+                            selected
+                            disabled
+                        >
+                            Select a service
+                        </option>
+
+                        <option>
+                            VTuber Model
+                        </option>
+
+                        <option>
+                            3D VTuber Model
+                        </option>
+
+                        <option>
+                            VTuber ID Card
+                        </option>
+
+                        <option>
+                            Logo Design
+                        </option>
+
+                        <option>
+                            Banner Design
+                        </option>
+
+                        <option>
+                            Emotes
+                        </option>
+
+                        <option>
+                            Stream Overlay
+                        </option>
+
+                        <option>
+                            3D Art Room
+                        </option>
+
+                        <option>
+                            Creative Scene
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUDGET + DEADLINE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Estimated Budget
+                        </label>
+
+                        <select name="budget">
+
+                            <option
+                                selected
+                                disabled
+                            >
+                                Select budget
+                            </option>
+
+                            <option>
+                                $50 - $100
+                            </option>
+
+                            <option>
+                                $100 - $250
+                            </option>
+
+                            <option>
+                                $250 - $500
+                            </option>
+
+                            <option>
+                                $500 - $1000
+                            </option>
+
+                            <option>
+                                $1000+
+                            </option>
+
+                            <option>
+                                Not sure yet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Desired Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            name="deadline"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Tell Us About Your Project *
+                    </label>
+
+                    <textarea
+                        name="message"
+                        placeholder="Tell us about your idea, character, style, colors, references, animations, etc."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- REFERENCE UPLOAD -->
+
+                <div class="form-group">
+
+                    <label>
+                        Reference Images
+                    </label>
+
+                    <div class="file-box">
+
+                        <input
+                            type="file"
+                            name="references"
+                            accept=".jpg,.jpeg,.png,.webp"
+                            multiple
+                        >
+
+                        <div class="help">
+                            You can select multiple JPG, PNG or WEBP
+                            reference images.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXTRA NOTES -->
+
+                <div class="form-group">
+
+                    <label>
+                        Additional Notes
+                    </label>
+
+                    <textarea
+                        name="additional_notes"
+                        placeholder="Anything else you want us to know?"
+                        style="min-height:90px;"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit"
+                    id="submitBtn"
+                >
+                    Send Commission Request
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                class="success"
+                id="success"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Request Received!
+                </h3>
+
+                <p>
+                    Thank you for contacting Woxin Automation.
+                    Your project information has been submitted
+                    successfully. We'll get back to you soon.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div>
+
+        <div class="footer-brand">
+            WOXIN AUTOMATION
+        </div>
+
+        <p>
+            Creative visuals for the digital world.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a
+            class="footer-link"
+            href="mailto:Gfx1628@gmail.com"
+            title="Email"
+        >
+            ✉
+        </a>
+
+        <a
+            class="footer-link"
+            href="#contact"
+            title="Discord"
+        >
+            💬
+        </a>
+
+        <a
+            class="footer-link"
+            href="#portfolio"
+            title="Portfolio"
+        >
+            ✦
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 Woxin Automation. All rights reserved.
+    </p>
+
+</footer>
+
 
 <script>
 
-const commissionForm =
-    document.getElementById("commissionForm");
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-const submitButton =
-    document.getElementById("submitButton");
+const menu =
+    document.getElementById("menu");
 
-const formSuccess =
-    document.getElementById("formSuccess");
+const navLinks =
+    document.getElementById("navLinks");
+
+menu.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+});
 
 
-commissionForm.addEventListener(
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveal =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+reveal.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   GLOWING PARTICLES
+========================================================= */
+
+const canvas =
+    document.getElementById("particles");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+let amount =
+    window.innerWidth < 600
+        ? 45
+        : 90;
+
+
+function resize(){
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+
+resize();
+
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        resize();
+
+        amount =
+            window.innerWidth < 600
+                ? 45
+                : 90;
+
+        createParticles();
+
+    }
+);
+
+
+function createParticles(){
+
+    particles = [];
+
+    for(let i = 0; i < amount; i++){
+
+        particles.push({
+
+            x:
+                Math.random()
+                * canvas.width,
+
+            y:
+                Math.random()
+                * canvas.height,
+
+            size:
+                Math.random()
+                * 1.7
+                + .4,
+
+            vx:
+                (Math.random()-.5)
+                * .25,
+
+            vy:
+                (Math.random()-.5)
+                * .25,
+
+            alpha:
+                Math.random()
+                * .6
+                + .1
+
+        });
+
+    }
+
+}
+
+
+createParticles();
+
+
+function particleAnimation(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    particles.forEach(p => {
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+
+        if(p.x < -10)
+            p.x = canvas.width + 10;
+
+        if(p.x > canvas.width + 10)
+            p.x = -10;
+
+        if(p.y < -10)
+            p.y = canvas.height + 10;
+
+        if(p.y > canvas.height + 10)
+            p.y = -10;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(255,110,220,${p.alpha})`;
+
+        ctx.fill();
+
+    });
+
+
+    requestAnimationFrame(
+        particleAnimation
+    );
+
+}
+
+
+particleAnimation();
+
+
+/* =========================================================
+   FORMSPREE
+========================================================= */
+
+const form =
+    document.getElementById(
+        "commissionForm"
+    );
+
+const submit =
+    document.getElementById(
+        "submitBtn"
+    );
+
+const success =
+    document.getElementById(
+        "success"
+    );
+
+
+form.addEventListener(
     "submit",
-    async function(event) {
+    async function(event){
 
         event.preventDefault();
 
-        /* Button loading state */
 
-        submitButton.disabled = true;
+        submit.disabled = true;
 
-        submitButton.innerHTML =
+        submit.textContent =
             "Sending Request...";
 
 
-        /* Collect form data */
-
-        const formData =
-            new FormData(commissionForm);
+        const data =
+            new FormData(form);
 
 
-        try {
+        try{
 
             const response =
                 await fetch(
-                    commissionForm.action,
+                    form.action,
                     {
-                        method: "POST",
-                        body: formData,
-                        headers: {
+                        method:"POST",
+
+                        body:data,
+
+                        headers:{
                             "Accept":
                                 "application/json"
                         }
@@ -321,54 +3014,47 @@ commissionForm.addEventListener(
                 );
 
 
-            /* Successful submission */
+            if(response.ok){
 
-            if (response.ok) {
-
-                commissionForm.reset();
-
-                commissionForm.style.display =
+                form.style.display =
                     "none";
 
-                formSuccess.style.display =
+                success.style.display =
                     "block";
 
-                formSuccess.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
+                success.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
                 });
 
             }
 
-            /* Formspree error */
+            else{
 
-            else {
-
-                submitButton.disabled =
+                submit.disabled =
                     false;
 
-                submitButton.innerHTML =
+                submit.textContent =
                     "Send Commission Request";
 
                 alert(
-                    "Something went wrong. Please try again."
+                    "The form could not be sent. Please try again."
                 );
+
             }
 
         }
 
-        /* Internet / connection error */
+        catch(error){
 
-        catch (error) {
-
-            submitButton.disabled =
+            submit.disabled =
                 false;
 
-            submitButton.innerHTML =
+            submit.textContent =
                 "Send Commission Request";
 
             alert(
-                "Unable to send your request. Please check your internet connection and try again."
+                "Please check your internet connection and try again."
             );
 
         }
@@ -377,3 +3063,6 @@ commissionForm.addEventListener(
 );
 
 </script>
+
+</body>
+</html>
