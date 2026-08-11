@@ -19,13 +19,55 @@ html {
 
 body {
     min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 10%, rgba(255, 120, 210, 0.14), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(150, 100, 255, 0.12), transparent 30%),
-        linear-gradient(135deg, #0b0810, #17101f 50%, #0d0913);
     color: white;
     font-family: Arial, sans-serif;
-    padding: 35px 20px;
+    padding: 30px 20px;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 100, 210, .16), transparent 25%),
+        radial-gradient(circle at 85% 25%, rgba(140, 90, 255, .15), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(255, 90, 190, .08), transparent 30%),
+        linear-gradient(135deg, #09070d, #17101f 50%, #0b0810);
+}
+
+/* GLOWING BACKGROUND */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .22;
+    pointer-events: none;
+    z-index: -1;
+    animation: floatGlow 7s ease-in-out infinite alternate;
+}
+
+body::before {
+    background: #ff5dcc;
+    top: 10%;
+    left: -100px;
+}
+
+body::after {
+    background: #8b5cff;
+    right: -100px;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes floatGlow {
+    from {
+        transform: translateY(-20px) scale(1);
+    }
+
+    to {
+        transform: translateY(30px) scale(1.2);
+    }
 }
 
 .container {
@@ -38,32 +80,123 @@ body {
 
 .header {
     text-align: center;
-    padding: 35px 20px 50px;
+    padding: 35px 20px 30px;
 }
 
 .logo-text {
-    font-size: 68px;
+    font-size: 72px;
     font-weight: 900;
-    letter-spacing: 5px;
-    color: #ffb5e7;
+    letter-spacing: 7px;
+    color: #ffb8e8;
+
     text-shadow:
-        0 0 10px rgba(255, 120, 210, .4),
-        0 0 35px rgba(255, 120, 210, .2);
+        0 0 8px rgba(255, 130, 220, .8),
+        0 0 25px rgba(255, 100, 210, .5),
+        0 0 55px rgba(255, 80, 200, .25);
+
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    from {
+        text-shadow:
+            0 0 8px rgba(255,130,220,.7),
+            0 0 25px rgba(255,100,210,.35);
+    }
+
+    to {
+        text-shadow:
+            0 0 15px rgba(255,160,230,1),
+            0 0 40px rgba(255,100,210,.65),
+            0 0 70px rgba(180,90,255,.35);
+    }
 }
 
 .tagline {
-    margin-top: 10px;
-    color: #cfc3d8;
-    font-size: 18px;
+    margin-top: 12px;
+    color: #d2c4d8;
+    font-size: 17px;
     letter-spacing: 2px;
 }
 
 .line {
-    width: 100px;
+    width: 110px;
     height: 3px;
-    background: linear-gradient(90deg, #ff8bd8, #a978ff);
-    margin: 22px auto 0;
+    margin: 22px auto;
     border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff76d5,
+        #a66cff,
+        #ff76d5
+    );
+
+    background-size: 200% 100%;
+    animation: lineMove 3s linear infinite;
+}
+
+@keyframes lineMove {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 200%;
+    }
+}
+
+/* COMMISSION BUTTON */
+
+.commission-area {
+    text-align: center;
+    margin: 5px 0 45px;
+}
+
+.commission-button {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 50px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #ff6dcc,
+        #a66cff
+    );
+
+    box-shadow:
+        0 0 15px rgba(255,100,210,.45),
+        0 0 35px rgba(170,100,255,.22);
+
+    transition: .3s ease;
+
+    animation: buttonGlow 2.5s ease-in-out infinite alternate;
+}
+
+.commission-button:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(255,120,220,.7),
+        0 0 50px rgba(160,100,255,.4);
+}
+
+@keyframes buttonGlow {
+    from {
+        box-shadow:
+            0 0 12px rgba(255,100,210,.4);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px rgba(255,100,210,.7),
+            0 0 45px rgba(160,100,255,.35);
+    }
 }
 
 /* FOLDERS */
@@ -77,48 +210,69 @@ body {
 .folder {
     position: relative;
     overflow: hidden;
-    background: rgba(35, 25, 46, .88);
+
+    background: rgba(31, 22, 41, .88);
     border: 1px solid #513c60;
     border-radius: 24px;
+
     padding: 38px 20px;
     text-align: center;
+
     cursor: pointer;
-    transition: .3s ease;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .folder::before {
     content: "";
     position: absolute;
+
     width: 130px;
     height: 130px;
-    background: rgba(255, 130, 215, .08);
+
+    background: rgba(255, 120, 215, .08);
     border-radius: 50%;
-    top: -60px;
+
+    top: -65px;
     right: -40px;
+
+    transition: .4s;
+}
+
+.folder:hover::before {
+    transform: scale(2);
+    background: rgba(255, 120, 215, .13);
 }
 
 .folder:hover {
     transform: translateY(-8px);
+
     border-color: #ff9ddd;
+
     box-shadow:
-        0 15px 40px rgba(255, 100, 210, .16),
-        inset 0 0 25px rgba(255, 100, 210, .04);
+        0 10px 30px rgba(255, 100, 210, .16),
+        0 0 20px rgba(255, 100, 210, .08);
 }
 
 .icon {
     font-size: 55px;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 0 10px rgba(255, 150, 220, .2));
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 150, 220, .35));
 }
 
 .folder h2 {
-    color: #fff;
     font-size: 22px;
+    color: #fff;
 }
 
 .folder p {
-    color: #a99bb0;
     margin-top: 8px;
+    color: #a99bb0;
     font-size: 14px;
 }
 
@@ -137,6 +291,9 @@ body {
     color: #ffb6e6;
     font-size: 42px;
     margin-bottom: 10px;
+
+    text-shadow:
+        0 0 15px rgba(255,100,210,.3);
 }
 
 .gallery-header p {
@@ -145,13 +302,17 @@ body {
 
 .back {
     display: inline-block;
+
     margin-bottom: 30px;
     padding: 11px 22px;
+
     background: #30213b;
     border: 1px solid #594467;
     border-radius: 12px;
+
     color: #fff;
     cursor: pointer;
+
     transition: .3s;
 }
 
@@ -159,6 +320,9 @@ body {
     background: #ff9ddd;
     color: #201524;
     border-color: #ff9ddd;
+
+    box-shadow:
+        0 0 20px rgba(255,100,210,.3);
 }
 
 /* IMAGES */
@@ -171,78 +335,176 @@ body {
 
 .image-card {
     overflow: hidden;
+
     border-radius: 20px;
     border: 1px solid #4b3858;
+
     background: #17101f;
+
     cursor: pointer;
+
     transition: .3s;
 }
 
 .image-card:hover {
     transform: translateY(-5px);
+
     border-color: #ff9ddd;
-    box-shadow: 0 12px 35px rgba(255, 120, 210, .15);
+
+    box-shadow:
+        0 12px 35px rgba(255,120,210,.18);
 }
 
 .image-card img {
     display: block;
+
     width: 100%;
     height: 390px;
+
     object-fit: cover;
-    transition: .4s;
+
+    transition: .45s;
 }
 
 .image-card:hover img {
     transform: scale(1.035);
 }
 
-/* FULLSCREEN IMAGE */
+/* LIGHTBOX */
 
 .lightbox {
     display: none;
+
     position: fixed;
-    z-index: 9999;
     inset: 0;
-    background: rgba(5, 3, 8, .94);
+
+    z-index: 9999;
+
+    background: rgba(5,3,8,.95);
+
     align-items: center;
     justify-content: center;
+
     padding: 25px;
 }
 
 .lightbox img {
     max-width: 95%;
     max-height: 90vh;
+
     object-fit: contain;
+
     border-radius: 15px;
-    box-shadow: 0 0 50px rgba(255, 130, 215, .2);
+
+    box-shadow:
+        0 0 30px rgba(255,120,220,.3),
+        0 0 70px rgba(140,90,255,.18);
 }
 
 .close {
     position: fixed;
-    top: 20px;
+
+    top: 18px;
     right: 28px;
+
     color: white;
-    font-size: 42px;
+    font-size: 44px;
+
     cursor: pointer;
-    z-index: 10000;
 }
 
 .close:hover {
     color: #ff9ddd;
 }
 
+/* COMMISSION POPUP */
+
+.commission-popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    background: rgba(5,3,8,.88);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.commission-box {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #24172e,
+            #15101c
+        );
+
+    border: 1px solid #704c78;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 35px rgba(255,100,210,.2);
+}
+
+.commission-box h2 {
+    color: #ffb6e6;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.commission-box p {
+    color: #c8bacf;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.close-popup {
+    display: inline-block;
+
+    padding: 11px 24px;
+
+    border-radius: 12px;
+
+    background: #3a2945;
+    border: 1px solid #63476e;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.close-popup:hover {
+    background: #ff9ddd;
+    color: #211625;
+}
+
 /* FOOTER */
 
 .footer {
     text-align: center;
+
     color: #76677f;
+
     padding: 55px 10px 15px;
+
     font-size: 14px;
 }
 
 /* MOBILE */
 
 @media (max-width: 800px) {
+
     .folders {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -256,10 +518,11 @@ body {
 
     .logo-text {
         font-size: 48px;
+        letter-spacing: 4px;
     }
 
     .tagline {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .folders {
@@ -276,6 +539,11 @@ body {
 
     .gallery-header h2 {
         font-size: 34px;
+    }
+
+    .commission-button {
+        font-size: 15px;
+        padding: 14px 25px;
     }
 }
 </style>
@@ -300,7 +568,19 @@ body {
 </div>
 
 
-<!-- HOME FOLDERS -->
+<!-- COMMISSION BUTTON -->
+
+<div class="commission-area">
+
+    <a href="#" class="commission-button"
+       onclick="openCommission(event)">
+        💌 Commission Me
+    </a>
+
+</div>
+
+
+<!-- HOME -->
 
 <div id="homeFolders">
 
@@ -366,18 +646,49 @@ body {
 
     <div class="images">
 
-        <div class="image-card"><img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Character.jpeg" alt="Character" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)"></div>
+        <div class="image-card">
+            <img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)">
+        </div>
 
-        <div class="image-card"><img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)"></div>
+        <div class="image-card">
+            <img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Character.jpeg" alt="Character" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)">
+        </div>
 
     </div>
 
@@ -545,7 +856,7 @@ body {
 </div>
 
 
-<!-- LIGHTBOX -->
+<!-- IMAGE LIGHTBOX -->
 
 <div class="lightbox" id="lightbox" onclick="closeImage()">
 
@@ -556,17 +867,43 @@ body {
 </div>
 
 
+<!-- COMMISSION POPUP -->
+
+<div class="commission-popup" id="commissionPopup">
+
+    <div class="commission-box">
+
+        <h2>💌 Commissions</h2>
+
+        <p>
+            Interested in working with Woxin?
+            <br><br>
+            Commission information and contact details will be added here.
+            <br>
+            Feel free to contact me for your next creative project!
+        </p>
+
+        <div class="close-popup" onclick="closeCommission()">
+            Close
+        </div>
+
+    </div>
+
+</div>
+
+
 <!-- FOOTER -->
 
 <div class="footer">
     © 2026 Woxin • Creative Portfolio
 </div>
 
-
 </div>
 
 
 <script>
+
+/* OPEN GALLERY */
 
 function openGallery(name) {
 
@@ -583,6 +920,8 @@ function openGallery(name) {
 }
 
 
+/* GO HOME */
+
 function goHome() {
 
     document.querySelectorAll(".gallery").forEach(function(page) {
@@ -596,20 +935,58 @@ function goHome() {
 }
 
 
+/* FULLSCREEN IMAGE */
+
 function showImage(src) {
 
     document.getElementById("lightbox").style.display = "flex";
+
     document.getElementById("lightboxImage").src = src;
 
 }
 
 
+/* CLOSE IMAGE */
+
 function closeImage() {
 
     document.getElementById("lightbox").style.display = "none";
+
     document.getElementById("lightboxImage").src = "";
 
 }
+
+
+/* COMMISSION */
+
+function openCommission(event) {
+
+    event.preventDefault();
+
+    document.getElementById("commissionPopup").style.display = "flex";
+
+}
+
+
+function closeCommission() {
+
+    document.getElementById("commissionPopup").style.display = "none";
+
+}
+
+
+/* ESC KEY */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeImage();
+        closeCommission();
+
+    }
+
+});
 
 </script>
 
