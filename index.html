@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +34,7 @@ body {
 
     padding: 25px 18px;
 }
+
 
 /* =========================
    BACKGROUND GLOW
@@ -70,6 +72,83 @@ body::after {
     animation-delay: 2s;
 }
 
+
+/* =========================
+   GLOWING PARTICLES
+========================= */
+
+.particle-field {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+
+    background: #ffd5f4;
+
+    box-shadow:
+        0 0 6px rgba(255,170,230,.95),
+        0 0 15px rgba(255,100,210,.75),
+        0 0 28px rgba(150,90,255,.35);
+
+    opacity: 0;
+    animation: particleFloat linear infinite;
+}
+
+.particle:nth-child(1)  { left: 5%;  top: 85%; animation-duration: 10s; animation-delay: -2s; }
+.particle:nth-child(2)  { left: 12%; top: 65%; animation-duration: 13s; animation-delay: -8s; }
+.particle:nth-child(3)  { left: 19%; top: 92%; animation-duration: 11s; animation-delay: -5s; }
+.particle:nth-child(4)  { left: 27%; top: 72%; animation-duration: 15s; animation-delay: -11s; }
+.particle:nth-child(5)  { left: 34%; top: 88%; animation-duration: 12s; animation-delay: -4s; }
+.particle:nth-child(6)  { left: 42%; top: 60%; animation-duration: 14s; animation-delay: -9s; }
+.particle:nth-child(7)  { left: 49%; top: 94%; animation-duration: 10s; animation-delay: -6s; }
+.particle:nth-child(8)  { left: 56%; top: 78%; animation-duration: 16s; animation-delay: -12s; }
+.particle:nth-child(9)  { left: 63%; top: 90%; animation-duration: 11s; animation-delay: -3s; }
+.particle:nth-child(10) { left: 70%; top: 68%; animation-duration: 14s; animation-delay: -7s; }
+.particle:nth-child(11) { left: 77%; top: 83%; animation-duration: 12s; animation-delay: -10s; }
+.particle:nth-child(12) { left: 84%; top: 58%; animation-duration: 15s; animation-delay: -5s; }
+.particle:nth-child(13) { left: 91%; top: 88%; animation-duration: 10s; animation-delay: -1s; }
+.particle:nth-child(14) { left: 97%; top: 70%; animation-duration: 13s; animation-delay: -9s; }
+.particle:nth-child(15) { left: 9%;  top: 40%; animation-duration: 17s; animation-delay: -13s; }
+.particle:nth-child(16) { left: 23%; top: 50%; animation-duration: 12s; animation-delay: -4s; }
+.particle:nth-child(17) { left: 38%; top: 35%; animation-duration: 15s; animation-delay: -8s; }
+.particle:nth-child(18) { left: 53%; top: 45%; animation-duration: 11s; animation-delay: -2s; }
+.particle:nth-child(19) { left: 68%; top: 30%; animation-duration: 16s; animation-delay: -10s; }
+.particle:nth-child(20) { left: 82%; top: 48%; animation-duration: 13s; animation-delay: -6s; }
+
+@keyframes particleFloat {
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 80px, 0) scale(.55);
+    }
+
+    12% {
+        opacity: .8;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate3d(25px, -45vh, 0) scale(1);
+    }
+
+    88% {
+        opacity: .55;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-20px, -105vh, 0) scale(.35);
+    }
+}
+
 @keyframes floatingGlow {
 
     from {
@@ -81,11 +160,17 @@ body::after {
     }
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
     width: 100%;
     max-width: 1150px;
     margin: auto;
 }
+
 
 /* =========================
    HEADER
@@ -127,6 +212,11 @@ body::after {
     }
 }
 
+
+/* =========================
+   ANIMATED BIO
+========================= */
+
 .subtitle {
     margin-top: 12px;
 
@@ -134,7 +224,39 @@ body::after {
 
     font-size: 17px;
     letter-spacing: 2px;
+
+    display: inline-block;
+    min-height: 1.5em;
 }
+
+.subtitle::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 5px;
+
+    color: #ff9ddd;
+
+    text-shadow:
+        0 0 10px rgba(255,100,210,.8);
+
+    animation: subtitleCursor .75s ease-in-out infinite;
+}
+
+@keyframes subtitleCursor {
+
+    0%, 45% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   GRADIENT LINE
+========================= */
 
 .gradient-line {
     width: 120px;
@@ -168,6 +290,7 @@ body::after {
     }
 }
 
+
 /* =========================
    ABOUT
 ========================= */
@@ -191,13 +314,129 @@ body::after {
         0 0 30px rgba(255,100,210,.06);
 }
 
+
+/* =========================
+   ANIMATED WELCOME TITLE
+========================= */
+
 .about h2 {
+    position: relative;
+    display: inline-block;
+
     color: #ffb6e7;
 
     margin-bottom: 12px;
 
     font-size: 26px;
+
+    background: linear-gradient(
+        90deg,
+        #ffb6e7,
+        #ffffff,
+        #d59cff,
+        #ffb6e7
+    );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 18px rgba(255,100,210,.18);
+
+    animation:
+        welcomeShine 4s linear infinite,
+        welcomeFloat 3s ease-in-out infinite;
 }
+
+.about h2::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: -30px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #ff9ddd;
+    -webkit-text-fill-color: #ff9ddd;
+
+    text-shadow:
+        0 0 8px rgba(255,120,215,.9),
+        0 0 20px rgba(180,90,255,.6);
+
+    animation:
+        welcomeSpark 1.8s ease-in-out infinite;
+}
+
+.about h2::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: -30px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #c794ff;
+    -webkit-text-fill-color: #c794ff;
+
+    text-shadow:
+        0 0 8px rgba(190,130,255,.9),
+        0 0 20px rgba(255,100,210,.5);
+
+    animation:
+        welcomeSpark 1.8s ease-in-out infinite reverse;
+}
+
+@keyframes welcomeShine {
+
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 250% center;
+    }
+}
+
+@keyframes welcomeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes welcomeSpark {
+
+    0%, 100% {
+        opacity: .45;
+
+        transform:
+            translateY(-50%)
+            scale(.8)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            scale(1.25)
+            rotate(180deg);
+    }
+}
+
 
 .about p {
     color: #bdb0c5;
@@ -227,6 +466,7 @@ body::after {
     box-shadow:
         0 0 15px rgba(255,100,210,.08);
 }
+
 
 /* =========================
    BUTTONS
@@ -275,7 +515,8 @@ body::after {
         0 0 15px rgba(255,100,210,.4),
         0 0 35px rgba(160,90,255,.18);
 
-    animation: buttonPulse 2.5s ease-in-out infinite alternate;
+    animation:
+        buttonPulse 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes buttonPulse {
@@ -300,6 +541,7 @@ body::after {
 .button:hover {
     transform: translateY(-4px) scale(1.03);
 }
+
 
 /* =========================
    FOLDERS
@@ -395,6 +637,7 @@ body::after {
     font-size: 14px;
 }
 
+
 /* =========================
    GALLERY
 ========================= */
@@ -455,6 +698,7 @@ body::after {
         0 0 20px rgba(255,100,210,.3);
 }
 
+
 /* =========================
    IMAGES
 ========================= */
@@ -500,7 +744,6 @@ body::after {
 
     transition: .45s;
 
-    /* IMAGE PROTECTION */
     user-select: none;
     -webkit-user-select: none;
 
@@ -510,6 +753,7 @@ body::after {
 .image-card:hover img {
     transform: scale(1.035);
 }
+
 
 /* =========================
    LIGHTBOX
@@ -567,6 +811,7 @@ body::after {
     color: #ff9ddd;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -586,6 +831,7 @@ body::after {
 .footer-name {
     color: #d6a5ca;
 }
+
 
 /* =========================
    TOP BUTTON
@@ -624,6 +870,7 @@ body::after {
     z-index: 1000;
 }
 
+
 /* =========================
    MOBILE
 ========================= */
@@ -656,6 +903,18 @@ body::after {
         padding: 20px 15px;
     }
 
+    .about h2 {
+        font-size: 22px;
+    }
+
+    .about h2::before {
+        left: -20px;
+    }
+
+    .about h2::after {
+        right: -20px;
+    }
+
     .folders {
         grid-template-columns: 1fr;
     }
@@ -682,11 +941,57 @@ body::after {
 
 }
 
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .particle,
+    .about h2 {
+        animation: none;
+    }
+
+}
+
 </style>
 </head>
 
 
 <body>
+
+
+<!-- =========================
+     GLOWING PARTICLES
+========================= -->
+
+<div class="particle-field" aria-hidden="true">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
 
 <div class="container">
 
@@ -701,9 +1006,7 @@ body::after {
         WOXIN
     </div>
 
-    <div class="subtitle">
-        VTuber • Design • 3D • Creative Work
-    </div>
+    <div class="subtitle" id="animatedBio"></div>
 
     <div class="gradient-line"></div>
 
@@ -885,7 +1188,6 @@ body::after {
 
 
 </div>
-
 </div>
 
 
@@ -922,9 +1224,9 @@ body::after {
 <div class="image-card">
 
 <img
-src="Chibi%20model.jpeg"
-alt="Chibi Model"
-onclick="showImage(this.src)"
+    src="Chibi%20model.jpeg"
+    alt="Chibi Model"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -933,9 +1235,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="model%201.jpeg"
-alt="Model 1"
-onclick="showImage(this.src)"
+    src="model%201.jpeg"
+    alt="Model 1"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -944,9 +1246,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Character.jpeg"
-alt="Character"
-onclick="showImage(this.src)"
+    src="Character.jpeg"
+    alt="Character"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -955,9 +1257,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%20model.jpeg"
-alt="VTuber Model"
-onclick="showImage(this.src)"
+    src="Vtuber%20model.jpeg"
+    alt="VTuber Model"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -966,9 +1268,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%2011.jpeg"
-alt="VTuber 11"
-onclick="showImage(this.src)"
+    src="Vtuber%2011.jpeg"
+    alt="VTuber 11"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -977,9 +1279,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%2010.jpeg"
-alt="VTuber 10"
-onclick="showImage(this.src)"
+    src="Vtuber%2010.jpeg"
+    alt="VTuber 10"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -988,9 +1290,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%209.jpeg"
-alt="VTuber 9"
-onclick="showImage(this.src)"
+    src="Vtuber%209.jpeg"
+    alt="VTuber 9"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -999,9 +1301,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%208.jpeg"
-alt="VTuber 8"
-onclick="showImage(this.src)"
+    src="Vtuber%208.jpeg"
+    alt="VTuber 8"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -1010,9 +1312,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%207.jpeg"
-alt="VTuber 7"
-onclick="showImage(this.src)"
+    src="Vtuber%207.jpeg"
+    alt="VTuber 7"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -1021,9 +1323,9 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%206%20.jpeg"
-alt="VTuber 6"
-onclick="showImage(this.src)"
+    src="Vtuber%206%20.jpeg"
+    alt="VTuber 6"
+    onclick="showImage(this.src)"
 >
 
 </div>
@@ -1032,16 +1334,15 @@ onclick="showImage(this.src)"
 <div class="image-card">
 
 <img
-src="Vtuber%205%20.jpeg"
-alt="VTuber 5"
-onclick="showImage(this.src)"
+    src="Vtuber%205%20.jpeg"
+    alt="VTuber 5"
+    onclick="showImage(this.src)"
 >
 
 </div>
 
 
 </div>
-
 </div>
 
 
@@ -1127,7 +1428,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1219,7 +1519,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1317,7 +1616,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1373,7 +1671,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1465,7 +1762,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1515,7 +1811,6 @@ onclick="showImage(this.src)">
 
 
 </div>
-
 </div>
 
 
@@ -1581,6 +1876,89 @@ onclick="showImage(this.src)">
 
 <script>
 
+
+/* =========================
+   ANIMATED BIO / TYPEWRITER
+========================= */
+
+const bioTexts = [
+    "VTuber • Design • 3D • Creative Work",
+    "VTuber Designs • Logos • Banners • Emotes",
+    "3D Art Rooms • Art Scenes • Stream Overlays"
+];
+
+const animatedBio = document.getElementById("animatedBio");
+
+let bioIndex = 0;
+let bioCharIndex = 0;
+let deletingBio = false;
+
+function animateBio() {
+
+    const currentText = bioTexts[bioIndex];
+
+    if (!deletingBio) {
+
+        animatedBio.textContent =
+            currentText.substring(
+                0,
+                bioCharIndex + 1
+            );
+
+        bioCharIndex++;
+
+        if (bioCharIndex === currentText.length) {
+
+            deletingBio = true;
+
+            setTimeout(
+                animateBio,
+                1800
+            );
+
+            return;
+        }
+
+        setTimeout(
+            animateBio,
+            70
+        );
+
+    } else {
+
+        animatedBio.textContent =
+            currentText.substring(
+                0,
+                bioCharIndex - 1
+            );
+
+        bioCharIndex--;
+
+        if (bioCharIndex === 0) {
+
+            deletingBio = false;
+
+            bioIndex =
+                (bioIndex + 1) % bioTexts.length;
+
+            setTimeout(
+                animateBio,
+                400
+            );
+
+            return;
+        }
+
+        setTimeout(
+            animateBio,
+            40
+        );
+    }
+}
+
+animateBio();
+
+
 /* =========================
    OPEN GALLERY
 ========================= */
@@ -1595,11 +1973,13 @@ function openGallery(name) {
 
     document.getElementById("homeFolders").style.display = "none";
 
-    document.querySelectorAll(".gallery").forEach(function(page) {
+    document
+        .querySelectorAll(".gallery")
+        .forEach(function(page) {
 
-        page.style.display = "none";
+            page.style.display = "none";
 
-    });
+        });
 
     document.getElementById(name).style.display = "block";
 
@@ -1613,11 +1993,13 @@ function openGallery(name) {
 
 function goHome() {
 
-    document.querySelectorAll(".gallery").forEach(function(page) {
+    document
+        .querySelectorAll(".gallery")
+        .forEach(function(page) {
 
-        page.style.display = "none";
+            page.style.display = "none";
 
-    });
+        });
 
     document.getElementById("home").style.display = "block";
 
@@ -1637,10 +2019,13 @@ function goHome() {
 
 function showImage(src) {
 
-    document.getElementById("lightbox").style.display = "flex";
+    document
+        .getElementById("lightbox")
+        .style.display = "flex";
 
-    document.getElementById("lightboxImage").src = src;
-
+    document
+        .getElementById("lightboxImage")
+        .src = src;
 }
 
 
@@ -1650,10 +2035,13 @@ function showImage(src) {
 
 function closeImage() {
 
-    document.getElementById("lightbox").style.display = "none";
+    document
+        .getElementById("lightbox")
+        .style.display = "none";
 
-    document.getElementById("lightboxImage").src = "";
-
+    document
+        .getElementById("lightboxImage")
+        .src = "";
 }
 
 
@@ -1661,22 +2049,24 @@ function closeImage() {
    TOP BUTTON
 ========================= */
 
-window.addEventListener("scroll", function() {
+window.addEventListener(
+    "scroll",
+    function() {
 
-    const button =
-        document.getElementById("topButton");
+        const button =
+            document.getElementById("topButton");
 
-    if (window.scrollY > 400) {
+        if (window.scrollY > 400) {
 
-        button.style.display = "flex";
+            button.style.display = "flex";
 
-    } else {
+        } else {
 
-        button.style.display = "none";
+            button.style.display = "none";
+        }
 
     }
-
-});
+);
 
 
 function goTop() {
@@ -1754,10 +2144,8 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-        /*
-         Ctrl + S
-         Save page
-        */
+
+        /* Ctrl + S */
 
         if (
             event.ctrlKey &&
@@ -1769,10 +2157,7 @@ document.addEventListener(
         }
 
 
-        /*
-         Ctrl + U
-         View source
-        */
+        /* Ctrl + U */
 
         if (
             event.ctrlKey &&
@@ -1784,10 +2169,7 @@ document.addEventListener(
         }
 
 
-        /*
-         Ctrl + Shift + I
-         Developer tools
-        */
+        /* Ctrl + Shift + I */
 
         if (
             event.ctrlKey &&
@@ -1800,10 +2182,7 @@ document.addEventListener(
         }
 
 
-        /*
-         Ctrl + Shift + J
-         Developer console
-        */
+        /* Ctrl + Shift + J */
 
         if (
             event.ctrlKey &&
@@ -1816,23 +2195,22 @@ document.addEventListener(
         }
 
 
-        /*
-         F12
-         Developer tools
-        */
+        /* F12 */
 
-        if (event.key === "F12") {
+        if (
+            event.key === "F12"
+        ) {
 
             event.preventDefault();
 
         }
 
 
-        /*
-         Escape closes image
-        */
+        /* Escape closes image */
 
-        if (event.key === "Escape") {
+        if (
+            event.key === "Escape"
+        ) {
 
             closeImage();
 
