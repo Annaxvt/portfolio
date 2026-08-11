@@ -27,11 +27,11 @@
 
 :root {
 
-    --bg: #050711;
-    --bg2: #080d1a;
+    --bg: #050712;
+    --bg2: #0a0f1e;
 
-    --panel: rgba(12, 17, 31, 0.82);
-    --panel2: rgba(17, 24, 43, 0.90);
+    --panel: rgba(12, 17, 32, 0.78);
+    --panel2: rgba(18, 25, 45, 0.90);
 
     --line: rgba(148, 163, 184, 0.16);
 
@@ -41,11 +41,10 @@
     --cyan: #59e7ff;
     --violet: #9b7cff;
     --pink: #ff6fba;
-
     --green: #63ff9c;
 
     --shadow:
-        0 24px 80px rgba(0,0,0,.42);
+        0 24px 80px rgba(0,0,0,.38);
 
 }
 
@@ -83,42 +82,43 @@ body {
         sans-serif;
 
     background:
+
         radial-gradient(
-            circle at 15% 10%,
-            rgba(89,231,255,.10),
-            transparent 25%
+            circle at 12% 8%,
+            rgba(89,231,255,.13),
+            transparent 27%
         ),
 
         radial-gradient(
-            circle at 85% 12%,
-            rgba(155,124,255,.13),
-            transparent 28%
+            circle at 88% 10%,
+            rgba(155,124,255,.16),
+            transparent 30%
         ),
 
         radial-gradient(
-            circle at 50% 55%,
-            rgba(89,231,255,.035),
+            circle at 50% 42%,
+            rgba(80,100,255,.045),
             transparent 35%
         ),
 
         radial-gradient(
-            circle at 80% 90%,
-            rgba(255,111,186,.08),
-            transparent 30%
+            circle at 45% 100%,
+            rgba(255,111,186,.10),
+            transparent 35%
         ),
 
         linear-gradient(
-            135deg,
-            #03050c 0%,
-            #070b16 45%,
-            #050812 100%
+            180deg,
+            #050712 0%,
+            #070b17 48%,
+            #050710 100%
         );
 
 }
 
 
 /* =========================================================
-   PROFESSIONAL BACKGROUND
+   PROFESSIONAL GRID BACKGROUND
    ========================================================= */
 
 body::before {
@@ -132,6 +132,8 @@ body::before {
     pointer-events: none;
 
     z-index: 0;
+
+    opacity: .24;
 
     background-image:
 
@@ -159,59 +161,8 @@ body::before {
 }
 
 
-/* Large atmospheric glow */
-
-body::after {
-
-    content: "";
-
-    position: fixed;
-
-    width: 650px;
-    height: 650px;
-
-    left: -250px;
-    top: 15%;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(89,231,255,.055),
-            transparent 68%
-        );
-
-    filter: blur(25px);
-
-    animation:
-        backgroundFloat 12s ease-in-out infinite alternate;
-
-}
-
-@keyframes backgroundFloat {
-
-    from {
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-
-    to {
-        transform:
-            translate3d(180px,80px,0)
-            scale(1.15);
-    }
-
-}
-
-
 /* =========================================================
-   BACKGROUND NOISE
+   NOISE
    ========================================================= */
 
 .noise {
@@ -240,43 +191,141 @@ body::after {
 
     position: fixed;
 
-    inset: -20%;
+    inset: -30%;
 
     z-index: 0;
 
     pointer-events: none;
 
     background:
+
         conic-gradient(
             from 180deg at 50% 50%,
             transparent,
-            rgba(89,231,255,.035),
+            rgba(89,231,255,.055),
             transparent,
-            rgba(155,124,255,.045),
+            rgba(155,124,255,.075),
             transparent,
-            rgba(255,111,186,.025),
+            rgba(255,111,186,.035),
             transparent
         );
 
-    filter: blur(60px);
+    filter: blur(65px);
 
     animation:
-        auroraSpin 30s linear infinite;
+        auroraSpin 28s linear infinite;
 
 }
 
 @keyframes auroraSpin {
 
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
 
 }
 
 
 /* =========================================================
-   GLOWING PARTICLES
+   LARGE GLOWING ORBS
+   ========================================================= */
+
+.glow-orb {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    filter: blur(80px);
+
+    opacity: .15;
+
+}
+
+.orb-one {
+
+    width: 260px;
+    height: 260px;
+
+    top: 15%;
+    left: -90px;
+
+    background: var(--cyan);
+
+    animation:
+        orbFloatOne 12s ease-in-out infinite;
+
+}
+
+.orb-two {
+
+    width: 300px;
+    height: 300px;
+
+    top: 55%;
+    right: -120px;
+
+    background: var(--violet);
+
+    animation:
+        orbFloatTwo 15s ease-in-out infinite;
+
+}
+
+.orb-three {
+
+    width: 220px;
+    height: 220px;
+
+    bottom: -80px;
+    left: 38%;
+
+    background: var(--pink);
+
+    opacity: .08;
+
+    animation:
+        orbFloatThree 17s ease-in-out infinite;
+
+}
+
+@keyframes orbFloatOne {
+
+    50% {
+        transform:
+            translate(70px, 80px)
+            scale(1.2);
+    }
+
+}
+
+@keyframes orbFloatTwo {
+
+    50% {
+        transform:
+            translate(-80px, -50px)
+            scale(1.15);
+    }
+
+}
+
+@keyframes orbFloatThree {
+
+    50% {
+        transform:
+            translate(30px, -70px)
+            scale(1.18);
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
    ========================================================= */
 
 .particles {
@@ -305,10 +354,11 @@ body::after {
     background: #c9f8ff;
 
     box-shadow:
-        0 0 14px var(--cyan);
+        0 0 8px var(--cyan),
+        0 0 18px var(--cyan);
 
     animation:
-        floatParticle 12s linear infinite;
+        floatParticle 14s linear infinite;
 
     opacity: 0;
 
@@ -374,6 +424,18 @@ body::after {
     animation-delay: -10s;
 }
 
+.p:nth-child(11) {
+    left: 17%;
+    top: 60%;
+    animation-delay: -12s;
+}
+
+.p:nth-child(12) {
+    left: 76%;
+    top: 55%;
+    animation-delay: -4s;
+}
+
 @keyframes floatParticle {
 
     0% {
@@ -383,23 +445,277 @@ body::after {
     }
 
     15% {
-        opacity: .8;
+        opacity: .65;
     }
 
     50% {
         opacity: 1;
+
         transform:
-            translate(25px,-50vh);
+            translate(25px, -50vh);
     }
 
     85% {
-        opacity: .3;
+        opacity: .25;
     }
 
     100% {
         opacity: 0;
+
         transform:
-            translate(-20px,-110vh);
+            translate(-20px, -110vh);
+    }
+
+}
+
+
+/* =========================================================
+   GLOWING BUTTERFLIES
+   ========================================================= */
+
+.butterflies {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+.butterfly {
+
+    position: absolute;
+
+    width: 34px;
+    height: 25px;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(89,231,255,.55)
+        );
+
+    animation:
+        butterflyFly 18s linear infinite;
+
+}
+
+.butterfly::before,
+.butterfly::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+
+    width: 17px;
+    height: 22px;
+
+    border-radius:
+        70% 20% 70% 20%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(89,231,255,.72),
+            rgba(155,124,255,.55)
+        );
+
+    box-shadow:
+        0 0 12px rgba(89,231,255,.38);
+
+    animation:
+        wingFlap .65s ease-in-out infinite alternate;
+
+}
+
+.butterfly::before {
+
+    left: 1px;
+
+    transform:
+        rotate(28deg);
+
+}
+
+.butterfly::after {
+
+    right: 1px;
+
+    transform:
+        scaleX(-1)
+        rotate(28deg);
+
+    animation-delay: -.2s;
+
+}
+
+.butterfly .body {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+    top: 4px;
+
+    width: 3px;
+    height: 19px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    box-shadow:
+        0 0 8px var(--cyan);
+
+}
+
+.butterfly:nth-child(1) {
+
+    left: -5%;
+
+    top: 26%;
+
+    animation-duration: 21s;
+
+    animation-delay: -4s;
+
+}
+
+.butterfly:nth-child(2) {
+
+    left: 28%;
+
+    top: 68%;
+
+    transform: scale(.7);
+
+    animation-duration: 24s;
+
+    animation-delay: -11s;
+
+}
+
+.butterfly:nth-child(3) {
+
+    left: 78%;
+
+    top: 22%;
+
+    transform: scale(.85);
+
+    animation-duration: 20s;
+
+    animation-delay: -15s;
+
+}
+
+.butterfly:nth-child(4) {
+
+    left: 100%;
+
+    top: 62%;
+
+    transform: scale(.62);
+
+    animation-duration: 23s;
+
+    animation-delay: -7s;
+
+}
+
+.butterfly:nth-child(5) {
+
+    left: 50%;
+
+    top: 38%;
+
+    transform: scale(.5);
+
+    animation-duration: 27s;
+
+    animation-delay: -19s;
+
+}
+
+@keyframes butterflyFly {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-40px, 40px)
+            rotate(-10deg);
+
+    }
+
+    10% {
+        opacity: .55;
+    }
+
+    30% {
+
+        transform:
+            translate(130px, -50px)
+            rotate(12deg);
+
+    }
+
+    55% {
+
+        transform:
+            translate(300px, 80px)
+            rotate(-8deg);
+
+    }
+
+    80% {
+
+        opacity: .35;
+
+        transform:
+            translate(520px, -90px)
+            rotate(15deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(760px, 50px)
+            rotate(-12deg);
+
+    }
+
+}
+
+@keyframes wingFlap {
+
+    from {
+        transform:
+            rotate(25deg)
+            scaleY(1);
+    }
+
+    to {
+        transform:
+            rotate(25deg)
+            scaleY(.65);
     }
 
 }
@@ -457,7 +773,7 @@ body::after {
         18px;
 
     background:
-        rgba(5,8,17,.70);
+        rgba(5,8,18,.70);
 
     backdrop-filter:
         blur(22px);
@@ -625,11 +941,13 @@ body::after {
 @keyframes pulseDot {
 
     50% {
+
         transform:
             scale(1.6);
 
         opacity:
             .5;
+
     }
 
 }
@@ -756,8 +1074,11 @@ body::after {
     display:
         inline-block;
 
-    width: 2px;
-    height: 16px;
+    width:
+        2px;
+
+    height:
+        16px;
 
     margin-left:
         5px;
@@ -783,7 +1104,7 @@ body::after {
 
 
 /* =========================================================
-   HEARTBEAT STATUS
+   HEART STATUS
    ========================================================= */
 
 .heart-status {
@@ -843,28 +1164,23 @@ body::after {
 
     0%,
     100% {
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     14% {
-        transform:
-            scale(1.28);
+        transform: scale(1.28);
     }
 
     28% {
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     42% {
-        transform:
-            scale(1.18);
+        transform: scale(1.18);
     }
 
     70% {
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
 }
@@ -1177,22 +1493,16 @@ body::after {
 
 }
 
-
-/* =========================================================
-   PORTFOLIO CARD
-   NO EMOJIS
-   ========================================================= */
-
 .folder {
 
     position:
         relative;
 
     min-height:
-        330px;
+        300px;
 
     padding:
-        0 24px 24px;
+        24px;
 
     overflow:
         hidden;
@@ -1227,10 +1537,10 @@ body::after {
 .folder-cover {
 
     height:
-        180px;
+        155px;
 
     margin:
-        0 -24px 22px;
+        -24px -24px 20px;
 
     position:
         relative;
@@ -1243,9 +1553,6 @@ body::after {
 
     background-position:
         center;
-
-    background-repeat:
-        no-repeat;
 
     border-bottom:
         1px solid var(--line);
@@ -1266,8 +1573,8 @@ body::after {
     background:
         linear-gradient(
             180deg,
-            rgba(5,8,17,.02),
-            rgba(5,8,17,.76)
+            rgba(7,9,18,.03),
+            rgba(7,9,18,.75)
         );
 
 }
@@ -1287,7 +1594,7 @@ body::after {
         linear-gradient(
             120deg,
             transparent 35%,
-            rgba(255,255,255,.17) 50%,
+            rgba(255,255,255,.18) 50%,
             transparent 65%
         );
 
@@ -1315,16 +1622,6 @@ body::after {
 }
 
 
-/* Zoom image on hover */
-
-.folder:hover .folder-cover {
-
-    background-size:
-        106%;
-
-}
-
-
 /* =========================================================
    PORTFOLIO TEXT
    ========================================================= */
@@ -1335,7 +1632,7 @@ body::after {
         relative;
 
     margin-top:
-        0;
+        10px;
 
     font-size:
         22px;
@@ -1362,15 +1659,21 @@ body::after {
     line-height:
         1.6;
 
+    padding-bottom:
+        35px;
+
 }
 
 .folder small {
 
-    display:
-        block;
+    position:
+        absolute;
 
-    margin-top:
-        18px;
+    bottom:
+        22px;
+
+    left:
+        24px;
 
     color:
         #718099;
@@ -1466,53 +1769,40 @@ body::after {
    REVIEWS
    ========================================================= */
 
-.reviews {
+.review-layout {
 
     display:
         grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        .75fr 1.25fr;
 
     gap:
-        14px;
+        18px;
 
 }
 
-.review-card {
+.review-info {
 
     padding:
-        28px;
-
-    transition:
-        .3s;
+        30px;
 
 }
 
-.review-card:hover {
+.review-info h3 {
 
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(89,231,255,.25);
+    margin-top:
+        8px;
 
 }
 
-.review-stars {
+.review-info p {
+
+    margin-top:
+        13px;
 
     color:
-        #ffd36e;
-
-    letter-spacing:
-        3px;
-
-}
-
-.review-card p {
-
-    color:
-        #aeb8ca;
+        var(--muted);
 
     line-height:
         1.75;
@@ -1520,40 +1810,276 @@ body::after {
     font-size:
         13px;
 
-    margin:
-        13px 0;
-
 }
 
-.review-author {
+.review-note {
 
     margin-top:
+        20px;
+
+    padding:
         16px;
 
-    color:
-        #dce4f2;
+    border:
+        1px solid var(--line);
 
-    font-weight:
-        800;
+    border-radius:
+        14px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:
+        #9ca9be;
 
     font-size:
         12px;
 
+    line-height:
+        1.7;
+
 }
 
-.review-author span {
+.review-form {
+
+    padding:
+        30px;
+
+}
+
+.review-form form {
+
+    display:
+        grid;
+
+    gap:
+        14px;
+
+}
+
+.review-form label {
 
     display:
         block;
 
     color:
-        #718099;
+        #dce4f2;
+
+    font-size:
+        11px;
 
     font-weight:
-        500;
+        800;
+
+    margin-bottom:
+        6px;
+
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(5,8,16,.75);
+
+    color:
+        #fff;
+
+    padding:
+        13px 14px;
+
+    outline:
+        none;
+
+    transition:
+        .25s;
+
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+
+    color:
+        #647086;
+
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+
+    border-color:
+        rgba(89,231,255,.45);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(89,231,255,.06);
+
+}
+
+.review-form textarea {
+
+    min-height:
+        145px;
+
+    resize:
+        vertical;
+
+}
+
+.star-rating {
+
+    display:
+        flex;
+
+    gap:
+        8px;
 
     margin-top:
         4px;
+
+}
+
+.star-rating button {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #5d6a80;
+
+    font-size:
+        20px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s;
+
+}
+
+.star-rating button:hover,
+.star-rating button.active {
+
+    color:
+        #ffd36e;
+
+    border-color:
+        rgba(255,211,110,.35);
+
+    background:
+        rgba(255,211,110,.06);
+
+    box-shadow:
+        0 0 18px rgba(255,211,110,.08);
+
+}
+
+.review-submit {
+
+    width:
+        100%;
+
+    border:
+        0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            #8179ff 55%,
+            var(--pink)
+        );
+
+    color:
+        #071019;
+
+    font-weight:
+        900;
+
+}
+
+.review-submit:disabled {
+
+    opacity:
+        .6;
+
+    cursor:
+        not-allowed;
+
+}
+
+.review-status {
+
+    display:
+        none;
+
+    padding:
+        14px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+}
+
+.review-status.success {
+
+    display:
+        block;
+
+    color:
+        #bfffd8;
+
+    background:
+        rgba(99,255,156,.06);
+
+    border:
+        1px solid rgba(99,255,156,.22);
+
+}
+
+.review-status.error {
+
+    display:
+        block;
+
+    color:
+        #ffd1df;
+
+    background:
+        rgba(255,80,130,.06);
+
+    border:
+        1px solid rgba(255,80,130,.22);
 
 }
 
@@ -1782,7 +2308,7 @@ body::after {
 
 
 /* =========================================================
-   REFERENCE LINK BOX
+   REFERENCE BOX
    ========================================================= */
 
 .reference-box {
@@ -2460,14 +2986,14 @@ body::after {
 
     }
 
-    .reviews {
+    .form-grid {
 
         grid-template-columns:
-            repeat(2,1fr);
+            1fr;
 
     }
 
-    .form-grid {
+    .review-layout {
 
         grid-template-columns:
             1fr;
@@ -2550,20 +3076,6 @@ body::after {
 
     }
 
-    .folder {
-
-        min-height:
-            315px;
-
-    }
-
-    .folder-cover {
-
-        height:
-            190px;
-
-    }
-
     .stats {
 
         grid-template-columns:
@@ -2578,13 +3090,6 @@ body::after {
 
         padding:
             20px;
-
-    }
-
-    .reviews {
-
-        grid-template-columns:
-            1fr;
 
     }
 
@@ -2620,6 +3125,13 @@ body::after {
 
         flex-direction:
             column;
+
+    }
+
+    .butterfly:nth-child(5) {
+
+        display:
+            none;
 
     }
 
@@ -2665,6 +3177,15 @@ body::after {
 
 <div class="aurora"></div>
 
+<div class="glow-orb orb-one"></div>
+
+<div class="glow-orb orb-two"></div>
+
+<div class="glow-orb orb-three"></div>
+
+
+<!-- PARTICLES -->
+
 <div class="particles" aria-hidden="true">
 
     <span class="p"></span>
@@ -2677,6 +3198,35 @@ body::after {
     <span class="p"></span>
     <span class="p"></span>
     <span class="p"></span>
+    <span class="p"></span>
+    <span class="p"></span>
+
+</div>
+
+
+<!-- GLOWING BUTTERFLIES -->
+
+<div class="butterflies" aria-hidden="true">
+
+    <div class="butterfly">
+        <span class="body"></span>
+    </div>
+
+    <div class="butterfly">
+        <span class="body"></span>
+    </div>
+
+    <div class="butterfly">
+        <span class="body"></span>
+    </div>
+
+    <div class="butterfly">
+        <span class="body"></span>
+    </div>
+
+    <div class="butterfly">
+        <span class="body"></span>
+    </div>
 
 </div>
 
@@ -2698,7 +3248,6 @@ body::after {
 
         <span>
             WOXIN
-
             <span style="color:#8d9bb2">
                 AUTOMATION
             </span>
@@ -2751,17 +3300,23 @@ body::after {
 
 
         <div class="welcome-line">
+
             Welcome to Woxin Automation
+
         </div>
 
 
         <h1 class="welcome-title">
+
             WOXIN
+
         </h1>
 
 
         <h2>
+
             AUTOMATION
+
         </h2>
 
 
@@ -3000,7 +3555,7 @@ body::after {
 
 
 <!-- =========================================================
-     REVIEWS
+     CLIENT REVIEWS
      ========================================================= -->
 
 <section class="section" id="reviews">
@@ -3014,98 +3569,188 @@ body::after {
             </div>
 
             <h3>
-                Made to leave an impression.
+                How was your experience?
             </h3>
 
         </div>
 
 
         <p>
-            Thoughtful communication,
-            clean execution and visuals clients
-            are proud to share.
+            If you've worked with Woxin Automation,
+            share your honest experience and tell us
+            how you felt about the final work.
         </p>
 
     </div>
 
 
-    <div class="reviews">
+    <div class="review-layout">
 
 
-        <div class="glass review-card">
+        <!-- REVIEW INFORMATION -->
 
-            <div class="review-stars">
-                ★★★★★
+        <div class="glass review-info">
+
+            <div class="kicker">
+                YOUR FEEDBACK MATTERS
             </div>
 
+
+            <h3>
+                Tell us how the work went.
+            </h3>
+
+
             <p>
-                “The final result felt exactly like my vision,
-                but more polished. The communication and
-                attention to detail were amazing.”
+                Your honest feedback helps us improve
+                and helps future clients understand
+                what it is like to work with Woxin Automation.
             </p>
 
-            <div class="review-author">
 
-                VTuber Client
+            <div class="review-note">
 
-                <span>
-                    VTuber Design Project
-                </span>
+                ⭐ Give a rating and write your honest review.
+
+                <br><br>
+
+                Please tell us what you liked,
+                what could be improved,
+                and how you felt about the final result.
 
             </div>
 
         </div>
 
 
-        <div class="glass review-card">
+        <!-- REVIEW FORM -->
 
-            <div class="review-stars">
-                ★★★★★
-            </div>
+        <div class="glass review-form">
 
-            <p>
-                “The branding came together beautifully.
-                Everything felt consistent and professional
-                across my stream and socials.”
-            </p>
+            <form
+                id="reviewForm"
+                action="https://formspree.io/f/xaewoayq"
+                method="POST"
+            >
 
-            <div class="review-author">
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Woxin Automation Client Review"
+                >
 
-                Creator Client
 
-                <span>
-                    Branding & Stream Graphics
-                </span>
+                <div>
 
-            </div>
+                    <label for="reviewName">
+                        Your Name
+                    </label>
+
+                    <input
+                        id="reviewName"
+                        name="review_name"
+                        type="text"
+                        placeholder="Your name or creator name"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        How would you rate the work?
+                    </label>
+
+
+                    <div class="star-rating">
+
+                        <button
+                            type="button"
+                            data-rating="1"
+                            aria-label="1 star"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="2"
+                            aria-label="2 stars"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="3"
+                            aria-label="3 stars"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="4"
+                            aria-label="4 stars"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="5"
+                            aria-label="5 stars"
+                        >
+                            ★
+                        </button>
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        id="reviewRating"
+                        name="rating"
+                        value=""
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label for="reviewMessage">
+                        Your Review
+                    </label>
+
+                    <textarea
+                        id="reviewMessage"
+                        name="review"
+                        required
+                        placeholder="How did you like the work? How was the communication? Tell us honestly about your experience..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    class="btn review-submit"
+                    id="reviewSubmit"
+                    type="submit"
+                >
+                    Submit My Review ↗
+                </button>
+
+
+                <div
+                    class="review-status"
+                    id="reviewStatus"
+                ></div>
+
+            </form>
 
         </div>
-
-
-        <div class="glass review-card">
-
-            <div class="review-stars">
-                ★★★★★
-            </div>
-
-            <p>
-                “Creative, responsive and easy to work with.
-                The artwork gave my project a completely
-                different level of personality.”
-            </p>
-
-            <div class="review-author">
-
-                Creative Client
-
-                <span>
-                    Art & Creative Scene
-                </span>
-
-            </div>
-
-        </div>
-
 
     </div>
 
@@ -3134,7 +3779,7 @@ body::after {
 
 
         <p>
-            Send your project details,
+            Send your project details, budget,
             deadline and reference links directly
             to Woxin Automation.
         </p>
@@ -3235,7 +3880,7 @@ body::after {
         </div>
 
 
-        <!-- FORM -->
+        <!-- COMMISSION FORM -->
 
         <div class="glass commission-form">
 
@@ -3516,7 +4161,6 @@ body::after {
 
                         </div>
 
-
                     </div>
 
                 </div>
@@ -3684,9 +4328,11 @@ body::after {
 
 const galleries = {
 
+
     vtuber: {
 
-        title: "VTuber",
+        title:
+            "VTuber",
 
         desc:
             "Character and VTuber design work",
@@ -3712,7 +4358,8 @@ const galleries = {
 
     logo: {
 
-        title: "Logo",
+        title:
+            "Logo",
 
         desc:
             "Identity and logo design collection",
@@ -3736,7 +4383,8 @@ const galleries = {
 
     banner: {
 
-        title: "Banner",
+        title:
+            "Banner",
 
         desc:
             "Social and streaming banner designs",
@@ -3761,7 +4409,8 @@ const galleries = {
 
     emotes: {
 
-        title: "Emotes",
+        title:
+            "Emotes",
 
         desc:
             "Stream and VTuber emote designs",
@@ -3787,7 +4436,8 @@ const galleries = {
 
     art3d: {
 
-        title: "3D Art Room",
+        title:
+            "3D Art Room",
 
         desc:
             "3D room and environment designs",
@@ -3806,7 +4456,8 @@ const galleries = {
 
     artscene: {
 
-        title: "Art Scene",
+        title:
+            "Art Scene",
 
         desc:
             "Creative scene and environment work",
@@ -3831,7 +4482,8 @@ const galleries = {
 
     overlay: {
 
-        title: "Overlay",
+        title:
+            "Overlay",
 
         desc:
             "Streaming and broadcast overlay designs",
@@ -3849,7 +4501,8 @@ const galleries = {
 
     vtuberid: {
 
-        title: "VTuber ID Card",
+        title:
+            "VTuber ID Card",
 
         desc:
             "VTuber profile and ID card designs",
@@ -3868,7 +4521,8 @@ const galleries = {
 
     vtuber3d: {
 
-        title: "3D VTuber Model",
+        title:
+            "3D VTuber Model",
 
         desc:
             "3D VTuber model showcases",
@@ -3889,7 +4543,6 @@ const galleries = {
 
 /* =========================================================
    CREATE PORTFOLIO FOLDERS
-   NO EMOJIS
    ========================================================= */
 
 const folders =
@@ -3897,7 +4550,8 @@ const folders =
 
 
 Object.entries(galleries).forEach(
-    ([key, gallery]) => {
+    ([key, gallery], index) => {
+
 
         const card =
             document.createElement("article");
@@ -3933,6 +4587,8 @@ Object.entries(galleries).forEach(
 
 
             <small>
+                ${String(index + 1).padStart(2, "0")}
+                /
                 ${gallery.images.length}
                 projects
             </small>
@@ -4092,6 +4748,7 @@ function typeAnimation() {
 
     if (!deletingText) {
 
+
         typed.textContent =
             currentLine.substring(
                 0,
@@ -4129,6 +4786,7 @@ function typeAnimation() {
     }
 
     else {
+
 
         typed.textContent =
             currentLine.substring(
@@ -4305,8 +4963,12 @@ topButton.addEventListener(
     function() {
 
         window.scrollTo({
+
             top: 0,
-            behavior: "smooth"
+
+            behavior:
+                "smooth"
+
         });
 
     }
@@ -4351,6 +5013,7 @@ commissionForm.addEventListener(
     "submit",
     async function(event) {
 
+
         event.preventDefault();
 
 
@@ -4382,6 +5045,7 @@ commissionForm.addEventListener(
 
         try {
 
+
             const response =
                 await fetch(
                     commissionForm.action,
@@ -4408,6 +5072,7 @@ commissionForm.addEventListener(
                 response.ok
             ) {
 
+
                 formStatus.className =
                     "form-status success";
 
@@ -4420,19 +5085,26 @@ commissionForm.addEventListener(
 
 
                 formStatus.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
+
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "center"
+
                 });
 
             }
 
             else {
 
+
                 let errorMessage =
                     "Something went wrong while sending the form. Please try again.";
 
 
                 try {
+
 
                     const data =
                         await response.json();
@@ -4477,6 +5149,7 @@ commissionForm.addEventListener(
             error
         ) {
 
+
             formStatus.className =
                 "form-status error";
 
@@ -4489,6 +5162,7 @@ commissionForm.addEventListener(
 
         finally {
 
+
             submitButton.disabled =
                 false;
 
@@ -4499,7 +5173,282 @@ commissionForm.addEventListener(
         }
 
     }
+);
 
+
+/* =========================================================
+   CLIENT REVIEW SYSTEM
+   ========================================================= */
+
+const reviewForm =
+    document.getElementById(
+        "reviewForm"
+    );
+
+
+const reviewSubmit =
+    document.getElementById(
+        "reviewSubmit"
+    );
+
+
+const reviewStatus =
+    document.getElementById(
+        "reviewStatus"
+    );
+
+
+const reviewRating =
+    document.getElementById(
+        "reviewRating"
+    );
+
+
+const ratingButtons =
+    document.querySelectorAll(
+        ".star-rating button"
+    );
+
+
+/* STAR SELECTION */
+
+ratingButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+
+                const rating =
+                    Number(
+                        this.dataset.rating
+                    );
+
+
+                reviewRating.value =
+                    rating;
+
+
+                ratingButtons.forEach(
+                    star => {
+
+                        const starRating =
+                            Number(
+                                star.dataset.rating
+                            );
+
+
+                        if (
+                            starRating <= rating
+                        ) {
+
+                            star.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                        else {
+
+                            star.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* REVIEW SUBMISSION */
+
+reviewForm.addEventListener(
+    "submit",
+    async function(event) {
+
+
+        event.preventDefault();
+
+
+        reviewStatus.className =
+            "review-status";
+
+
+        reviewStatus.textContent =
+            "";
+
+
+        if (
+            !reviewRating.value
+        ) {
+
+            reviewStatus.className =
+                "review-status error";
+
+
+            reviewStatus.textContent =
+                "✕ Please select a star rating before submitting your review.";
+
+
+            return;
+
+        }
+
+
+        reviewSubmit.disabled =
+            true;
+
+
+        reviewSubmit.textContent =
+            "Submitting Review...";
+
+
+        const reviewData =
+            new FormData(
+                reviewForm
+            );
+
+
+        try {
+
+
+            const response =
+                await fetch(
+                    reviewForm.action,
+                    {
+
+                        method:
+                            "POST",
+
+                        body:
+                            reviewData,
+
+                        headers: {
+
+                            Accept:
+                                "application/json"
+
+                        }
+
+                    }
+                );
+
+
+            if (
+                response.ok
+            ) {
+
+
+                reviewStatus.className =
+                    "review-status success";
+
+
+                reviewStatus.textContent =
+                    "✓ Thank you for your honest review! Your feedback has been submitted successfully.";
+
+
+                reviewForm.reset();
+
+
+                reviewRating.value =
+                    "";
+
+
+                ratingButtons.forEach(
+                    star => {
+
+                        star.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            }
+
+            else {
+
+
+                let errorMessage =
+                    "Something went wrong while submitting your review.";
+
+
+                try {
+
+                    const data =
+                        await response.json();
+
+
+                    if (
+                        data &&
+                        data.errors &&
+                        data.errors.length
+                    ) {
+
+                        errorMessage =
+                            data.errors
+                                .map(
+                                    error =>
+                                        error.message
+                                )
+                                .join(", ");
+
+                    }
+
+                }
+
+                catch (
+                    ignored
+                ) {}
+
+
+                reviewStatus.className =
+                    "review-status error";
+
+
+                reviewStatus.textContent =
+                    "✕ " +
+                    errorMessage;
+
+            }
+
+        }
+
+        catch (
+            error
+        ) {
+
+
+            reviewStatus.className =
+                "review-status error";
+
+
+            reviewStatus.textContent =
+                "✕ Unable to submit the review right now. Please try again.";
+
+        }
+
+
+        finally {
+
+
+            reviewSubmit.disabled =
+                false;
+
+
+            reviewSubmit.textContent =
+                "Submit My Review ↗";
+
+        }
+
+    }
 );
 
 </script>
