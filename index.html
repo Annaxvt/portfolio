@@ -121,14 +121,6 @@ h1 {
     box-shadow: 0 10px 30px rgba(255,157,221,.18);
 }
 
-.empty {
-    color: #b8aabd;
-    font-size: 18px;
-    padding: 50px;
-    border: 2px dashed #4b3858;
-    border-radius: 20px;
-}
-
 @media (max-width: 800px) {
     .folders {
         grid-template-columns: repeat(2, 1fr);
@@ -190,10 +182,10 @@ h1 {
 
         <div class="folder" onclick="openGallery('art3d')">
             <div class="icon">📁</div>
-            <h2>3D Art</h2>
+            <h2>3D Art Room</h2>
         </div>
 
-        <div class="folder" onclick="openGallery('room')">
+        <div class="folder" onclick="openGallery('artscene')">
             <div class="icon">📁</div>
             <h2>Art Scene</h2>
         </div>
@@ -314,16 +306,21 @@ h1 {
 </div>
 
 
-<!-- 3D ART -->
+<!-- 3D ART ROOM -->
 
 <div id="art3d" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>3D Art</h2>
+    <h2>3D Art Room</h2>
 
-    <div class="empty">
-        Your 3D artwork will appear here.
+    <div class="images">
+
+        <img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1">
+        <img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2">
+        <img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3">
+        <img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4">
+
     </div>
 
 </div>
@@ -331,14 +328,25 @@ h1 {
 
 <!-- ART SCENE -->
 
-<div id="room" class="gallery">
+<div id="artscene" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
 
     <h2>Art Scene</h2>
 
-    <div class="empty">
-        Your art scenes and environments will appear here.
+    <div class="images">
+
+        <img src="Artscene%201.jpeg" alt="Art Scene 1">
+        <img src="Artscene%202.jpeg" alt="Art Scene 2">
+        <img src="Artscene%203.jpeg" alt="Art Scene 3">
+        <img src="Artscene%204.jpeg" alt="Art Scene 4">
+        <img src="Artscene%205.jpeg" alt="Art Scene 5">
+        <img src="Artscene%206.jpeg" alt="Art Scene 6">
+        <img src="Artscene%207.jpeg" alt="Art Scene 7">
+        <img src="Artscene%208.jpeg" alt="Art Scene 8">
+        <img src="Artscene%209.jpeg" alt="Art Scene 9">
+        <img src="Artscene%2010.jpeg" alt="Art Scene 10">
+
     </div>
 
 </div>
