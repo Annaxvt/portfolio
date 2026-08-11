@@ -15,16 +15,15 @@
 
 /* =========================================================
    WOXIN AUTOMATION
-   COMPLETE PORTFOLIO WEBSITE
-   SERVICES SECTION REMOVED
+   PREMIUM FUTURISTIC BACKGROUND VERSION
    ========================================================= */
 
 :root {
-    --bg: #070912;
-    --bg2: #0b1020;
+    --bg: #050711;
+    --bg2: #080c18;
 
-    --panel: rgba(15, 20, 35, 0.76);
-    --panel2: rgba(19, 26, 46, 0.88);
+    --panel: rgba(13, 18, 32, 0.76);
+    --panel2: rgba(18, 25, 44, 0.88);
 
     --line: rgba(148, 163, 184, 0.16);
 
@@ -34,12 +33,12 @@
     --cyan: #59e7ff;
     --violet: #9b7cff;
     --pink: #ff6fba;
-
     --green: #63ff9c;
 
     --shadow:
         0 24px 80px rgba(0,0,0,.38);
 }
+
 
 /* =========================================================
    RESET
@@ -73,40 +72,279 @@ body {
 
     background:
         radial-gradient(
-            circle at 15% 5%,
+            circle at 12% 10%,
             rgba(89,231,255,.10),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(155,124,255,.12),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(255,111,186,.06),
             transparent 28%
         ),
 
-        radial-gradient(
-            circle at 90% 12%,
-            rgba(155,124,255,.14),
-            transparent 30%
-        ),
+        linear-gradient(
+            135deg,
+            #03050c 0%,
+            #070a14 45%,
+            #050711 100%
+        );
 
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(255,111,186,.08),
-            transparent 32%
-        ),
-
-        var(--bg);
+    position: relative;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
 
 /* =========================================================
-   BACKGROUND NOISE
+   PREMIUM BACKGROUND SYSTEM
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            rgba(0,0,0,.65),
+            transparent
+        );
+
+    opacity: .45;
+
+    animation:
+        gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+
+    from {
+        transform:
+            translate3d(0,0,0);
+    }
+
+    to {
+        transform:
+            translate3d(70px,70px,0);
+    }
+}
+
+
+/* =========================================================
+   AMBIENT GLOW ORBS
+   ========================================================= */
+
+.background-orbs {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: .20;
+
+    mix-blend-mode: screen;
+}
+
+.orb-1 {
+    width: 380px;
+    height: 380px;
+
+    left: -120px;
+    top: 8%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(89,231,255,.65),
+            transparent 70%
+        );
+
+    animation:
+        orbFloat1 15s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 450px;
+    height: 450px;
+
+    right: -160px;
+    top: 18%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(155,124,255,.65),
+            transparent 70%
+        );
+
+    animation:
+        orbFloat2 19s ease-in-out infinite;
+}
+
+.orb-3 {
+    width: 330px;
+    height: 330px;
+
+    left: 35%;
+    bottom: -150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,111,186,.45),
+            transparent 70%
+        );
+
+    animation:
+        orbFloat3 17s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(90px,60px)
+            scale(1.15);
+    }
+}
+
+@keyframes orbFloat2 {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-100px,80px)
+            scale(1.12);
+    }
+}
+
+@keyframes orbFloat3 {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(50px,-90px)
+            scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   SCAN LIGHT
+   ========================================================= */
+
+.scan-light {
+    position: fixed;
+    left: -20%;
+    top: -30%;
+
+    width: 35%;
+    height: 170%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(89,231,255,.035),
+            rgba(155,124,255,.045),
+            transparent
+        );
+
+    transform:
+        rotate(18deg);
+
+    filter:
+        blur(12px);
+
+    animation:
+        scanMove 14s ease-in-out infinite;
+}
+
+@keyframes scanMove {
+
+    0% {
+        left: -35%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: .8;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   NOISE
    ========================================================= */
 
 .noise {
@@ -115,13 +353,14 @@ select {
 
     pointer-events: none;
 
-    opacity: .035;
+    opacity: .028;
 
-    z-index: 0;
+    z-index: 2;
 
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
+
 
 /* =========================================================
    AURORA
@@ -129,7 +368,7 @@ select {
 
 .aurora {
     position: fixed;
-    inset: -20%;
+    inset: -25%;
 
     z-index: 0;
 
@@ -139,25 +378,32 @@ select {
         conic-gradient(
             from 180deg at 50% 50%,
             transparent,
-            rgba(89,231,255,.04),
+            rgba(89,231,255,.045),
             transparent,
-            rgba(155,124,255,.05),
+            rgba(155,124,255,.055),
+            transparent,
+            rgba(255,111,186,.035),
             transparent
         );
 
-    filter: blur(50px);
+    filter:
+        blur(65px);
 
-    animation: auroraSpin 25s linear infinite;
+    animation:
+        auroraSpin 28s linear infinite;
 }
 
 @keyframes auroraSpin {
+
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 }
 
+
 /* =========================================================
-   GLOWING PARTICLES
+   PARTICLES
    ========================================================= */
 
 .particles {
@@ -168,7 +414,7 @@ select {
 
     pointer-events: none;
 
-    z-index: 1;
+    z-index: 3;
 }
 
 .p {
@@ -251,9 +497,11 @@ select {
 }
 
 @keyframes floatParticle {
+
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform:
+            translateY(40px);
     }
 
     15% {
@@ -262,8 +510,9 @@ select {
 
     50% {
         opacity: 1;
+
         transform:
-            translate(25px, -50vh);
+            translate(25px,-50vh);
     }
 
     85% {
@@ -272,10 +521,12 @@ select {
 
     100% {
         opacity: 0;
+
         transform:
-            translate(-20px, -110vh);
+            translate(-20px,-110vh);
     }
 }
+
 
 /* =========================================================
    MAIN WRAPPER
@@ -284,7 +535,7 @@ select {
 .wrap {
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
     width:
         min(
@@ -294,6 +545,7 @@ select {
 
     margin: auto;
 }
+
 
 /* =========================================================
    NAVIGATION
@@ -331,6 +583,7 @@ select {
 
     box-shadow:
         0 10px 40px rgba(0,0,0,.18);
+
 }
 
 .brand {
@@ -379,13 +632,15 @@ select {
     padding:
         10px 13px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
     font-size: 13px;
 
     border-radius: 11px;
 
-    transition: .25s;
+    transition:
+        .25s;
 }
 
 .navlinks a:hover {
@@ -394,6 +649,7 @@ select {
     background:
         rgba(255,255,255,.06);
 }
+
 
 /* =========================================================
    HERO
@@ -410,6 +666,7 @@ select {
 
     padding:
         90px 0 70px;
+
 }
 
 .eyebrow {
@@ -457,9 +714,13 @@ select {
 }
 
 @keyframes pulseDot {
+
     50% {
-        transform: scale(1.6);
-        opacity: .5;
+        transform:
+            scale(1.6);
+
+        opacity:
+            .5;
     }
 }
 
@@ -479,6 +740,7 @@ select {
 }
 
 @keyframes welcomeGlow {
+
     50% {
         text-shadow:
             0 0 22px rgba(89,231,255,.25),
@@ -525,6 +787,7 @@ select {
 }
 
 @keyframes titleGlow {
+
     50% {
         filter:
             drop-shadow(
@@ -538,7 +801,8 @@ select {
     font-size:
         clamp(18px,2.4vw,29px);
 
-    font-weight: 500;
+    font-weight:
+        500;
 
     color:
         #d7deee;
@@ -556,7 +820,8 @@ select {
     color:
         #8fdfff;
 
-    font-size: 15px;
+    font-size:
+        15px;
 }
 
 .cursor {
@@ -578,13 +843,16 @@ select {
 }
 
 @keyframes blinkCursor {
+
     50% {
-        opacity: 0;
+        opacity:
+            0;
     }
 }
 
+
 /* =========================================================
-   HEARTBEAT STATUS
+   HEART STATUS
    ========================================================= */
 
 .heart-status {
@@ -594,9 +862,11 @@ select {
     display:
         inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 10px;
+    gap:
+        10px;
 
     padding:
         11px 17px;
@@ -621,7 +891,8 @@ select {
 }
 
 .heart-status .heart {
-    display: inline-block;
+    display:
+        inline-block;
 
     animation:
         heartBeat 1.15s infinite;
@@ -634,27 +905,34 @@ select {
 }
 
 @keyframes heartBeat {
+
     0%,
     100% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
     14% {
-        transform: scale(1.28);
+        transform:
+            scale(1.28);
     }
 
     28% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
     42% {
-        transform: scale(1.18);
+        transform:
+            scale(1.18);
     }
 
     70% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 }
+
 
 /* =========================================================
    BUTTONS
@@ -667,7 +945,8 @@ select {
     justify-content:
         center;
 
-    gap: 12px;
+    gap:
+        12px;
 
     flex-wrap:
         wrap;
@@ -677,11 +956,14 @@ select {
 }
 
 .btn {
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
     padding:
         13px 20px;
@@ -735,6 +1017,7 @@ select {
         0 12px 35px
         rgba(89,231,255,.16);
 }
+
 
 /* =========================================================
    SECTIONS
@@ -801,6 +1084,7 @@ select {
         14px;
 }
 
+
 /* =========================================================
    GLASS
    ========================================================= */
@@ -825,6 +1109,7 @@ select {
     backdrop-filter:
         blur(18px);
 }
+
 
 /* =========================================================
    ABOUT
@@ -904,8 +1189,9 @@ select {
         13px;
 }
 
+
 /* =========================================================
-   PORTFOLIO FOLDERS
+   PORTFOLIO
    ========================================================= */
 
 .work-grid {
@@ -950,6 +1236,7 @@ select {
         0 25px 70px rgba(0,0,0,.42),
         0 0 35px rgba(89,231,255,.06);
 }
+
 
 /* =========================================================
    FOLDER IMAGE COVER
@@ -1022,6 +1309,7 @@ select {
 }
 
 @keyframes coverShine {
+
     0% {
         transform:
             translateX(-120%);
@@ -1158,6 +1446,7 @@ select {
         uppercase;
 }
 
+
 /* =========================================================
    AVAILABILITY
    ========================================================= */
@@ -1223,6 +1512,7 @@ select {
     animation:
         heartBeat 1.15s ease-in-out infinite;
 }
+
 
 /* =========================================================
    REVIEWS
@@ -1304,6 +1594,7 @@ select {
     margin-top:
         4px;
 }
+
 
 /* =========================================================
    COMMISSION AREA
@@ -1493,8 +1784,9 @@ select {
         vertical;
 }
 
+
 /* =========================================================
-   REFERENCE LINK BOX
+   REFERENCE BOX
    ========================================================= */
 
 .reference-box {
@@ -1615,6 +1907,7 @@ select {
         #fff;
 }
 
+
 /* =========================================================
    FORM BUTTON
    ========================================================= */
@@ -1651,6 +1944,7 @@ select {
     transform:
         none;
 }
+
 
 /* =========================================================
    FORM STATUS
@@ -1703,6 +1997,7 @@ select {
     border:
         1px solid rgba(255,80,130,.22);
 }
+
 
 /* =========================================================
    GALLERY
@@ -1853,6 +2148,7 @@ select {
         scale(1.035);
 }
 
+
 /* =========================================================
    LIGHTBOX
    ========================================================= */
@@ -1950,6 +2246,7 @@ select {
         rgba(255,255,255,.05);
 }
 
+
 /* =========================================================
    CONTACT CTA
    ========================================================= */
@@ -1997,6 +2294,7 @@ select {
         1.7;
 }
 
+
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -2019,6 +2317,7 @@ select {
     color:
         #b9c4d6;
 }
+
 
 /* =========================================================
    TOP BUTTON
@@ -2073,6 +2372,7 @@ select {
         center;
 }
 
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -2099,6 +2399,7 @@ select {
             1fr;
     }
 }
+
 
 @media (max-width: 620px) {
 
@@ -2197,7 +2498,29 @@ select {
         flex-direction:
             column;
     }
+
+    .orb-1 {
+        width:
+            260px;
+
+        height:
+            260px;
+    }
+
+    .orb-2 {
+        width:
+            300px;
+
+        height:
+            300px;
+    }
+
+    body::before {
+        background-size:
+            48px 48px;
+    }
 }
+
 
 /* =========================================================
    ACCESSIBILITY
@@ -2222,15 +2545,30 @@ select {
 </style>
 </head>
 
+
 <body>
 
 <!-- =========================================================
-     BACKGROUND
+     PREMIUM BACKGROUND
      ========================================================= -->
+
+<div class="background-orbs" aria-hidden="true">
+
+    <div class="orb orb-1"></div>
+
+    <div class="orb orb-2"></div>
+
+    <div class="orb orb-3"></div>
+
+</div>
+
+
+<div class="scan-light" aria-hidden="true"></div>
 
 <div class="noise"></div>
 
 <div class="aurora"></div>
+
 
 <div class="particles" aria-hidden="true">
 
@@ -2247,7 +2585,9 @@ select {
 
 </div>
 
+
 <div class="wrap">
+
 
 <!-- =========================================================
      NAVIGATION
@@ -2269,6 +2609,7 @@ select {
         </span>
 
     </a>
+
 
     <div class="navlinks">
 
@@ -2292,7 +2633,9 @@ select {
 
 </nav>
 
+
 <main id="main">
+
 
 <!-- =========================================================
      HERO
@@ -2310,17 +2653,21 @@ select {
 
         </div>
 
+
         <div class="welcome-line">
             Welcome to Woxin Automation
         </div>
+
 
         <h1 class="welcome-title">
             WOXIN
         </h1>
 
+
         <h2>
             AUTOMATION
         </h2>
+
 
         <div class="type">
 
@@ -2329,6 +2676,7 @@ select {
             <span class="cursor"></span>
 
         </div>
+
 
         <div class="heart-status">
 
@@ -2340,6 +2688,7 @@ select {
 
         </div>
 
+
         <div class="hero-actions">
 
             <a
@@ -2350,6 +2699,7 @@ select {
             >
                 Start a Project ↗
             </a>
+
 
             <a
                 class="btn"
@@ -2363,6 +2713,7 @@ select {
     </div>
 
 </section>
+
 
 <!-- =========================================================
      ABOUT
@@ -2385,6 +2736,7 @@ select {
 
         </div>
 
+
         <p>
             Woxin Automation is a modern technology and creative company
             combining automation, digital solutions and high-quality design
@@ -2393,7 +2745,9 @@ select {
 
     </div>
 
+
     <div class="about">
+
 
         <div class="glass about-copy">
 
@@ -2401,11 +2755,13 @@ select {
                 WOXIN AUTOMATION
             </div>
 
+
             <p>
                 Woxin Automation brings together creative design,
                 digital solutions and modern technology to turn ideas
                 into professional, memorable digital experiences.
             </p>
+
 
             <p>
                 We specialize in VTuber designs, logos, banners,
@@ -2413,12 +2769,14 @@ select {
                 creative scenes, branding and custom digital assets.
             </p>
 
+
             <p>
                 Our approach is simple:
                 understand the vision,
                 refine the details and create work
                 that feels unique to the client.
             </p>
+
 
             <p>
                 <strong>
@@ -2429,6 +2787,7 @@ select {
             </p>
 
         </div>
+
 
         <div class="glass stats">
 
@@ -2444,6 +2803,7 @@ select {
 
             </div>
 
+
             <div class="stat">
 
                 <b>
@@ -2456,6 +2816,7 @@ select {
 
             </div>
 
+
             <div class="stat">
 
                 <b>
@@ -2467,6 +2828,7 @@ select {
                 </span>
 
             </div>
+
 
             <div class="stat">
 
@@ -2485,6 +2847,7 @@ select {
     </div>
 
 </section>
+
 
 <!-- =========================================================
      PORTFOLIO
@@ -2506,6 +2869,7 @@ select {
 
         </div>
 
+
         <p>
             Choose a category to explore the work.
             Every collection opens in a dedicated gallery.
@@ -2513,10 +2877,12 @@ select {
 
     </div>
 
+
     <div
         class="work-grid"
         id="folders"
     ></div>
+
 
     <div class="availability">
 
@@ -2535,6 +2901,7 @@ select {
     </div>
 
 </section>
+
 
 <!-- =========================================================
      REVIEWS
@@ -2556,6 +2923,7 @@ select {
 
         </div>
 
+
         <p>
             Thoughtful communication,
             clean execution and visuals clients
@@ -2564,7 +2932,9 @@ select {
 
     </div>
 
+
     <div class="reviews">
+
 
         <div class="glass review-card">
 
@@ -2587,6 +2957,7 @@ select {
 
         </div>
 
+
         <div class="glass review-card">
 
             <div class="review-stars">
@@ -2607,6 +2978,7 @@ select {
             </div>
 
         </div>
+
 
         <div class="glass review-card">
 
@@ -2629,9 +3001,11 @@ select {
 
         </div>
 
+
     </div>
 
 </section>
+
 
 <!-- =========================================================
      COMMISSION FORM
@@ -2653,6 +3027,7 @@ select {
 
         </div>
 
+
         <p>
             Send your project details, budget,
             deadline and reference links directly
@@ -2661,9 +3036,9 @@ select {
 
     </div>
 
+
     <div class="form-grid">
 
-        <!-- CONTACT INFORMATION -->
 
         <div class="glass contact-card">
 
@@ -2671,9 +3046,11 @@ select {
                 Woxin Automation
             </div>
 
+
             <h3>
                 Let's build something memorable.
             </h3>
+
 
             <p>
                 For VTuber designs, logos, banners,
@@ -2683,7 +3060,9 @@ select {
                 as possible.
             </p>
 
+
             <div class="contact-list">
+
 
                 <div class="contact-item">
 
@@ -2698,6 +3077,7 @@ select {
                     </a>
 
                 </div>
+
 
                 <div class="contact-item">
 
@@ -2715,6 +3095,7 @@ select {
 
                 </div>
 
+
                 <div class="contact-item">
 
                     <small>
@@ -2727,7 +3108,9 @@ select {
 
                 </div>
 
+
             </div>
+
 
             <div style="margin-top:20px">
 
@@ -2744,9 +3127,9 @@ select {
 
         </div>
 
-        <!-- FORM -->
 
         <div class="glass commission-form">
+
 
             <form
                 id="commissionForm"
@@ -2754,11 +3137,13 @@ select {
                 method="POST"
             >
 
+
                 <input
                     type="hidden"
                     name="_subject"
                     value="New Woxin Automation Commission Request"
                 >
+
 
                 <input
                     type="hidden"
@@ -2766,9 +3151,9 @@ select {
                     id="replyto"
                 >
 
-                <!-- NAME + EMAIL -->
 
                 <div class="form-row">
+
 
                     <div>
 
@@ -2786,6 +3171,7 @@ select {
 
                     </div>
 
+
                     <div>
 
                         <label for="email">
@@ -2802,11 +3188,12 @@ select {
 
                     </div>
 
+
                 </div>
 
-                <!-- DISCORD + PROJECT TYPE -->
 
                 <div class="form-row">
+
 
                     <div>
 
@@ -2823,6 +3210,7 @@ select {
                         >
 
                     </div>
+
 
                     <div>
 
@@ -2888,11 +3276,12 @@ select {
 
                     </div>
 
+
                 </div>
 
-                <!-- BUDGET + DEADLINE -->
 
                 <div class="form-row">
+
 
                     <div>
 
@@ -2933,6 +3322,7 @@ select {
 
                     </div>
 
+
                     <div>
 
                         <label for="deadline">
@@ -2947,9 +3337,9 @@ select {
 
                     </div>
 
+
                 </div>
 
-                <!-- PROJECT DETAILS -->
 
                 <div>
 
@@ -2966,7 +3356,6 @@ select {
 
                 </div>
 
-                <!-- REFERENCE LINKS -->
 
                 <div>
 
@@ -2974,17 +3363,21 @@ select {
                         Reference Images
                     </label>
 
+
                     <div class="reference-box">
+
 
                         <div class="reference-icon">
                             ↗
                         </div>
+
 
                         <div class="reference-content">
 
                             <strong>
                                 Share your reference images
                             </strong>
+
 
                             <p>
                                 Upload your images to Google Drive,
@@ -2993,6 +3386,7 @@ select {
                                 You can also share one folder containing
                                 multiple reference images.
                             </p>
+
 
                             <input
                                 id="referenceLinks"
@@ -3007,7 +3401,6 @@ select {
 
                 </div>
 
-                <!-- ADDITIONAL NOTES -->
 
                 <div>
 
@@ -3024,7 +3417,6 @@ select {
 
                 </div>
 
-                <!-- SUBMIT -->
 
                 <button
                     class="btn submit-btn"
@@ -3034,12 +3426,12 @@ select {
                     Send Commission Request ↗
                 </button>
 
-                <!-- STATUS -->
 
                 <div
                     class="form-status"
                     id="formStatus"
                 ></div>
+
 
             </form>
 
@@ -3048,6 +3440,7 @@ select {
     </div>
 
 </section>
+
 
 <!-- =========================================================
      FINAL CONTACT
@@ -3061,10 +3454,12 @@ select {
             WOXIN AUTOMATION
         </div>
 
+
         <h3>
             Have an idea?
             Let's create it.
         </h3>
+
 
         <p>
             Tell us what you're building,
@@ -3073,6 +3468,7 @@ select {
             We'll turn the idea into a clean,
             practical and memorable digital solution.
         </p>
+
 
         <a
             class="btn primary"
@@ -3088,6 +3484,7 @@ select {
 </section>
 
 </main>
+
 
 <!-- =========================================================
      FOOTER
@@ -3109,6 +3506,7 @@ select {
 
 </div>
 
+
 <!-- =========================================================
      BACK TO TOP
      ========================================================= -->
@@ -3120,6 +3518,7 @@ select {
 >
     ↑
 </div>
+
 
 <!-- =========================================================
      LIGHTBOX
@@ -3138,6 +3537,7 @@ select {
         ×
     </button>
 
+
     <img
         id="lightboxImage"
         src=""
@@ -3145,6 +3545,7 @@ select {
     >
 
 </div>
+
 
 <script>
 
@@ -3182,6 +3583,7 @@ const galleries = {
 
     },
 
+
     logo: {
 
         title: "Logo",
@@ -3207,6 +3609,7 @@ const galleries = {
         ]
 
     },
+
 
     banner: {
 
@@ -3234,6 +3637,7 @@ const galleries = {
         ]
 
     },
+
 
     emotes: {
 
@@ -3263,6 +3667,7 @@ const galleries = {
 
     },
 
+
     art3d: {
 
         title: "3D Art Room",
@@ -3283,6 +3688,7 @@ const galleries = {
         ]
 
     },
+
 
     artscene: {
 
@@ -3311,6 +3717,7 @@ const galleries = {
 
     },
 
+
     overlay: {
 
         title: "Overlay",
@@ -3330,6 +3737,7 @@ const galleries = {
         ]
 
     },
+
 
     vtuberid: {
 
@@ -3351,6 +3759,7 @@ const galleries = {
         ]
 
     },
+
 
     vtuber3d: {
 
@@ -3375,6 +3784,7 @@ const galleries = {
 
 };
 
+
 /* =========================================================
    CREATE PORTFOLIO FOLDERS
    ========================================================= */
@@ -3388,11 +3798,14 @@ Object.entries(galleries).forEach(
         const card =
             document.createElement("article");
 
+
         card.className =
             "glass folder";
 
+
         const coverImage =
             gallery.images[0];
+
 
         card.innerHTML = `
 
@@ -3403,6 +3816,7 @@ Object.entries(galleries).forEach(
                     url('${coverImage}');
                 "
             ></div>
+
 
             <div class="folder-top">
 
@@ -3416,13 +3830,16 @@ Object.entries(galleries).forEach(
 
             </div>
 
+
             <h4>
                 ${gallery.title}
             </h4>
 
+
             <p>
                 ${gallery.desc}
             </p>
+
 
             <small>
                 ${String(index + 1).padStart(2, "0")}
@@ -3433,15 +3850,18 @@ Object.entries(galleries).forEach(
 
         `;
 
+
         card.addEventListener(
             "click",
             () => openGallery(key)
         );
 
+
         folders.appendChild(card);
 
     }
 );
+
 
 /* =========================================================
    OPEN GALLERY
@@ -3452,8 +3872,10 @@ function openGallery(key) {
     const gallery =
         galleries[key];
 
+
     const main =
         document.getElementById("main");
+
 
     main.innerHTML = `
 
@@ -3474,6 +3896,7 @@ function openGallery(key) {
                         ← Back to Woxin
                     </button>
 
+
                     <div
                         class="kicker"
                         style="margin-top:24px"
@@ -3482,10 +3905,12 @@ function openGallery(key) {
                         ${gallery.title}
                     </div>
 
+
                     <h2>
                         ${gallery.icon}
                         ${gallery.title}
                     </h2>
+
 
                     <p>
                         ${gallery.desc}
@@ -3494,6 +3919,7 @@ function openGallery(key) {
                 </div>
 
             </div>
+
 
             <div class="images">
 
@@ -3522,12 +3948,14 @@ function openGallery(key) {
 
     `;
 
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
 }
+
 
 /* =========================================================
    GO HOME
@@ -3538,6 +3966,7 @@ function goHome() {
     window.location.reload();
 
 }
+
 
 /* =========================================================
    ANIMATED HERO TEXT
@@ -3564,10 +3993,12 @@ let typingCharacterIndex = 0;
 
 let deletingText = false;
 
+
 function typeAnimation() {
 
     const currentLine =
         typingLines[typingLineIndex];
+
 
     if (!deletingText) {
 
@@ -3577,7 +4008,9 @@ function typeAnimation() {
                 typingCharacterIndex + 1
             );
 
+
         typingCharacterIndex++;
+
 
         if (
             typingCharacterIndex ===
@@ -3592,8 +4025,8 @@ function typeAnimation() {
             );
 
             return;
-
         }
+
 
         setTimeout(
             typeAnimation,
@@ -3610,7 +4043,9 @@ function typeAnimation() {
                 typingCharacterIndex - 1
             );
 
+
         typingCharacterIndex--;
+
 
         if (
             typingCharacterIndex === 0
@@ -3624,14 +4059,15 @@ function typeAnimation() {
                 ) %
                 typingLines.length;
 
+
             setTimeout(
                 typeAnimation,
                 400
             );
 
             return;
-
         }
+
 
         setTimeout(
             typeAnimation,
@@ -3643,6 +4079,7 @@ function typeAnimation() {
 }
 
 typeAnimation();
+
 
 /* =========================================================
    LIGHTBOX
@@ -3657,6 +4094,7 @@ const lightboxImage =
 const closeLightbox =
     document.getElementById("closeLightbox");
 
+
 function showImage(source) {
 
     lightboxImage.src =
@@ -3668,8 +4106,8 @@ function showImage(source) {
 
     document.body.style.overflow =
         "hidden";
-
 }
+
 
 function closeImage() {
 
@@ -3682,13 +4120,14 @@ function closeImage() {
 
     document.body.style.overflow =
         "";
-
 }
+
 
 closeLightbox.addEventListener(
     "click",
     closeImage
 );
+
 
 lightbox.addEventListener(
     "click",
@@ -3705,6 +4144,7 @@ lightbox.addEventListener(
     }
 );
 
+
 document.addEventListener(
     "keydown",
     function(event) {
@@ -3720,12 +4160,14 @@ document.addEventListener(
     }
 );
 
+
 /* =========================================================
    BACK TO TOP
    ========================================================= */
 
 const topButton =
     document.getElementById("topBtn");
+
 
 window.addEventListener(
     "scroll",
@@ -3752,6 +4194,7 @@ window.addEventListener(
     }
 );
 
+
 topButton.addEventListener(
     "click",
     function() {
@@ -3763,6 +4206,7 @@ topButton.addEventListener(
 
     }
 );
+
 
 /* =========================================================
    COMMISSION FORM
@@ -3793,36 +4237,39 @@ const replyTo =
         "replyto"
     );
 
+
 commissionForm.addEventListener(
     "submit",
     async function(event) {
 
         event.preventDefault();
 
+
         submitButton.disabled =
             true;
+
 
         submitButton.textContent =
             "Sending Request...";
 
+
         formStatus.className =
             "form-status";
+
 
         formStatus.textContent =
             "";
 
-        /*
-         * This sends the client's email
-         * as the reply-to address.
-         */
 
         replyTo.value =
             emailField.value;
+
 
         const formData =
             new FormData(
                 commissionForm
             );
+
 
         try {
 
@@ -3847,6 +4294,7 @@ commissionForm.addEventListener(
                     }
                 );
 
+
             if (
                 response.ok
             ) {
@@ -3854,14 +4302,20 @@ commissionForm.addEventListener(
                 formStatus.className =
                     "form-status success";
 
+
                 formStatus.textContent =
                     "✓ Your commission request has been sent successfully! Woxin Automation will contact you by email or Discord.";
 
+
                 commissionForm.reset();
 
+
                 formStatus.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "center"
                 });
 
             }
@@ -3871,10 +4325,12 @@ commissionForm.addEventListener(
                 let errorMessage =
                     "Something went wrong while sending the form. Please try again.";
 
+
                 try {
 
                     const data =
                         await response.json();
+
 
                     if (
                         data &&
@@ -3898,8 +4354,10 @@ commissionForm.addEventListener(
                     ignored
                 ) {}
 
+
                 formStatus.className =
                     "form-status error";
+
 
                 formStatus.textContent =
                     "✕ " +
@@ -3916,15 +4374,18 @@ commissionForm.addEventListener(
             formStatus.className =
                 "form-status error";
 
+
             formStatus.textContent =
                 "✕ Unable to send right now. Please check your internet connection and try again.";
 
         }
 
+
         finally {
 
             submitButton.disabled =
                 false;
+
 
             submitButton.textContent =
                 "Send Commission Request ↗";
