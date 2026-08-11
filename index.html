@@ -3,151 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Creative Portfolio</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    min-height:100vh;
+    background:radial-gradient(circle at top,#30213d 0%,#17121f 45%,#0d0a12 100%);
+    color:white;
+    font-family:Arial,sans-serif;
+    padding:40px 20px;
 }
 
-body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at top, #30213d 0%, #17121f 45%, #0d0a12 100%);
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 40px 20px;
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    text-align:center;
 }
 
-.container {
-    width: 100%;
-    max-width: 1050px;
-    margin: auto;
-    text-align: center;
+h1{
+    color:#ffb6e6;
+    font-size:52px;
+    margin-bottom:10px;
+    text-shadow:0 0 20px rgba(255,150,220,.3);
 }
 
-h1 {
-    color: #ffb6e6;
-    font-size: 52px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255,150,220,.3);
+.subtitle{
+    color:#cfc3d8;
+    margin-bottom:45px;
+    font-size:18px;
 }
 
-.subtitle {
-    color: #cfc3d8;
-    margin-bottom: 45px;
-    font-size: 18px;
+.folders{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.folders {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.folder{
+    background:rgba(37,28,48,.9);
+    border:2px solid #4b3858;
+    border-radius:22px;
+    padding:42px 20px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.folder {
-    background: rgba(37,28,48,.9);
-    border: 2px solid #4b3858;
-    border-radius: 22px;
-    padding: 42px 20px;
-    cursor: pointer;
-    transition: .3s;
+.folder:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:#ff9ddd;
+    background:#30243c;
+    box-shadow:0 15px 35px rgba(255,157,221,.2);
 }
 
-.folder:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: #ff9ddd;
-    background: #30243c;
-    box-shadow: 0 15px 35px rgba(255,157,221,.2);
+.icon{
+    font-size:58px;
+    margin-bottom:15px;
 }
 
-.icon {
-    font-size: 58px;
-    margin-bottom: 15px;
+.folder h2{
+    font-size:23px;
 }
 
-.folder h2 {
-    font-size: 23px;
+.gallery{
+    display:none;
 }
 
-.gallery {
-    display: none;
+.back{
+    display:inline-block;
+    margin-bottom:30px;
+    padding:11px 22px;
+    background:#352640;
+    border:1px solid #5b4267;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.back {
-    display: inline-block;
-    margin-bottom: 30px;
-    padding: 11px 22px;
-    background: #352640;
-    border: 1px solid #5b4267;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: .3s;
+.back:hover{
+    background:#ff9ddd;
+    color:#211625;
 }
 
-.back:hover {
-    background: #ff9ddd;
-    color: #211625;
+.gallery h2{
+    color:#ffb6e6;
+    font-size:36px;
+    margin-bottom:30px;
 }
 
-.gallery h2 {
-    color: #ffb6e6;
-    font-size: 36px;
-    margin-bottom: 30px;
+.images{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
-.images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.images img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:18px;
+    border:2px solid #4b3858;
+    transition:.3s;
+    background:#211827;
 }
 
-.images img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 18px;
-    border: 2px solid #4b3858;
-    transition: .3s;
-    background: #211827;
+.images img:hover{
+    transform:scale(1.03);
+    border-color:#ff9ddd;
+    box-shadow:0 10px 30px rgba(255,157,221,.18);
 }
 
-.images img:hover {
-    transform: scale(1.03);
-    border-color: #ff9ddd;
-    box-shadow: 0 10px 30px rgba(255,157,221,.18);
+.empty{
+    color:#b8aabd;
+    font-size:18px;
+    padding:50px;
+    border:2px dashed #4b3858;
+    border-radius:20px;
 }
 
-.empty {
-    color: #b8aabd;
-    font-size: 18px;
-    padding: 50px;
-    border: 2px dashed #4b3858;
-    border-radius: 20px;
+@media(max-width:800px){
+    .folders{grid-template-columns:repeat(2,1fr)}
 }
 
-@media (max-width: 800px) {
-    .folders {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 550px) {
-    .folders,
-    .images {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 38px;
-    }
-
-    .images img {
-        height: 320px;
-    }
+@media(max-width:550px){
+    .folders,.images{grid-template-columns:1fr}
+    h1{font-size:38px}
+    .images img{height:320px}
 }
 </style>
 </head>
@@ -156,9 +139,7 @@ h1 {
 
 <div class="container">
 
-<!-- HOME -->
 <div id="home">
-
     <h1>My Creative Portfolio</h1>
 
     <p class="subtitle">
@@ -207,6 +188,7 @@ h1 {
 
 
 <!-- VTUBER -->
+
 <div id="vtuber" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -214,17 +196,17 @@ h1 {
     <h2>VTuber</h2>
 
     <div class="images">
-
         <img src="Chibi%20model.jpeg" alt="Chibi Model">
         <img src="model%201.jpeg" alt="Model 1">
         <img src="Character.jpeg" alt="Character">
         <img src="Vtuber%20model.jpeg" alt="VTuber Model">
-
     </div>
+
 </div>
 
 
 <!-- LOGO -->
+
 <div id="logo" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -232,7 +214,6 @@ h1 {
     <h2>Logo</h2>
 
     <div class="images">
-
         <img src="Logo%202.jpeg" alt="Logo 2">
         <img src="logo1.jpeg" alt="Logo 1">
         <img src="logo%209.jpeg" alt="Logo 9">
@@ -242,26 +223,41 @@ h1 {
         <img src="logo5.jpeg" alt="Logo 5">
         <img src="logo%204.jpeg" alt="Logo 4">
         <img src="Logo3.jpeg" alt="Logo 3">
-
     </div>
+
 </div>
 
 
 <!-- BANNER -->
+
 <div id="banner" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
 
     <h2>Banner</h2>
 
-    <div class="empty">
-        Your banner designs will appear here.
+    <div class="images">
+
+        <img src="Banner%201.jpeg" alt="Banner 1">
+        <img src="Banner%202.jpeg" alt="Banner 2">
+        <img src="Banner%203.jpeg" alt="Banner 3">
+        <img src="Banner%204.jpeg" alt="Banner 4">
+        <img src="Banner%205.jpeg" alt="Banner 5">
+        <img src="Banner%206.jpeg" alt="Banner 6">
+        <img src="Banner%207.jpeg" alt="Banner 7">
+        <img src="Banner%208.jpeg" alt="Banner 8">
+        <img src="Banner%209.jpeg" alt="Banner 9">
+        <img src="Banner%2010.jpeg" alt="Banner 10">
+        <img src="Banner%2011.jpeg" alt="Banner 11">
+        <img src="Banner%2012.jpeg" alt="Banner 12">
+
     </div>
 
 </div>
 
 
 <!-- EMOTES -->
+
 <div id="emotes" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -276,6 +272,7 @@ h1 {
 
 
 <!-- 3D ART -->
+
 <div id="art3d" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -290,6 +287,7 @@ h1 {
 
 
 <!-- ROOM -->
+
 <div id="room" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -304,6 +302,7 @@ h1 {
 
 
 <!-- OVERLAY -->
+
 <div id="overlay" class="gallery">
 
     <div class="back" onclick="goHome()">← Back</div>
@@ -321,28 +320,28 @@ h1 {
 
 <script>
 
-function openGallery(name) {
+function openGallery(name){
 
-    document.getElementById("home").style.display = "none";
+    document.getElementById("home").style.display="none";
 
-    document.querySelectorAll(".gallery").forEach(function(page) {
-        page.style.display = "none";
+    document.querySelectorAll(".gallery").forEach(function(page){
+        page.style.display="none";
     });
 
-    document.getElementById(name).style.display = "block";
+    document.getElementById(name).style.display="block";
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0);
 }
 
-function goHome() {
+function goHome(){
 
-    document.querySelectorAll(".gallery").forEach(function(page) {
-        page.style.display = "none";
+    document.querySelectorAll(".gallery").forEach(function(page){
+        page.style.display="none";
     });
 
-    document.getElementById("home").style.display = "block";
+    document.getElementById("home").style.display="block";
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0);
 }
 
 </script>
