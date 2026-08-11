@@ -1,22 +1,24 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Woxin | Creative Portfolio</title>
+<title>WOXIN AUTOMATION | Digital Solutions</title>
+
+<meta name="description"
+content="Woxin Automation — smart automation, digital solutions, creative technology and professional design services.">
 
 <style>
 
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -27,119 +29,168 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #ffffff;
 
     background:
-        radial-gradient(circle at 10% 10%, rgba(255,95,205,.16), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(145,90,255,.15), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(255,80,190,.10), transparent 30%),
-        linear-gradient(135deg, #09070d, #17101f 50%, #0a0710);
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 220, 255, .13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(130, 75, 255, .16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 50, 180, .08),
+            transparent 35%
+        ),
+        #06070c;
 
-    padding: 25px 18px;
+    padding: 0 22px;
 }
 
 
-/* =========================
-   BACKGROUND GLOW
-========================= */
-
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: .22;
-
-    pointer-events: none;
-    z-index: -1;
-
-    animation: floatingGlow 8s ease-in-out infinite alternate;
-}
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
 body::before {
-    background: #ff4fc8;
-    top: 5%;
-    left: -130px;
+    content: "";
+
+    position: fixed;
+
+    width: 520px;
+    height: 520px;
+
+    left: -220px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(0, 200, 255, .08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: -3;
+
+    animation: auraOne 10s ease-in-out infinite alternate;
 }
 
 body::after {
-    background: #8955ff;
-    right: -130px;
-    bottom: 5%;
-    animation-delay: 2s;
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    right: -220px;
+    bottom: 10%;
+
+    border-radius: 50%;
+
+    background: rgba(130, 70, 255, .10);
+
+    filter: blur(110px);
+
+    pointer-events: none;
+
+    z-index: -3;
+
+    animation: auraTwo 12s ease-in-out infinite alternate;
 }
 
-@keyframes floatingGlow {
+@keyframes auraOne {
     from {
-        transform: translateY(-25px) scale(1);
+        transform: translateY(-30px) scale(1);
     }
 
     to {
-        transform: translateY(35px) scale(1.25);
+        transform: translateY(60px) scale(1.25);
+    }
+}
+
+@keyframes auraTwo {
+    from {
+        transform: translateY(40px) scale(1);
+    }
+
+    to {
+        transform: translateY(-60px) scale(1.2);
     }
 }
 
 
-/* =========================
+/* =========================================================
    PARTICLES
-========================= */
+========================================================= */
 
 .particles {
     position: fixed;
     inset: 0;
-    pointer-events: none;
+
     overflow: hidden;
-    z-index: -1;
+
+    pointer-events: none;
+
+    z-index: -2;
 }
 
 .particle {
     position: absolute;
 
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
 
     border-radius: 50%;
 
-    background: #ffd5f4;
+    background: #b8f8ff;
 
     box-shadow:
-        0 0 7px #ff9ddd,
-        0 0 18px rgba(255,100,210,.8);
+        0 0 8px #00dfff,
+        0 0 20px rgba(0, 210, 255, .55);
 
-    animation: particleFloat 12s linear infinite;
+    animation: floatParticle linear infinite;
 
     opacity: 0;
 }
 
-.particle:nth-child(1) { left: 5%;  top: 90%; animation-delay: -1s; }
-.particle:nth-child(2) { left: 12%; top: 75%; animation-delay: -6s; }
-.particle:nth-child(3) { left: 20%; top: 85%; animation-delay: -3s; }
-.particle:nth-child(4) { left: 28%; top: 70%; animation-delay: -9s; }
-.particle:nth-child(5) { left: 35%; top: 92%; animation-delay: -4s; }
-.particle:nth-child(6) { left: 43%; top: 78%; animation-delay: -8s; }
-.particle:nth-child(7) { left: 50%; top: 88%; animation-delay: -2s; }
-.particle:nth-child(8) { left: 58%; top: 72%; animation-delay: -7s; }
-.particle:nth-child(9) { left: 65%; top: 90%; animation-delay: -5s; }
-.particle:nth-child(10) { left: 73%; top: 76%; animation-delay: -10s; }
-.particle:nth-child(11) { left: 81%; top: 88%; animation-delay: -3s; }
-.particle:nth-child(12) { left: 90%; top: 70%; animation-delay: -8s; }
-.particle:nth-child(13) { left: 96%; top: 90%; animation-delay: -5s; }
+.particle:nth-child(1)  { left: 4%;  top: 90%; animation-duration: 13s; animation-delay: -3s; }
+.particle:nth-child(2)  { left: 10%; top: 70%; animation-duration: 16s; animation-delay: -8s; }
+.particle:nth-child(3)  { left: 17%; top: 85%; animation-duration: 11s; animation-delay: -4s; }
+.particle:nth-child(4)  { left: 24%; top: 65%; animation-duration: 15s; animation-delay: -10s; }
+.particle:nth-child(5)  { left: 31%; top: 92%; animation-duration: 12s; animation-delay: -2s; }
+.particle:nth-child(6)  { left: 39%; top: 75%; animation-duration: 17s; animation-delay: -12s; }
+.particle:nth-child(7)  { left: 46%; top: 90%; animation-duration: 14s; animation-delay: -6s; }
+.particle:nth-child(8)  { left: 54%; top: 68%; animation-duration: 12s; animation-delay: -9s; }
+.particle:nth-child(9)  { left: 61%; top: 87%; animation-duration: 16s; animation-delay: -5s; }
+.particle:nth-child(10) { left: 68%; top: 72%; animation-duration: 13s; animation-delay: -11s; }
+.particle:nth-child(11) { left: 75%; top: 91%; animation-duration: 15s; animation-delay: -7s; }
+.particle:nth-child(12) { left: 82%; top: 63%; animation-duration: 11s; animation-delay: -3s; }
+.particle:nth-child(13) { left: 89%; top: 84%; animation-duration: 17s; animation-delay: -10s; }
+.particle:nth-child(14) { left: 96%; top: 70%; animation-duration: 14s; animation-delay: -4s; }
 
-@keyframes particleFloat {
+@keyframes floatParticle {
 
     0% {
         opacity: 0;
-        transform: translateY(100px) scale(.5);
+        transform: translateY(80px) translateX(0) scale(.5);
     }
 
     15% {
-        opacity: .9;
+        opacity: .8;
     }
 
     50% {
@@ -158,175 +209,225 @@ body::after {
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =========================================================
+   MAIN
+========================================================= */
 
 .container {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1200px;
+
     margin: auto;
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-.header {
-    text-align: center;
-    padding: 35px 15px 15px;
-}
+.navbar {
 
-.logo {
-    font-size: 76px;
-    font-weight: 900;
-    letter-spacing: 8px;
+    position: sticky;
+    top: 18px;
 
-    color: #ffb9e9;
+    z-index: 100;
 
-    text-shadow:
-        0 0 8px rgba(255,130,220,.9),
-        0 0 25px rgba(255,100,210,.6),
-        0 0 55px rgba(180,90,255,.35);
+    display: flex;
 
-    animation: logoGlow 3s ease-in-out infinite alternate;
-}
+    align-items: center;
+    justify-content: space-between;
 
-@keyframes logoGlow {
+    gap: 20px;
 
-    from {
-        text-shadow:
-            0 0 8px rgba(255,130,220,.7),
-            0 0 25px rgba(255,100,210,.35);
-    }
+    margin-top: 18px;
+    margin-bottom: 30px;
 
-    to {
-        text-shadow:
-            0 0 15px rgba(255,160,230,1),
-            0 0 40px rgba(255,100,210,.7),
-            0 0 70px rgba(170,90,255,.4);
-    }
-}
-
-
-/* =========================
-   ANIMATED BIO
-========================= */
-
-.subtitle {
-    margin-top: 12px;
-
-    color: #d0c1d8;
-
-    font-size: 17px;
-    letter-spacing: 2px;
-
-    min-height: 25px;
-}
-
-.subtitle::after {
-    content: "|";
-
-    margin-left: 5px;
-
-    color: #ff9ddd;
-
-    text-shadow:
-        0 0 10px rgba(255,100,210,.9);
-
-    animation: cursorBlink .7s infinite;
-}
-
-@keyframes cursorBlink {
-
-    0%, 45% {
-        opacity: 1;
-    }
-
-    50%, 100% {
-        opacity: 0;
-    }
-}
-
-
-/* =========================
-   GRADIENT LINE
-========================= */
-
-.gradient-line {
-    width: 120px;
-    height: 3px;
-
-    margin: 22px auto;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff73d3,
-            #a66cff,
-            #ff73d3
-        );
-
-    background-size: 200% 100%;
-
-    animation: movingLine 3s linear infinite;
-}
-
-@keyframes movingLine {
-
-    from {
-        background-position: 0%;
-    }
-
-    to {
-        background-position: 200%;
-    }
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about {
-    max-width: 800px;
-
-    margin: 20px auto 25px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    background:
-        rgba(29,20,39,.72);
+    padding: 14px 18px;
 
     border:
-        1px solid #493652;
+        1px solid rgba(255,255,255,.08);
 
-    border-radius: 22px;
+    border-radius: 18px;
+
+    background:
+        rgba(9, 11, 18, .72);
+
+    backdrop-filter: blur(18px);
 
     box-shadow:
-        0 0 30px rgba(255,100,210,.06);
+        0 15px 50px rgba(0,0,0,.25);
 }
 
-.about h2 {
+.nav-brand {
 
-    display: inline-block;
+    display: flex;
 
-    margin-bottom: 12px;
+    align-items: center;
 
-    font-size: 26px;
+    gap: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: white;
+}
+
+.nav-mark {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #071017;
+
+    font-weight: 900;
 
     background:
         linear-gradient(
-            90deg,
-            #ffb6e7,
-            #ffffff,
-            #d59cff,
-            #ffb6e7
+            135deg,
+            #00e5ff,
+            #7d5cff
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,220,255,.25);
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 22px;
+
+    list-style: none;
+}
+
+.nav-links a {
+
+    color: #9299a9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 590px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px 80px;
+}
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border-radius: 100px;
+
+    color: #b9f9ff;
+
+    background:
+        rgba(0,220,255,.06);
+
+    border:
+        1px solid rgba(0,220,255,.22);
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 25px rgba(0,220,255,.06);
+}
+
+.hero-badge::before {
+
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff;
+
+    animation: onlinePulse 1.5s infinite;
+}
+
+@keyframes onlinePulse {
+
+    0%,100% {
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+
+    margin-top: 28px;
+
+    font-size:
+        clamp(55px, 10vw, 125px);
+
+    line-height: .9;
+
+    font-weight: 950;
+
+    letter-spacing:
+        clamp(3px, 1vw, 12px);
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 10%,
+            #8ff7ff 35%,
+            #a77cff 62%,
+            #ffffff 90%
         );
 
     background-size: 250% auto;
@@ -336,137 +437,488 @@ body::after {
 
     -webkit-text-fill-color: transparent;
 
+    filter:
+        drop-shadow(
+            0 0 35px rgba(0,220,255,.12)
+        );
+
     animation:
-        welcomeShine 4s linear infinite,
-        welcomeFloat 3s ease-in-out infinite;
+        heroGradient 6s linear infinite;
 }
 
-@keyframes welcomeShine {
+@keyframes heroGradient {
 
     from {
-        background-position: 0%;
+        background-position: 0% center;
     }
 
     to {
-        background-position: 250%;
+        background-position: 250% center;
     }
 }
 
-@keyframes welcomeFloat {
+.hero-company {
 
-    0%, 100% {
-        transform: translateY(0);
+    margin-top: 16px;
+
+    color: #8992a5;
+
+    font-size:
+        clamp(13px, 2vw, 17px);
+
+    letter-spacing:
+        clamp(3px, .7vw, 7px);
+
+    text-transform: uppercase;
+}
+
+.hero-tagline {
+
+    min-height: 30px;
+
+    margin-top: 25px;
+
+    color: #dce3ed;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.hero-tagline::after {
+
+    content: "|";
+
+    color: #00e5ff;
+
+    margin-left: 5px;
+
+    animation: cursorBlink .7s infinite;
+}
+
+@keyframes cursorBlink {
+
+    0%,45% {
+        opacity: 1;
     }
 
-    50% {
-        transform: translateY(-3px);
+    50%,100% {
+        opacity: 0;
     }
 }
 
-.about p {
-    color: #bdb0c5;
+.hero-description {
 
-    line-height: 1.7;
+    max-width: 700px;
+
+    margin-top: 18px;
+
+    color: #858e9f;
+
+    line-height: 1.8;
 
     font-size: 15px;
 }
 
+.hero-buttons {
 
-/* =========================
-   COMMISSION HEARTBEAT
-========================= */
+    display: flex;
 
-.status {
+    flex-wrap: wrap;
 
-    display: inline-block;
+    justify-content: center;
 
-    margin-top: 18px;
+    gap: 12px;
 
-    padding: 8px 15px;
+    margin-top: 32px;
+}
 
-    border-radius: 30px;
+.btn {
 
-    color: #ffd9f3;
+    display: inline-flex;
 
-    background:
-        rgba(255,100,210,.10);
+    align-items: center;
+    justify-content: center;
 
-    border:
-        1px solid
-        rgba(255,130,220,.3);
+    min-width: 175px;
+
+    padding: 14px 23px;
+
+    border-radius: 13px;
+
+    text-decoration: none;
 
     font-size: 13px;
 
+    font-weight: 800;
+
+    transition:
+        transform .3s,
+        box-shadow .3s,
+        border-color .3s;
+}
+
+.btn-primary {
+
+    color: #031016;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #8d70ff
+        );
+
     box-shadow:
-        0 0 15px
-        rgba(255,100,210,.08);
+        0 10px 35px
+        rgba(0,210,255,.18);
+}
+
+.btn-secondary {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,220,255,.16);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    margin-top: 45px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+
+    color: #00dfff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+
+    margin-top: 8px;
+
+    font-size:
+        clamp(28px, 5vw, 44px);
+
+    letter-spacing: -1px;
+}
+
+.section-heading p {
+
+    max-width: 650px;
+
+    margin-top: 10px;
+
+    color: #7f8798;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   COMPANY CARD
+========================================================= */
+
+.company-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 35px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,24,34,.9),
+            rgba(10,12,18,.86)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+}
+
+.company-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,220,255,.07);
+
+    filter: blur(15px);
+}
+
+.company-card h2 {
+
+    position: relative;
+
+    font-size: 27px;
+}
+
+.company-card p {
+
+    position: relative;
+
+    max-width: 850px;
+
+    margin-top: 15px;
+
+    color: #9098a8;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+.company-points {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.point {
+
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+}
+
+.point strong {
+
+    display: block;
+
+    color: #dfe8f5;
+
+    font-size: 14px;
+}
+
+.point span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #747e90;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+.service {
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(14,17,25,.72);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    transition: .3s;
+}
+
+.service:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,220,255,.3);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,220,255,.07);
+}
+
+.service-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,220,255,.11),
+            rgba(125,90,255,.12)
+        );
+
+    border:
+        1px solid rgba(0,220,255,.13);
+
+    margin-bottom: 18px;
+}
+
+.service h3 {
+    font-size: 16px;
+}
+
+.service p {
+
+    margin-top: 8px;
+
+    color: #737d8e;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-wrap {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin: 30px 0 5px;
+}
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border-radius: 50px;
+
+    color: #c5fbff;
+
+    background:
+        rgba(0,220,255,.055);
+
+    border:
+        1px solid rgba(0,220,255,.22);
+
+    font-size: 12px;
+
+    box-shadow:
+        0 0 20px rgba(0,220,255,.06);
 
     animation:
-        commissionHeartbeat
-        1.65s
-        ease-in-out
-        infinite;
+        statusPulse 2.2s ease-in-out infinite;
 }
 
 .status::before {
 
     content: "♥";
 
-    display: inline-block;
-
-    margin-right: 7px;
-
-    color: #ff8fd8;
+    color: #ff70ca;
 
     text-shadow:
-        0 0 7px rgba(255,100,210,.9),
-        0 0 15px rgba(255,100,210,.55);
+        0 0 10px #ff40b4;
 
     animation:
-        heartBeat
-        1.65s
-        ease-in-out
-        infinite;
+        heartbeat 1.5s infinite;
 }
 
-@keyframes commissionHeartbeat {
+@keyframes statusPulse {
 
-    0%, 100% {
-        transform: scale(1);
-
+    0%,100% {
         box-shadow:
-            0 0 15px
-            rgba(255,100,210,.08);
+            0 0 15px rgba(0,220,255,.04);
     }
 
-    8% {
-        transform: scale(1.035);
-
+    50% {
         box-shadow:
-            0 0 22px
-            rgba(255,100,210,.22);
-    }
-
-    16% {
-        transform: scale(1);
-    }
-
-    24% {
-        transform: scale(1.025);
-
-        box-shadow:
-            0 0 25px
-            rgba(255,100,210,.25);
-    }
-
-    34% {
-        transform: scale(1);
+            0 0 30px rgba(0,220,255,.13);
     }
 }
 
-@keyframes heartBeat {
+@keyframes heartbeat {
 
-    0%, 100% {
+    0%,100% {
         transform: scale(1);
     }
 
@@ -479,7 +931,7 @@ body::after {
     }
 
     24% {
-        transform: scale(1.22);
+        transform: scale(1.2);
     }
 
     34% {
@@ -488,106 +940,18 @@ body::after {
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* =========================================================
+   PORTFOLIO FOLDERS
+========================================================= */
 
-.buttons {
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    margin: 25px 0 45px;
-}
-
-.button {
-
-    display: inline-block;
-
-    padding: 14px 27px;
-
-    border-radius: 50px;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    transition: .3s ease;
-}
-
-.commission {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff67cc,
-            #a464ff
-        );
-
-    box-shadow:
-        0 0 15px
-        rgba(255,100,210,.4);
-
-    animation:
-        buttonPulse
-        2.5s
-        ease-in-out
-        infinite alternate;
-}
-
-@keyframes buttonPulse {
-
-    from {
-        box-shadow:
-            0 0 12px
-            rgba(255,100,210,.4);
-    }
-
-    to {
-        box-shadow:
-            0 0 28px
-            rgba(255,100,210,.65),
-            0 0 50px
-            rgba(150,90,255,.25);
-    }
-}
-
-.email {
-    background: #30213b;
-    border-color: #5a4366;
-}
-
-.button:hover {
-    transform:
-        translateY(-4px)
-        scale(1.03);
-}
-
-
-/* =========================
-   FOLDERS
-========================= */
-
-.folders {
+.portfolio-grid {
 
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 18px;
 }
 
 .folder {
@@ -596,26 +960,34 @@ body::after {
 
     overflow: hidden;
 
-    padding: 38px 20px;
+    min-height: 205px;
 
-    text-align: center;
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    border-radius: 22px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(38,27,50,.95),
-            rgba(22,15,29,.95)
+            rgba(19,23,33,.9),
+            rgba(9,11,17,.92)
         );
-
-    border:
-        1px solid #4f3a5b;
-
-    border-radius: 24px;
 
     cursor: pointer;
 
     transition:
-        .35s ease;
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
 }
 
 .folder::before {
@@ -624,107 +996,128 @@ body::after {
 
     position: absolute;
 
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
 
-    right: -55px;
-    top: -60px;
+    top: -100px;
+    right: -70px;
 
     border-radius: 50%;
 
     background:
-        rgba(255,100,210,.08);
+        rgba(0,220,255,.07);
 
-    transition:
-        .5s ease;
+    filter: blur(5px);
+
+    transition: .5s;
 }
 
-.folder:hover::before {
+.folder::after {
 
-    transform:
-        scale(2);
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
 
     background:
-        rgba(255,100,210,.13);
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,.035) 45%,
+            transparent 70%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition: .7s;
+}
+
+.folder:hover::after {
+    transform: translateX(120%);
 }
 
 .folder:hover {
 
     transform:
-        translateY(-8px)
-        scale(1.015);
+        translateY(-8px);
 
     border-color:
-        #ff9ddd;
+        rgba(0,220,255,.30);
 
     box-shadow:
-
-        0 15px 40px
-        rgba(255,100,210,.15),
-
-        0 0 20px
-        rgba(170,90,255,.08);
+        0 20px 55px
+        rgba(0,0,0,.35),
+        0 0 30px
+        rgba(0,220,255,.07);
 }
 
+.folder:hover::before {
+    transform: scale(1.7);
+}
 
-/* ALL FOLDER ICONS */
+.folder-top {
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
 
 .folder-icon {
 
-    position: relative;
-
-    z-index: 2;
-
-    width: 82px;
-    height: 82px;
-
-    margin:
-        0 auto 17px;
+    width: 62px;
+    height: 62px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 22px;
+    border-radius: 17px;
 
-    font-size: 46px;
+    font-size: 31px;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,110,210,.12),
-            rgba(145,90,255,.13)
+            135deg,
+            rgba(0,220,255,.10),
+            rgba(130,80,255,.12)
         );
 
     border:
-        1px solid
-        rgba(255,150,225,.20);
+        1px solid rgba(0,220,255,.13);
 
     box-shadow:
         inset 0 0 20px
-        rgba(255,100,210,.05),
+        rgba(255,255,255,.015);
 
-        0 0 18px
-        rgba(255,100,210,.08);
-
-    transition:
-        .35s ease;
+    transition: .35s;
 }
 
 .folder:hover .folder-icon {
 
     transform:
-        translateY(-4px)
-        rotate(-3deg)
+        rotate(-4deg)
         scale(1.08);
-
-    border-color:
-        rgba(255,160,230,.5);
 
     box-shadow:
         0 0 25px
-        rgba(255,100,210,.22);
+        rgba(0,220,255,.13);
+}
+
+.folder-number {
+
+    color: #414b5b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
 }
 
 .folder h3 {
@@ -732,7 +1125,9 @@ body::after {
     position: relative;
     z-index: 2;
 
-    font-size: 21px;
+    margin-top: 22px;
+
+    font-size: 19px;
 }
 
 .folder p {
@@ -740,93 +1135,111 @@ body::after {
     position: relative;
     z-index: 2;
 
-    margin-top: 8px;
+    margin-top: 6px;
 
-    color:
-        #a99bad;
+    color: #747e8f;
 
-    font-size: 14px;
+    font-size: 12px;
 }
 
+.folder-action {
 
-/* =========================
-   GALLERY
-========================= */
+    position: absolute;
 
-.gallery {
-    display: none;
-}
+    right: 22px;
+    bottom: 20px;
 
-.gallery-header {
+    color: #00dfff;
 
-    text-align: center;
+    font-size: 11px;
 
-    margin-bottom: 32px;
-}
+    opacity: 0;
 
-.gallery-header h2 {
-
-    color:
-        #ffb5e6;
-
-    font-size: 42px;
-
-    text-shadow:
-        0 0 18px
-        rgba(255,100,210,.3);
-}
-
-.gallery-header p {
-
-    margin-top: 8px;
-
-    color:
-        #a99bad;
-}
-
-.back {
-
-    display: inline-block;
-
-    margin-bottom: 28px;
-
-    padding: 11px 22px;
-
-    border-radius: 12px;
-
-    color: white;
-
-    background:
-        #30213b;
-
-    border:
-        1px solid #594367;
-
-    cursor: pointer;
+    transform: translateX(-8px);
 
     transition: .3s;
 }
 
-.back:hover {
+.folder:hover .folder-action {
 
-    background:
-        #ff9ddd;
+    opacity: 1;
 
-    color:
-        #211523;
-
-    border-color:
-        #ff9ddd;
-
-    box-shadow:
-        0 0 20px
-        rgba(255,100,210,.3);
+    transform: translateX(0);
 }
 
 
-/* =========================
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+    display: none;
+
+    padding-bottom: 50px;
+}
+
+.gallery-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.gallery-title h2 {
+
+    font-size:
+        clamp(30px, 5vw, 48px);
+
+    letter-spacing: -1px;
+}
+
+.gallery-title p {
+
+    margin-top: 7px;
+
+    color: #788294;
+
+    font-size: 13px;
+}
+
+.back {
+
+    padding: 11px 17px;
+
+    border-radius: 11px;
+
+    color: #cbd4df;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.back:hover {
+
+    color: #061017;
+
+    background: #00e5ff;
+
+    border-color: #00e5ff;
+}
+
+
+/* =========================================================
    IMAGE GRID
-========================= */
+========================================================= */
 
 .images {
 
@@ -835,25 +1248,60 @@ body::after {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 18px;
 }
 
 .image-card {
 
+    position: relative;
+
     overflow: hidden;
 
-    background:
-        #16101d;
+    border-radius: 19px;
+
+    background: #0c0f16;
 
     border:
-        1px solid #4b3756;
-
-    border-radius: 20px;
+        1px solid rgba(255,255,255,.08);
 
     cursor: pointer;
 
-    transition:
-        .3s;
+    transition: .35s;
+}
+
+.image-card::after {
+
+    content: "VIEW";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -40%);
+
+    padding: 9px 14px;
+
+    border-radius: 100px;
+
+    color: white;
+
+    background:
+        rgba(0,0,0,.65);
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    transition: .3s;
 }
 
 .image-card:hover {
@@ -862,11 +1310,19 @@ body::after {
         translateY(-5px);
 
     border-color:
-        #ff9ddd;
+        rgba(0,220,255,.35);
 
     box-shadow:
-        0 12px 35px
-        rgba(255,120,210,.18);
+        0 20px 50px
+        rgba(0,0,0,.35);
+}
+
+.image-card:hover::after {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%);
 }
 
 .image-card img {
@@ -880,7 +1336,8 @@ body::after {
     object-fit: cover;
 
     transition:
-        .45s;
+        transform .55s,
+        filter .55s;
 
     user-select: none;
 
@@ -891,18 +1348,18 @@ body::after {
 
 .image-card:hover img {
 
-    transform:
-        scale(1.035);
+    transform: scale(1.045);
+
+    filter:
+        brightness(.72);
 }
 
 
-/* =========================
+/* =========================================================
    LIGHTBOX
-========================= */
+========================================================= */
 
 .lightbox {
-
-    display: none;
 
     position: fixed;
 
@@ -910,87 +1367,201 @@ body::after {
 
     z-index: 9999;
 
-    align-items: center;
+    display: none;
 
+    align-items: center;
     justify-content: center;
 
-    padding: 20px;
+    padding: 25px;
 
     background:
-        rgba(3,2,6,.96);
+        rgba(2,4,8,.96);
+
+    backdrop-filter:
+        blur(15px);
 }
 
 .lightbox img {
 
-    max-width: 95%;
-
-    max-height: 90vh;
+    max-width: 94vw;
+    max-height: 88vh;
 
     object-fit: contain;
 
     border-radius: 15px;
 
     box-shadow:
-        0 0 35px
-        rgba(255,110,215,.3),
+        0 0 50px rgba(0,220,255,.14),
+        0 0 100px rgba(120,80,255,.10);
 
-        0 0 70px
-        rgba(140,90,255,.18);
+    user-select: none;
+
+    -webkit-user-drag: none;
 }
 
 .close {
 
     position: fixed;
 
-    top: 15px;
-    right: 25px;
+    top: 20px;
+    right: 28px;
 
-    font-size: 45px;
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
 
     color: white;
 
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    font-size: 28px;
+
     cursor: pointer;
+
+    transition: .25s;
 }
 
 .close:hover {
-    color: #ff9ddd;
+
+    background:
+        #00dfff;
+
+    color:
+        #041017;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* =========================================================
+   CTA
+========================================================= */
 
-.footer {
+.cta {
 
-    margin-top: 60px;
+    position: relative;
 
-    padding:
-        25px 10px;
+    overflow: hidden;
+
+    margin-top: 55px;
+
+    padding: 50px 30px;
 
     text-align: center;
 
-    color:
-        #75677d;
+    border-radius: 27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,220,255,.07),
+            rgba(125,80,255,.08)
+        );
+
+    border:
+        1px solid rgba(0,220,255,.15);
+}
+
+.cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    left: 50%;
+    top: -190px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,220,255,.13);
+
+    filter: blur(50px);
+}
+
+.cta h2 {
+
+    position: relative;
+
+    font-size:
+        clamp(26px, 5vw, 40px);
+}
+
+.cta p {
+
+    position: relative;
+
+    max-width: 650px;
+
+    margin: 12px auto 25px;
+
+    color: #818b9b;
+
+    line-height: 1.7;
 
     font-size: 14px;
 }
 
-.footer-name {
-    color: #d6a5ca;
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding: 50px 10px 35px;
+
+    text-align: center;
+
+    color: #596272;
+
+    font-size: 12px;
+}
+
+.footer strong {
+    color: #9da8b8;
+}
+
+.footer-line {
+
+    width: 80px;
+    height: 1px;
+
+    margin: 0 auto 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00dfff,
+            transparent
+        );
 }
 
 
-/* =========================
+/* =========================================================
    TOP BUTTON
-========================= */
+========================================================= */
 
 .top-button {
 
     position: fixed;
 
-    right: 20px;
-    bottom: 20px;
+    right: 22px;
+    bottom: 22px;
 
     width: 45px;
     height: 45px;
@@ -1002,63 +1573,85 @@ body::after {
 
     border-radius: 50%;
 
-    color: white;
+    color: #061017;
 
     background:
         linear-gradient(
             135deg,
-            #ff67cc,
-            #965fff
+            #00e5ff,
+            #8d70ff
         );
+
+    box-shadow:
+        0 0 25px
+        rgba(0,220,255,.2);
 
     cursor: pointer;
 
-    box-shadow:
-        0 0 20px
-        rgba(255,100,210,.3);
-
-    z-index: 1000;
+    z-index: 500;
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .folders {
+    .services {
         grid-template-columns:
             repeat(2, 1fr);
     }
+
+    .portfolio-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .company-points {
+        grid-template-columns:
+            1fr;
+    }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
 
     body {
-        padding:
-            18px 12px;
+        padding: 0 12px;
     }
 
-    .logo {
-        font-size: 48px;
-        letter-spacing: 5px;
+    .navbar {
+        position: relative;
+        top: 0;
     }
 
-    .subtitle {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 560px;
+        padding-top: 50px;
+    }
+
+    .hero-description {
         font-size: 13px;
     }
 
-    .about {
-        padding:
-            20px 15px;
+    .hero-buttons {
+        width: 100%;
     }
 
-    .about h2 {
-        font-size: 22px;
+    .btn {
+        width: 100%;
+        max-width: 300px;
     }
 
-    .folders {
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1067,17 +1660,36 @@ body::after {
     }
 
     .image-card img {
-        height: 320px;
+        height: 330px;
     }
 
-    .gallery-header h2 {
-        font-size: 34px;
+    .gallery-top {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .button {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
+    .company-card {
+        padding: 25px 20px;
+    }
+
+    .cta {
+        padding: 40px 20px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
 }
 
@@ -1088,12 +1700,13 @@ body::after {
 <body>
 
 
-<!-- =========================
+<!-- =======================================================
      PARTICLES
-========================= -->
+======================================================= -->
 
-<div class="particles">
+<div class="particles" aria-hidden="true">
 
+    <span class="particle"></span>
     <span class="particle"></span>
     <span class="particle"></span>
     <span class="particle"></span>
@@ -1114,970 +1727,1476 @@ body::after {
 <div class="container">
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- =======================================================
+     NAVBAR
+======================================================= -->
 
-<header
-    class="header"
-    id="home"
->
+<nav class="navbar">
 
-    <div class="logo">
+    <div class="nav-brand">
+
+        <span class="nav-mark">
+            WA
+        </span>
+
+        WOXIN AUTOMATION
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#services">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="#portfolio">
+                Portfolio
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =======================================================
+     HOME
+======================================================= -->
+
+<div id="home">
+
+
+<section class="hero">
+
+    <div class="hero-badge">
+        Digital Solutions • Automation • Creative Technology
+    </div>
+
+    <h1>
         WOXIN
+    </h1>
+
+    <div class="hero-company">
+        AUTOMATION
     </div>
 
     <div
-        class="subtitle"
+        class="hero-tagline"
         id="animatedBio"
     ></div>
 
-    <div class="gradient-line"></div>
+    <p class="hero-description">
 
-</header>
+        Woxin Automation is a modern technology and
+        creative solutions company focused on smart
+        automation, digital experiences, professional
+        design and scalable solutions for modern businesses.
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="about">
-
-    <h2>
-        ✦ Welcome to Woxin's Portfolio ✦
-    </h2>
-
-    <p>
-        Welcome! I'm Woxin, a creative artist
-        specializing in VTuber designs, logos,
-        banners, emotes, overlays,
-        3D art rooms and creative scenes.
     </p>
 
-    <div class="status">
-        Available for Commissions
+    <div class="hero-buttons">
+
+        <a
+            href="mailto:Gfx1628@gmail.com?subject=Woxin%20Automation%20Inquiry"
+            class="btn btn-primary"
+        >
+            Start a Project
+        </a>
+
+        <a
+            href="#portfolio"
+            class="btn btn-secondary"
+        >
+            Explore Portfolio
+        </a>
+
     </div>
 
 </section>
 
 
-<!-- =========================
-     BUTTONS
-========================= -->
+<!-- =======================================================
+     COMPANY
+======================================================= -->
 
-<div class="buttons">
+<section class="section">
+
+    <div class="company-card">
+
+        <div class="eyebrow">
+            WHO WE ARE
+        </div>
+
+        <h2>
+            Technology that works smarter.
+        </h2>
+
+        <p>
+
+            Woxin Automation combines automation,
+            technology and creative expertise to help
+            businesses build efficient digital workflows,
+            strong visual identities and engaging online
+            experiences. Our approach focuses on practical
+            solutions, modern design and long-term scalability.
+
+        </p>
+
+
+        <div class="company-points">
+
+            <div class="point">
+
+                <strong>
+                    Smart Automation
+                </strong>
+
+                <span>
+                    Efficient workflows and digital processes.
+                </span>
+
+            </div>
+
+
+            <div class="point">
+
+                <strong>
+                    Creative Technology
+                </strong>
+
+                <span>
+                    Design and technology working together.
+                </span>
+
+            </div>
+
+
+            <div class="point">
+
+                <strong>
+                    Digital Solutions
+                </strong>
+
+                <span>
+                    Professional solutions built for modern needs.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            WHAT WE DO
+        </div>
+
+        <h2>
+            Our Services
+        </h2>
+
+        <p>
+            A combination of technology, automation and
+            creative services designed to build better
+            digital experiences.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Automation
+            </h3>
+
+            <p>
+                Smart workflows and automated digital processes
+                designed to save time and improve efficiency.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI & Technology
+            </h3>
+
+            <p>
+                Modern technology solutions that help businesses
+                work smarter and scale efficiently.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Design
+            </h3>
+
+            <p>
+                Professional visual design including branding,
+                graphics and digital content.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🌐
+            </div>
+
+            <h3>
+                Digital Solutions
+            </h3>
+
+            <p>
+                Modern digital experiences and customized solutions
+                for creators, brands and businesses.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STATUS
+======================================================= -->
+
+<div class="status-wrap">
+
+    <div class="status">
+        Available for New Projects
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     PORTFOLIO
+======================================================= -->
+
+<section
+    class="section"
+    id="portfolio"
+>
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            SELECTED WORK
+        </div>
+
+        <h2>
+            Creative Portfolio
+        </h2>
+
+        <p>
+            Explore our design and digital work across
+            multiple creative categories.
+        </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <!-- VTUBER -->
+
+        <div
+            class="folder"
+            onclick="openGallery('vtuber')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🎭
+                </div>
+
+                <span class="folder-number">
+                    01
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    VTuber
+                </h3>
+
+                <p>
+                    Character & Model Designs
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- LOGO -->
+
+        <div
+            class="folder"
+            onclick="openGallery('logo')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🎨
+                </div>
+
+                <span class="folder-number">
+                    02
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Logo
+                </h3>
+
+                <p>
+                    Brand Identity & Logos
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- BANNER -->
+
+        <div
+            class="folder"
+            onclick="openGallery('banner')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🖼️
+                </div>
+
+                <span class="folder-number">
+                    03
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Banner
+                </h3>
+
+                <p>
+                    Social & Channel Banners
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- EMOTES -->
+
+        <div
+            class="folder"
+            onclick="openGallery('emotes')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    😎
+                </div>
+
+                <span class="folder-number">
+                    04
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Emotes
+                </h3>
+
+                <p>
+                    Stream & Community Emotes
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- 3D ART ROOM -->
+
+        <div
+            class="folder"
+            onclick="openGallery('art3d')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🏠
+                </div>
+
+                <span class="folder-number">
+                    05
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    3D Art Room
+                </h3>
+
+                <p>
+                    3D Environments & Rooms
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- ART SCENE -->
+
+        <div
+            class="folder"
+            onclick="openGallery('artscene')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🌌
+                </div>
+
+                <span class="folder-number">
+                    06
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Art Scene
+                </h3>
+
+                <p>
+                    Creative Environments
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- OVERLAY -->
+
+        <div
+            class="folder"
+            onclick="openGallery('overlay')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🖥️
+                </div>
+
+                <span class="folder-number">
+                    07
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Overlay
+                </h3>
+
+                <p>
+                    Streaming & Digital Overlays
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- ID CARD -->
+
+        <div
+            class="folder"
+            onclick="openGallery('vtuberid')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🪪
+                </div>
+
+                <span class="folder-number">
+                    08
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    VTuber ID Card
+                </h3>
+
+                <p>
+                    Profile & ID Designs
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+        <!-- 3D MODEL -->
+
+        <div
+            class="folder"
+            onclick="openGallery('vtuber3d')"
+        >
+
+            <div class="folder-top">
+
+                <div class="folder-icon">
+                    🧊
+                </div>
+
+                <span class="folder-number">
+                    09
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    3D VTuber Model
+                </h3>
+
+                <p>
+                    3D Model Designs
+                </p>
+
+            </div>
+
+            <span class="folder-action">
+                VIEW PROJECTS →
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CTA
+======================================================= -->
+
+<section
+    class="cta"
+    id="contact"
+>
+
+    <div class="eyebrow">
+        LET'S BUILD SOMETHING
+    </div>
+
+    <h2>
+        Have a project in mind?
+    </h2>
+
+    <p>
+        Tell us what you are building and let's create
+        a smart, professional and memorable digital solution.
+    </p>
 
     <a
-        class="button commission"
-        href="mailto:Gfx1628@gmail.com?subject=Commission%20Inquiry"
+        href="mailto:Gfx1628@gmail.com?subject=Woxin%20Automation%20Project%20Inquiry"
+        class="btn btn-primary"
     >
-        💌 Commission Me
+        Contact Woxin Automation
     </a>
 
-    <a
-        class="button email"
-        href="mailto:Gfx1628@gmail.com"
-    >
-        📧 Email Woxin
-    </a>
+</section>
+
 
 </div>
 
 
-<!-- =========================
-     FOLDERS
-========================= -->
-
-<div id="homeFolders">
-
-<div class="folders">
-
-
-<!-- VTUBER -->
-
-<div
-    class="folder"
-    onclick="openGallery('vtuber')"
->
-
-    <div class="folder-icon">
-        🎭
-    </div>
-
-    <h3>
-        VTuber
-    </h3>
-
-    <p>
-        VTuber Designs
-    </p>
-
-</div>
-
-
-<!-- LOGO -->
-
-<div
-    class="folder"
-    onclick="openGallery('logo')"
->
-
-    <div class="folder-icon">
-        🎨
-    </div>
-
-    <h3>
-        Logo
-    </h3>
-
-    <p>
-        Logo Designs
-    </p>
-
-</div>
-
-
-<!-- BANNER -->
-
-<div
-    class="folder"
-    onclick="openGallery('banner')"
->
-
-    <div class="folder-icon">
-        🖼️
-    </div>
-
-    <h3>
-        Banner
-    </h3>
-
-    <p>
-        Banner Designs
-    </p>
-
-</div>
-
-
-<!-- EMOTES -->
-
-<div
-    class="folder"
-    onclick="openGallery('emotes')"
->
-
-    <div class="folder-icon">
-        😎
-    </div>
-
-    <h3>
-        Emotes
-    </h3>
-
-    <p>
-        Stream Emotes
-    </p>
-
-</div>
-
-
-<!-- 3D ART ROOM -->
-
-<div
-    class="folder"
-    onclick="openGallery('art3d')"
->
-
-    <div class="folder-icon">
-        🏠
-    </div>
-
-    <h3>
-        3D Art Room
-    </h3>
-
-    <p>
-        3D Room Designs
-    </p>
-
-</div>
-
-
-<!-- ART SCENE -->
-
-<div
-    class="folder"
-    onclick="openGallery('artscene')"
->
-
-    <div class="folder-icon">
-        🌌
-    </div>
-
-    <h3>
-        Art Scene
-    </h3>
-
-    <p>
-        Scene Designs
-    </p>
-
-</div>
-
-
-<!-- OVERLAY -->
-
-<div
-    class="folder"
-    onclick="openGallery('overlay')"
->
-
-    <div class="folder-icon">
-        🖥️
-    </div>
-
-    <h3>
-        Overlay
-    </h3>
-
-    <p>
-        Stream Overlays
-    </p>
-
-</div>
-
-
-<!-- VTUBER ID CARD -->
-
-<div
-    class="folder"
-    onclick="openGallery('vtuberid')"
->
-
-    <div class="folder-icon">
-        🪪
-    </div>
-
-    <h3>
-        VTuber ID Card
-    </h3>
-
-    <p>
-        VTuber ID Card Designs
-    </p>
-
-</div>
-
-
-<!-- 3D VTUBER MODEL -->
-
-<div
-    class="folder"
-    onclick="openGallery('vtuber3d')"
->
-
-    <div class="folder-icon">
-        🧊
-    </div>
-
-    <h3>
-        3D VTuber Model
-    </h3>
-
-    <p>
-        3D VTuber Model Designs
-    </p>
-
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      VTUBER GALLERY
-========================= -->
+======================================================= -->
 
-<div id="vtuber" class="gallery">
-
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
-</div>
-
-<div class="gallery-header">
-
-    <h2>VTuber</h2>
-
-    <p>
-        VTuber character and model designs
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img
-    src="Chibi%20model.jpeg"
-    alt="Chibi Model"
-    onclick="showImage(this.src)"
+<div
+    id="vtuber"
+    class="gallery"
 >
+
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                VTuber
+            </h2>
+
+            <p>
+                Character and model design collection
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Chibi%20model.jpeg"
+                 alt="Chibi Model"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="model%201.jpeg"
+                 alt="Model 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Character.jpeg"
+                 alt="Character"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%20model.jpeg"
+                 alt="VTuber Model"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%2011.jpeg"
+                 alt="VTuber 11"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%2010.jpeg"
+                 alt="VTuber 10"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%209.jpeg"
+                 alt="VTuber 9"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%208.jpeg"
+                 alt="VTuber 8"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%207.jpeg"
+                 alt="VTuber 7"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%206%20.jpeg"
+                 alt="VTuber 6"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%205%20.jpeg"
+                 alt="VTuber 5"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
 
-<div class="image-card">
-<img
-    src="model%201.jpeg"
-    alt="Model 1"
-    onclick="showImage(this.src)"
+<!-- =======================================================
+     LOGO GALLERY
+======================================================= -->
+
+<div
+    id="logo"
+    class="gallery"
 >
+
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                Logo
+            </h2>
+
+            <p>
+                Brand identity and logo collection
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Logo%202.jpeg"
+                 alt="Logo 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo1.jpeg"
+                 alt="Logo 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo%209.jpeg"
+                 alt="Logo 9"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo%208.jpeg"
+                 alt="Logo 8"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo%207.jpeg"
+                 alt="Logo 7"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo%206.jpeg"
+                 alt="Logo 6"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo5.jpeg"
+                 alt="Logo 5"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="logo%204.jpeg"
+                 alt="Logo 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Logo3.jpeg"
+                 alt="Logo 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
 
-<div class="image-card">
-<img
-    src="Character.jpeg"
-    alt="Character"
-    onclick="showImage(this.src)"
+<!-- =======================================================
+     BANNER GALLERY
+======================================================= -->
+
+<div
+    id="banner"
+    class="gallery"
 >
+
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                Banner
+            </h2>
+
+            <p>
+                Social media and channel banner collection
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Banner%201.jpeg"
+                 alt="Banner 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%202.jpeg"
+                 alt="Banner 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%204.jpeg"
+                 alt="Banner 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%205.jpeg"
+                 alt="Banner 5"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%206.jpeg"
+                 alt="Banner 6"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%207.jpeg"
+                 alt="Banner 7"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%209.jpeg"
+                 alt="Banner 9"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%2010.jpeg"
+                 alt="Banner 10"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%2011.jpeg"
+                 alt="Banner 11"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Banner%2012.jpeg"
+                 alt="Banner 12"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
 
-<div class="image-card">
-<img
-    src="Vtuber%20model.jpeg"
-    alt="VTuber Model"
-    onclick="showImage(this.src)"
+<!-- =======================================================
+     EMOTES GALLERY
+======================================================= -->
+
+<div
+    id="emotes"
+    class="gallery"
 >
-</div>
+
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                Emotes
+            </h2>
+
+            <p>
+                VTuber and streaming emotes
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
 
 
-<div class="image-card">
-<img
-    src="Vtuber%2011.jpeg"
-    alt="VTuber 11"
-    onclick="showImage(this.src)"
->
-</div>
+    <div class="images">
 
+        <div class="image-card">
+            <img src="Emotes%201.jpeg"
+                 alt="Emotes 1"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%2010.jpeg"
-    alt="VTuber 10"
-    onclick="showImage(this.src)"
->
-</div>
+        <div class="image-card">
+            <img src="Emote%202.jpeg"
+                 alt="Emote 2"
+                 onclick="showImage(this.src)">
+        </div>
 
+        <div class="image-card">
+            <img src="Emotes%203.jpeg"
+                 alt="Emotes 3"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%209.jpeg"
-    alt="VTuber 9"
-    onclick="showImage(this.src)"
->
-</div>
+        <div class="image-card">
+            <img src="Emotes%204.jpeg"
+                 alt="Emotes 4"
+                 onclick="showImage(this.src)">
+        </div>
 
+        <div class="image-card">
+            <img src="Emotes%205.jpeg"
+                 alt="Emotes 5"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%208.jpeg"
-    alt="VTuber 8"
-    onclick="showImage(this.src)"
->
-</div>
+        <div class="image-card">
+            <img src="Emotes%206.jpeg"
+                 alt="Emotes 6"
+                 onclick="showImage(this.src)">
+        </div>
 
+        <div class="image-card">
+            <img src="Emotes%207.jpeg"
+                 alt="Emotes 7"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%207.jpeg"
-    alt="VTuber 7"
-    onclick="showImage(this.src)"
->
-</div>
+        <div class="image-card">
+            <img src="Emotes%208.jpeg"
+                 alt="Emotes 8"
+                 onclick="showImage(this.src)">
+        </div>
 
+        <div class="image-card">
+            <img src="Emotes%209.jpeg"
+                 alt="Emotes 9"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%206%20.jpeg"
-    alt="VTuber 6"
-    onclick="showImage(this.src)"
->
-</div>
+        <div class="image-card">
+            <img src="Emotes%2010.jpeg"
+                 alt="Emotes 10"
+                 onclick="showImage(this.src)">
+        </div>
 
+        <div class="image-card">
+            <img src="Emotes%2011.jpeg"
+                 alt="Emotes 11"
+                 onclick="showImage(this.src)">
+        </div>
 
-<div class="image-card">
-<img
-    src="Vtuber%205%20.jpeg"
-    alt="VTuber 5"
-    onclick="showImage(this.src)"
->
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
-     LOGO
-========================= -->
-
-<div id="logo" class="gallery">
-
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
-</div>
-
-<div class="gallery-header">
-
-    <h2>Logo</h2>
-
-    <p>
-        Logo design collection
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="Logo%202.jpeg"
-     alt="Logo 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo1.jpeg"
-     alt="Logo 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo%209.jpeg"
-     alt="Logo 9"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo%208.jpeg"
-     alt="Logo 8"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo%207.jpeg"
-     alt="Logo 7"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo%206.jpeg"
-     alt="Logo 6"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo5.jpeg"
-     alt="Logo 5"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="logo%204.jpeg"
-     alt="Logo 4"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Logo3.jpeg"
-     alt="Logo 3"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
-     BANNER
-========================= -->
-
-<div id="banner" class="gallery">
-
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
-</div>
-
-<div class="gallery-header">
-
-    <h2>Banner</h2>
-
-    <p>
-        Banner design collection
-    </p>
+    </div>
 
 </div>
 
-<div class="images">
 
-
-<div class="image-card">
-<img src="Banner%201.jpeg"
-     alt="Banner 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%202.jpeg"
-     alt="Banner 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%204.jpeg"
-     alt="Banner 4"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%205.jpeg"
-     alt="Banner 5"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%206.jpeg"
-     alt="Banner 6"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%207.jpeg"
-     alt="Banner 7"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%209.jpeg"
-     alt="Banner 9"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%2010.jpeg"
-     alt="Banner 10"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%2011.jpeg"
-     alt="Banner 11"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Banner%2012.jpeg"
-     alt="Banner 12"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
-     EMOTES
-========================= -->
-
-<div id="emotes" class="gallery">
-
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
-</div>
-
-<div class="gallery-header">
-
-    <h2>Emotes</h2>
-
-    <p>
-        VTuber and stream emotes
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="Emotes%201.jpeg"
-     alt="Emotes 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emote%202.jpeg"
-     alt="Emote 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%203.jpeg"
-     alt="Emotes 3"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%204.jpeg"
-     alt="Emotes 4"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%205.jpeg"
-     alt="Emotes 5"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%206.jpeg"
-     alt="Emotes 6"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%207.jpeg"
-     alt="Emotes 7"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%208.jpeg"
-     alt="Emotes 8"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%209.jpeg"
-     alt="Emotes 9"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%2010.jpeg"
-     alt="Emotes 10"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Emotes%2011.jpeg"
-     alt="Emotes 11"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      3D ART ROOM
-========================= -->
+======================================================= -->
 
-<div id="art3d" class="gallery">
+<div
+    id="art3d"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                3D Art Room
+            </h2>
+
+            <p>
+                3D room and environment designs
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="3D%20art%20room%201.jpeg"
+                 alt="3D Art Room 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20art%20room%202.jpeg"
+                 alt="3D Art Room 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20art%20room%203.jpeg"
+                 alt="3D Art Room 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20art%20room%204.jpeg"
+                 alt="3D Art Room 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
-<div class="gallery-header">
 
-    <h2>3D Art Room</h2>
-
-    <p>
-        3D room and environment designs
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="3D%20art%20room%201.jpeg"
-     alt="3D Art Room 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20art%20room%202.jpeg"
-     alt="3D Art Room 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20art%20room%203.jpeg"
-     alt="3D Art Room 3"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20art%20room%204.jpeg"
-     alt="3D Art Room 4"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      ART SCENE
-========================= -->
+======================================================= -->
 
-<div id="artscene" class="gallery">
+<div
+    id="artscene"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                Art Scene
+            </h2>
+
+            <p>
+                Creative scenes and environments
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Artscene%201.jpeg"
+                 alt="Art Scene 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%202.jpeg"
+                 alt="Art Scene 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%203.jpeg"
+                 alt="Art Scene 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%204.jpeg"
+                 alt="Art Scene 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%205.jpeg"
+                 alt="Art Scene 5"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%206.jpeg"
+                 alt="Art Scene 6"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%207.jpeg"
+                 alt="Art Scene 7"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%208.jpeg"
+                 alt="Art Scene 8"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%209.jpeg"
+                 alt="Art Scene 9"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Artscene%2010.jpeg"
+                 alt="Art Scene 10"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
-<div class="gallery-header">
 
-    <h2>Art Scene</h2>
-
-    <p>
-        Creative scene and environment designs
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="Artscene%201.jpeg"
-     alt="Art Scene 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%202.jpeg"
-     alt="Art Scene 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%203.jpeg"
-     alt="Art Scene 3"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%204.jpeg"
-     alt="Art Scene 4"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%205.jpeg"
-     alt="Art Scene 5"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%206.jpeg"
-     alt="Art Scene 6"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%207.jpeg"
-     alt="Art Scene 7"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%208.jpeg"
-     alt="Art Scene 8"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%209.jpeg"
-     alt="Art Scene 9"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Artscene%2010.jpeg"
-     alt="Art Scene 10"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      OVERLAY
-========================= -->
+======================================================= -->
 
-<div id="overlay" class="gallery">
+<div
+    id="overlay"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                Overlay
+            </h2>
+
+            <p>
+                Streaming and digital overlay designs
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Overlay%201.jpeg"
+                 alt="Overlay 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Overlay%202.jpeg"
+                 alt="Overlay 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Overlay%203.jpeg"
+                 alt="Overlay 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
-<div class="gallery-header">
 
-    <h2>Overlay</h2>
-
-    <p>
-        Stream overlay designs
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="Overlay%201.jpeg"
-     alt="Overlay 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Overlay%202.jpeg"
-     alt="Overlay 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Overlay%203.jpeg"
-     alt="Overlay 3"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      VTUBER ID CARD
-========================= -->
+======================================================= -->
 
-<div id="vtuberid" class="gallery">
+<div
+    id="vtuberid"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                VTuber ID Card
+            </h2>
+
+            <p>
+                VTuber identity and profile card designs
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="Vtuber%20ID%20Card%201.jpeg"
+                 alt="VTuber ID Card 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%20ID%20Card%202.jpeg"
+                 alt="VTuber ID Card 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%20ID%20Card%203.jpeg"
+                 alt="VTuber ID Card 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="Vtuber%20ID%20Card%204.jpeg"
+                 alt="VTuber ID Card 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
-<div class="gallery-header">
 
-    <h2>VTuber ID Card</h2>
-
-    <p>
-        VTuber ID card and profile designs
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="Vtuber%20ID%20Card%201.jpeg"
-     alt="VTuber ID Card 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Vtuber%20ID%20Card%202.jpeg"
-     alt="VTuber ID Card 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Vtuber%20ID%20Card%203.jpeg"
-     alt="VTuber ID Card 3"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="Vtuber%20ID%20Card%204.jpeg"
-     alt="VTuber ID Card 4"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      3D VTUBER MODEL
-========================= -->
+======================================================= -->
 
-<div id="vtuber3d" class="gallery">
+<div
+    id="vtuber3d"
+    class="gallery"
+>
 
-<div class="back" onclick="goHome()">
-    ← Back to Portfolio
+    <div class="gallery-top">
+
+        <div class="gallery-title">
+
+            <h2>
+                3D VTuber Model
+            </h2>
+
+            <p>
+                3D VTuber model designs and showcases
+            </p>
+
+        </div>
+
+        <button
+            class="back"
+            onclick="goHome()"
+        >
+            ← Back
+        </button>
+
+    </div>
+
+
+    <div class="images">
+
+        <div class="image-card">
+            <img src="3D%20VTuber%20Model%201.jpeg"
+                 alt="3D VTuber Model 1"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20VTuber%20Model%202.jpeg"
+                 alt="3D VTuber Model 2"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20VTuber%20Model%203.jpeg"
+                 alt="3D VTuber Model 3"
+                 onclick="showImage(this.src)">
+        </div>
+
+        <div class="image-card">
+            <img src="3D%20VTuber%20Model%204.jpeg"
+                 alt="3D VTuber Model 4"
+                 onclick="showImage(this.src)">
+        </div>
+
+    </div>
+
 </div>
 
-<div class="gallery-header">
 
-    <h2>3D VTuber Model</h2>
-
-    <p>
-        3D VTuber model designs and showcases
-    </p>
-
-</div>
-
-<div class="images">
-
-
-<div class="image-card">
-<img src="3D%20VTuber%20Model%201.jpeg"
-     alt="3D VTuber Model 1"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20VTuber%20Model%202.jpeg"
-     alt="3D VTuber Model 2"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20VTuber%20Model%203.jpeg"
-     alt="3D VTuber Model 3"
-     onclick="showImage(this.src)">
-</div>
-
-<div class="image-card">
-<img src="3D%20VTuber%20Model%204.jpeg"
-     alt="3D VTuber Model 4"
-     onclick="showImage(this.src)">
-</div>
-
-
-</div>
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      LIGHTBOX
-========================= -->
+======================================================= -->
 
 <div
     class="lightbox"
@@ -2085,8 +3204,11 @@ body::after {
     onclick="closeImage()"
 >
 
-    <span class="close">
-        &times;
+    <span
+        class="close"
+        onclick="closeImage()"
+    >
+        ×
     </span>
 
     <img
@@ -2098,35 +3220,9 @@ body::after {
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-    <p>
-        © 2026
-
-        <span class="footer-name">
-            Woxin
-        </span>
-
-        • Creative Portfolio
-    </p>
-
-    <p style="margin-top:8px;">
-        ✦ VTuber • Design • 3D • Creative Work ✦
-    </p>
-
-</footer>
-
-
-</div>
-
-
-<!-- =========================
+<!-- =======================================================
      TOP BUTTON
-========================= -->
+======================================================= -->
 
 <div
     class="top-button"
@@ -2137,43 +3233,62 @@ body::after {
 </div>
 
 
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-line"></div>
+
+    <p>
+        © 2026
+        <strong>
+            WOXIN AUTOMATION
+        </strong>
+        — Digital Solutions & Creative Technology
+    </p>
+
+</footer>
+
+
+</div>
+
+
 <script>
 
-
-/* =========================
-   ANIMATED BIO
-========================= */
+/* =========================================================
+   ANIMATED HERO TAGLINE
+========================================================= */
 
 const bioTexts = [
 
-    "VTuber • Design • 3D • Creative Work",
+    "Smart Automation • Digital Solutions • Innovation",
 
-    "VTuber Designs • Logos • Banners • Emotes",
+    "Technology • Creative Design • Digital Experiences",
 
-    "3D Art Rooms • Art Scenes • Stream Overlays"
+    "Automation • AI • Creative Technology"
 
 ];
 
 const animatedBio =
-    document.getElementById(
-        "animatedBio"
-    );
+    document.getElementById("animatedBio");
 
 let bioIndex = 0;
 let bioCharIndex = 0;
-let deletingBio = false;
+let deleting = false;
 
 
 function animateBio() {
 
-    const currentText =
+    const current =
         bioTexts[bioIndex];
 
 
-    if (!deletingBio) {
+    if (!deleting) {
 
         animatedBio.textContent =
-            currentText.substring(
+            current.substring(
                 0,
                 bioCharIndex + 1
             );
@@ -2182,11 +3297,11 @@ function animateBio() {
 
 
         if (
-            bioCharIndex ===
-            currentText.length
+            bioCharIndex >=
+            current.length
         ) {
 
-            deletingBio = true;
+            deleting = true;
 
             setTimeout(
                 animateBio,
@@ -2199,14 +3314,13 @@ function animateBio() {
 
         setTimeout(
             animateBio,
-            65
+            60
         );
-
 
     } else {
 
         animatedBio.textContent =
-            currentText.substring(
+            current.substring(
                 0,
                 bioCharIndex - 1
             );
@@ -2214,11 +3328,9 @@ function animateBio() {
         bioCharIndex--;
 
 
-        if (
-            bioCharIndex === 0
-        ) {
+        if (bioCharIndex <= 0) {
 
-            deletingBio = false;
+            deleting = false;
 
             bioIndex =
                 (bioIndex + 1)
@@ -2226,7 +3338,7 @@ function animateBio() {
 
             setTimeout(
                 animateBio,
-                400
+                450
             );
 
             return;
@@ -2235,7 +3347,7 @@ function animateBio() {
 
         setTimeout(
             animateBio,
-            35
+            32
         );
     }
 }
@@ -2244,9 +3356,9 @@ function animateBio() {
 animateBio();
 
 
-/* =========================
+/* =========================================================
    OPEN GALLERY
-========================= */
+========================================================= */
 
 function openGallery(name) {
 
@@ -2256,54 +3368,45 @@ function openGallery(name) {
 
 
     document
-        .querySelector(".about")
-        .style.display = "none";
-
-
-    document
-        .querySelector(".buttons")
-        .style.display = "none";
-
-
-    document
-        .getElementById("homeFolders")
-        .style.display = "none";
-
-
-    document
         .querySelectorAll(".gallery")
-        .forEach(function(page) {
+        .forEach(function(gallery) {
 
-            page.style.display =
+            gallery.style.display =
                 "none";
 
         });
 
 
-    document
-        .getElementById(name)
-        .style.display =
-        "block";
+    const selected =
+        document.getElementById(name);
 
 
-    window.scrollTo(
-        0,
-        0
-    );
+    if (selected) {
+
+        selected.style.display =
+            "block";
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* =========================
+/* =========================================================
    GO HOME
-========================= */
+========================================================= */
 
 function goHome() {
 
     document
         .querySelectorAll(".gallery")
-        .forEach(function(page) {
+        .forEach(function(gallery) {
 
-            page.style.display =
+            gallery.style.display =
                 "none";
 
         });
@@ -2315,72 +3418,63 @@ function goHome() {
         "block";
 
 
-    document
-        .querySelector(".about")
-        .style.display =
-        "block";
-
-
-    document
-        .querySelector(".buttons")
-        .style.display =
-        "flex";
-
-
-    document
-        .getElementById("homeFolders")
-        .style.display =
-        "block";
-
-
-    window.scrollTo(
-        0,
-        0
-    );
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* =========================
-   SHOW IMAGE
-========================= */
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
 
 function showImage(src) {
 
-    document
-        .getElementById("lightbox")
-        .style.display =
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const image =
+        document.getElementById("lightboxImage");
+
+
+    image.src = src;
+
+    lightbox.style.display =
         "flex";
 
 
-    document
-        .getElementById("lightboxImage")
-        .src =
-        src;
+    document.body.style.overflow =
+        "hidden";
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE IMAGE
-========================= */
+========================================================= */
 
 function closeImage() {
 
-    document
-        .getElementById("lightbox")
-        .style.display =
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const image =
+        document.getElementById("lightboxImage");
+
+
+    lightbox.style.display =
         "none";
 
+    image.src = "";
 
-    document
-        .getElementById("lightboxImage")
-        .src =
+    document.body.style.overflow =
         "";
 }
 
 
-/* =========================
+/* =========================================================
    TOP BUTTON
-========================= */
+========================================================= */
 
 window.addEventListener(
     "scroll",
@@ -2392,9 +3486,7 @@ window.addEventListener(
             );
 
 
-        if (
-            window.scrollY > 400
-        ) {
+        if (window.scrollY > 450) {
 
             button.style.display =
                 "flex";
@@ -2421,19 +3513,29 @@ function goTop() {
 }
 
 
-/* =========================
-   IMAGE PROTECTION
-========================= */
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
 document.addEventListener(
-    "contextmenu",
+    "keydown",
     function(event) {
 
-        event.preventDefault();
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeImage();
+
+        }
 
     }
 );
 
+
+/* =========================================================
+   IMAGE PROTECTION
+========================================================= */
 
 document.addEventListener(
     "dragstart",
@@ -2441,8 +3543,7 @@ document.addEventListener(
 
         if (
             event.target &&
-            event.target.tagName ===
-            "IMG"
+            event.target.tagName === "IMG"
         ) {
 
             event.preventDefault();
@@ -2454,76 +3555,16 @@ document.addEventListener(
 
 
 document.addEventListener(
-    "selectstart",
+    "contextmenu",
     function(event) {
 
         if (
             event.target &&
-            event.target.tagName ===
-            "IMG"
+            event.target.tagName === "IMG"
         ) {
 
             event.preventDefault();
 
-        }
-
-    }
-);
-
-
-/* =========================
-   KEYBOARD PROTECTION
-========================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.ctrlKey &&
-            event.key.toLowerCase() === "s"
-        ) {
-            event.preventDefault();
-        }
-
-
-        if (
-            event.ctrlKey &&
-            event.key.toLowerCase() === "u"
-        ) {
-            event.preventDefault();
-        }
-
-
-        if (
-            event.ctrlKey &&
-            event.shiftKey &&
-            event.key.toLowerCase() === "i"
-        ) {
-            event.preventDefault();
-        }
-
-
-        if (
-            event.ctrlKey &&
-            event.shiftKey &&
-            event.key.toLowerCase() === "j"
-        ) {
-            event.preventDefault();
-        }
-
-
-        if (
-            event.key === "F12"
-        ) {
-            event.preventDefault();
-        }
-
-
-        if (
-            event.key === "Escape"
-        ) {
-            closeImage();
         }
 
     }
