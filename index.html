@@ -7,6 +7,7 @@
 <title>Woxin | Creative Portfolio</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,19 +23,19 @@ body {
     overflow-x: hidden;
 
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    color: white;
 
     background:
-        radial-gradient(circle at 10% 10%, rgba(255, 95, 205, .16), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(145, 90, 255, .15), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(255, 80, 190, .10), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(255,95,205,.16), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(145,90,255,.15), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(255,80,190,.10), transparent 30%),
         linear-gradient(135deg, #09070d, #17101f 50%, #0a0710);
 
     padding: 25px 18px;
 }
 
 /* =========================
-   ANIMATED GLOW
+   BACKGROUND GLOW
 ========================= */
 
 body::before,
@@ -46,7 +47,6 @@ body::after {
     height: 300px;
 
     border-radius: 50%;
-
     filter: blur(90px);
     opacity: .22;
 
@@ -66,6 +66,7 @@ body::after {
     background: #8955ff;
     right: -130px;
     bottom: 5%;
+
     animation-delay: 2s;
 }
 
@@ -103,9 +104,9 @@ body::after {
     color: #ffb9e9;
 
     text-shadow:
-        0 0 8px rgba(255, 130, 220, .9),
-        0 0 25px rgba(255, 100, 210, .6),
-        0 0 55px rgba(180, 90, 255, .35);
+        0 0 8px rgba(255,130,220,.9),
+        0 0 25px rgba(255,100,210,.6),
+        0 0 55px rgba(180,90,255,.35);
 
     animation: logoGlow 3s ease-in-out infinite alternate;
 }
@@ -180,14 +181,14 @@ body::after {
 
     text-align: center;
 
-    background: rgba(29, 20, 39, .72);
+    background: rgba(29,20,39,.72);
 
     border: 1px solid #493652;
 
     border-radius: 22px;
 
     box-shadow:
-        0 0 30px rgba(255, 100, 210, .06);
+        0 0 30px rgba(255,100,210,.06);
 }
 
 .about h2 {
@@ -217,9 +218,9 @@ body::after {
 
     color: #ffd9f3;
 
-    background: rgba(255, 100, 210, .10);
+    background: rgba(255,100,210,.10);
 
-    border: 1px solid rgba(255, 130, 220, .3);
+    border: 1px solid rgba(255,130,220,.3);
 
     font-size: 13px;
 
@@ -301,7 +302,7 @@ body::after {
 }
 
 /* =========================
-   PORTFOLIO FOLDERS
+   FOLDERS
 ========================= */
 
 .folders {
@@ -357,6 +358,7 @@ body::after {
 
 .folder:hover::before {
     transform: scale(2);
+
     background: rgba(255,100,210,.13);
 }
 
@@ -394,7 +396,7 @@ body::after {
 }
 
 /* =========================
-   GALLERIES
+   GALLERY
 ========================= */
 
 .gallery {
@@ -453,6 +455,10 @@ body::after {
         0 0 20px rgba(255,100,210,.3);
 }
 
+/* =========================
+   IMAGES
+========================= */
+
 .images {
     display: grid;
 
@@ -493,6 +499,12 @@ body::after {
     object-fit: cover;
 
     transition: .45s;
+
+    /* IMAGE PROTECTION */
+    user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-user-drag: none;
 }
 
 .image-card:hover img {
@@ -527,6 +539,11 @@ body::after {
     object-fit: contain;
 
     border-radius: 15px;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-user-drag: none;
 
     box-shadow:
         0 0 35px rgba(255,110,215,.3),
@@ -627,6 +644,7 @@ body::after {
 
     .logo {
         font-size: 48px;
+
         letter-spacing: 5px;
     }
 
@@ -656,17 +674,22 @@ body::after {
 
     .button {
         width: 100%;
+
         max-width: 280px;
+
         text-align: center;
     }
 
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
+
 
 <!-- =========================
      HEADER
@@ -674,7 +697,9 @@ body::after {
 
 <header class="header" id="home">
 
-    <div class="logo">WOXIN</div>
+    <div class="logo">
+        WOXIN
+    </div>
 
     <div class="subtitle">
         VTuber • Design • 3D • Creative Work
@@ -691,7 +716,9 @@ body::after {
 
 <section class="about">
 
-    <h2>✦ Welcome to Woxin's Portfolio ✦</h2>
+    <h2>
+        ✦ Welcome to Woxin's Portfolio ✦
+    </h2>
 
     <p>
         Welcome! I'm Woxin, a creative artist specializing in
@@ -730,56 +757,134 @@ body::after {
 
 
 <!-- =========================
-     HOME FOLDERS
+     FOLDERS
 ========================= -->
 
 <div id="homeFolders">
 
-    <div class="folders">
+<div class="folders">
 
-        <div class="folder" onclick="openGallery('vtuber')">
-            <div class="folder-icon">📁</div>
-            <h3>VTuber</h3>
-            <p>VTuber Designs</p>
-        </div>
 
-        <div class="folder" onclick="openGallery('logo')">
-            <div class="folder-icon">📁</div>
-            <h3>Logo</h3>
-            <p>Logo Designs</p>
-        </div>
+<div class="folder" onclick="openGallery('vtuber')">
 
-        <div class="folder" onclick="openGallery('banner')">
-            <div class="folder-icon">📁</div>
-            <h3>Banner</h3>
-            <p>Banner Designs</p>
-        </div>
-
-        <div class="folder" onclick="openGallery('emotes')">
-            <div class="folder-icon">📁</div>
-            <h3>Emotes</h3>
-            <p>Stream Emotes</p>
-        </div>
-
-        <div class="folder" onclick="openGallery('art3d')">
-            <div class="folder-icon">📁</div>
-            <h3>3D Art Room</h3>
-            <p>3D Room Designs</p>
-        </div>
-
-        <div class="folder" onclick="openGallery('artscene')">
-            <div class="folder-icon">📁</div>
-            <h3>Art Scene</h3>
-            <p>Scene Designs</p>
-        </div>
-
-        <div class="folder" onclick="openGallery('overlay')">
-            <div class="folder-icon">📁</div>
-            <h3>Overlay</h3>
-            <p>Stream Overlays</p>
-        </div>
-
+    <div class="folder-icon">
+        📁
     </div>
+
+    <h3>
+        VTuber
+    </h3>
+
+    <p>
+        VTuber Designs
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('logo')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        Logo
+    </h3>
+
+    <p>
+        Logo Designs
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('banner')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        Banner
+    </h3>
+
+    <p>
+        Banner Designs
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('emotes')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        Emotes
+    </h3>
+
+    <p>
+        Stream Emotes
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('art3d')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        3D Art Room
+    </h3>
+
+    <p>
+        3D Room Designs
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('artscene')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        Art Scene
+    </h3>
+
+    <p>
+        Scene Designs
+    </p>
+
+</div>
+
+
+<div class="folder" onclick="openGallery('overlay')">
+
+    <div class="folder-icon">
+        📁
+    </div>
+
+    <h3>
+        Overlay
+    </h3>
+
+    <p>
+        Stream Overlays
+    </p>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -790,60 +895,153 @@ body::after {
 
 <div id="vtuber" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div
+    class="back"
+    onclick="goHome()"
+>
+    ← Back to Portfolio
+</div>
+
 
 <div class="gallery-header">
-    <h2>VTuber</h2>
-    <p>VTuber character and model designs</p>
+
+    <h2>
+        VTuber
+    </h2>
+
+    <p>
+        VTuber character and model designs
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card">
-<img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)">
-</div>
 
 <div class="image-card">
-<img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)">
+
+<img
+src="Chibi%20model.jpeg"
+alt="Chibi Model"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Character.jpeg" alt="Character" onclick="showImage(this.src)">
+
+<img
+src="model%201.jpeg"
+alt="Model 1"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)">
+
+<img
+src="Character.jpeg"
+alt="Character"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%20model.jpeg"
+alt="VTuber Model"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%2011.jpeg"
+alt="VTuber 11"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%2010.jpeg"
+alt="VTuber 10"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%209.jpeg"
+alt="VTuber 9"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%208.jpeg"
+alt="VTuber 8"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)">
+
+<img
+src="Vtuber%207.jpeg"
+alt="VTuber 7"
+onclick="showImage(this.src)"
+>
+
 </div>
+
 
 <div class="image-card">
-<img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)">
-</div>
+
+<img
+src="Vtuber%206%20.jpeg"
+alt="VTuber 6"
+onclick="showImage(this.src)"
+>
 
 </div>
+
+
+<div class="image-card">
+
+<img
+src="Vtuber%205%20.jpeg"
+alt="VTuber 5"
+onclick="showImage(this.src)"
+>
+
+</div>
+
+
+</div>
+
 </div>
 
 
@@ -853,26 +1051,83 @@ body::after {
 
 <div id="logo" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>Logo</h2>
-    <p>Logo design collection</p>
+
+    <h2>
+        Logo
+    </h2>
+
+    <p>
+        Logo design collection
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="Logo%202.jpeg" alt="Logo 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo1.jpeg" alt="Logo 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo%209.jpeg" alt="Logo 9" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo%208.jpeg" alt="Logo 8" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo%207.jpeg" alt="Logo 7" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo%206.jpeg" alt="Logo 6" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo5.jpeg" alt="Logo 5" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="logo%204.jpeg" alt="Logo 4" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Logo3.jpeg" alt="Logo 3" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="Logo%202.jpeg"
+alt="Logo 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo1.jpeg"
+alt="Logo 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo%209.jpeg"
+alt="Logo 9"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo%208.jpeg"
+alt="Logo 8"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo%207.jpeg"
+alt="Logo 7"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo%206.jpeg"
+alt="Logo 6"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo5.jpeg"
+alt="Logo 5"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="logo%204.jpeg"
+alt="Logo 4"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Logo3.jpeg"
+alt="Logo 3"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -882,27 +1137,89 @@ body::after {
 
 <div id="banner" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>Banner</h2>
-    <p>Banner design collection</p>
+
+    <h2>
+        Banner
+    </h2>
+
+    <p>
+        Banner design collection
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="Banner%201.jpeg" alt="Banner 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%202.jpeg" alt="Banner 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%204.jpeg" alt="Banner 4" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%205.jpeg" alt="Banner 5" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%206.jpeg" alt="Banner 6" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%207.jpeg" alt="Banner 7" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%209.jpeg" alt="Banner 9" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%2010.jpeg" alt="Banner 10" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%2011.jpeg" alt="Banner 11" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Banner%2012.jpeg" alt="Banner 12" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="Banner%201.jpeg"
+alt="Banner 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%202.jpeg"
+alt="Banner 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%204.jpeg"
+alt="Banner 4"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%205.jpeg"
+alt="Banner 5"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%206.jpeg"
+alt="Banner 6"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%207.jpeg"
+alt="Banner 7"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%209.jpeg"
+alt="Banner 9"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%2010.jpeg"
+alt="Banner 10"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%2011.jpeg"
+alt="Banner 11"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Banner%2012.jpeg"
+alt="Banner 12"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -912,28 +1229,95 @@ body::after {
 
 <div id="emotes" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>Emotes</h2>
-    <p>VTuber and stream emotes</p>
+
+    <h2>
+        Emotes
+    </h2>
+
+    <p>
+        VTuber and stream emotes
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="Emotes%201.jpeg" alt="Emotes 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emote%202.jpeg" alt="Emote 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%203.jpeg" alt="Emotes 3" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%204.jpeg" alt="Emotes 4" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%205.jpeg" alt="Emotes 5" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%206.jpeg" alt="Emotes 6" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%207.jpeg" alt="Emotes 7" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%208.jpeg" alt="Emotes 8" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%209.jpeg" alt="Emotes 9" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%2010.jpeg" alt="Emotes 10" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Emotes%2011.jpeg" alt="Emotes 11" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="Emotes%201.jpeg"
+alt="Emotes 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emote%202.jpeg"
+alt="Emote 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%203.jpeg"
+alt="Emotes 3"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%204.jpeg"
+alt="Emotes 4"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%205.jpeg"
+alt="Emotes 5"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%206.jpeg"
+alt="Emotes 6"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%207.jpeg"
+alt="Emotes 7"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%208.jpeg"
+alt="Emotes 8"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%209.jpeg"
+alt="Emotes 9"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%2010.jpeg"
+alt="Emotes 10"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Emotes%2011.jpeg"
+alt="Emotes 11"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -943,21 +1327,53 @@ body::after {
 
 <div id="art3d" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>3D Art Room</h2>
-    <p>3D room and environment designs</p>
+
+    <h2>
+        3D Art Room
+    </h2>
+
+    <p>
+        3D room and environment designs
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="3D%20art%20room%201.jpeg"
+alt="3D Art Room 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="3D%20art%20room%202.jpeg"
+alt="3D Art Room 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="3D%20art%20room%203.jpeg"
+alt="3D Art Room 3"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="3D%20art%20room%204.jpeg"
+alt="3D Art Room 4"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -967,27 +1383,89 @@ body::after {
 
 <div id="artscene" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>Art Scene</h2>
-    <p>Creative scene and environment designs</p>
+
+    <h2>
+        Art Scene
+    </h2>
+
+    <p>
+        Creative scene and environment designs
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="Artscene%201.jpeg" alt="Art Scene 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%202.jpeg" alt="Art Scene 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%203.jpeg" alt="Art Scene 3" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%204.jpeg" alt="Art Scene 4" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%205.jpeg" alt="Art Scene 5" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%206.jpeg" alt="Art Scene 6" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%207.jpeg" alt="Art Scene 7" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%208.jpeg" alt="Art Scene 8" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%209.jpeg" alt="Art Scene 9" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Artscene%2010.jpeg" alt="Art Scene 10" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="Artscene%201.jpeg"
+alt="Art Scene 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%202.jpeg"
+alt="Art Scene 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%203.jpeg"
+alt="Art Scene 3"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%204.jpeg"
+alt="Art Scene 4"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%205.jpeg"
+alt="Art Scene 5"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%206.jpeg"
+alt="Art Scene 6"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%207.jpeg"
+alt="Art Scene 7"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%208.jpeg"
+alt="Art Scene 8"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%209.jpeg"
+alt="Art Scene 9"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Artscene%2010.jpeg"
+alt="Art Scene 10"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -997,20 +1475,47 @@ body::after {
 
 <div id="overlay" class="gallery">
 
-<div class="back" onclick="goHome()">← Back to Portfolio</div>
+<div class="back" onclick="goHome()">
+    ← Back to Portfolio
+</div>
 
 <div class="gallery-header">
-    <h2>Overlay</h2>
-    <p>Stream overlay designs</p>
+
+    <h2>
+        Overlay
+    </h2>
+
+    <p>
+        Stream overlay designs
+    </p>
+
 </div>
+
 
 <div class="images">
 
-<div class="image-card"><img src="Overlay%201.jpeg" alt="Overlay 1" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Overlay%202.jpeg" alt="Overlay 2" onclick="showImage(this.src)"></div>
-<div class="image-card"><img src="Overlay%203.jpeg" alt="Overlay 3" onclick="showImage(this.src)"></div>
+
+<div class="image-card">
+<img src="Overlay%201.jpeg"
+alt="Overlay 1"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Overlay%202.jpeg"
+alt="Overlay 2"
+onclick="showImage(this.src)">
+</div>
+
+<div class="image-card">
+<img src="Overlay%203.jpeg"
+alt="Overlay 3"
+onclick="showImage(this.src)">
+</div>
+
 
 </div>
+
 </div>
 
 
@@ -1018,11 +1523,21 @@ body::after {
      FULLSCREEN IMAGE
 ========================= -->
 
-<div class="lightbox" id="lightbox" onclick="closeImage()">
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeImage()"
+>
 
-    <span class="close">&times;</span>
+    <span class="close">
+        &times;
+    </span>
 
-    <img id="lightboxImage" src="" alt="Full Preview">
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Full Preview"
+    >
 
 </div>
 
@@ -1035,7 +1550,9 @@ body::after {
 
     <p>
         © 2026
-        <span class="footer-name">Woxin</span>
+        <span class="footer-name">
+            Woxin
+        </span>
         • Creative Portfolio
     </p>
 
@@ -1146,7 +1663,8 @@ function closeImage() {
 
 window.addEventListener("scroll", function() {
 
-    const button = document.getElementById("topButton");
+    const button =
+        document.getElementById("topButton");
 
     if (window.scrollY > 400) {
 
@@ -1164,26 +1682,164 @@ window.addEventListener("scroll", function() {
 function goTop() {
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 }
 
 
 /* =========================
-   ESCAPE KEY
+   IMAGE PROTECTION
 ========================= */
 
-document.addEventListener("keydown", function(event) {
+/* Right click disabled */
 
-    if (event.key === "Escape") {
+document.addEventListener(
+    "contextmenu",
+    function(event) {
 
-        closeImage();
+        event.preventDefault();
 
     }
+);
 
-});
+
+/* Prevent image dragging */
+
+document.addEventListener(
+    "dragstart",
+    function(event) {
+
+        if (
+            event.target &&
+            event.target.tagName === "IMG"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+    }
+);
+
+
+/* Prevent selecting images */
+
+document.addEventListener(
+    "selectstart",
+    function(event) {
+
+        if (
+            event.target &&
+            event.target.tagName === "IMG"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   KEYBOARD PROTECTION
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        /*
+         Ctrl + S
+         Save page
+        */
+
+        if (
+            event.ctrlKey &&
+            event.key.toLowerCase() === "s"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+         Ctrl + U
+         View source
+        */
+
+        if (
+            event.ctrlKey &&
+            event.key.toLowerCase() === "u"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+         Ctrl + Shift + I
+         Developer tools
+        */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "i"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+         Ctrl + Shift + J
+         Developer console
+        */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "j"
+        ) {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+         F12
+         Developer tools
+        */
+
+        if (event.key === "F12") {
+
+            event.preventDefault();
+
+        }
+
+
+        /*
+         Escape closes image
+        */
+
+        if (event.key === "Escape") {
+
+            closeImage();
+
+        }
+
+    }
+);
 
 </script>
 
