@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Creative Portfolio</title>
+<title>Woxin | Creative Portfolio</title>
 
 <style>
 * {
@@ -13,113 +13,234 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at top, #30213d 0%, #17121f 45%, #0d0a12 100%);
+        radial-gradient(circle at 20% 10%, rgba(255, 120, 210, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(150, 100, 255, 0.12), transparent 30%),
+        linear-gradient(135deg, #0b0810, #17101f 50%, #0d0913);
     color: white;
     font-family: Arial, sans-serif;
-    padding: 40px 20px;
+    padding: 35px 20px;
 }
 
 .container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
+}
+
+/* HEADER */
+
+.header {
     text-align: center;
+    padding: 35px 20px 50px;
 }
 
-h1 {
-    color: #ffb6e6;
-    font-size: 52px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255,150,220,.3);
+.logo-text {
+    font-size: 68px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ffb5e7;
+    text-shadow:
+        0 0 10px rgba(255, 120, 210, .4),
+        0 0 35px rgba(255, 120, 210, .2);
 }
 
-.subtitle {
+.tagline {
+    margin-top: 10px;
     color: #cfc3d8;
-    margin-bottom: 45px;
     font-size: 18px;
+    letter-spacing: 2px;
 }
+
+.line {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff8bd8, #a978ff);
+    margin: 22px auto 0;
+    border-radius: 10px;
+}
+
+/* FOLDERS */
 
 .folders {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 24px;
 }
 
 .folder {
-    background: rgba(37,28,48,.9);
-    border: 2px solid #4b3858;
-    border-radius: 22px;
-    padding: 42px 20px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(35, 25, 46, .88);
+    border: 1px solid #513c60;
+    border-radius: 24px;
+    padding: 38px 20px;
+    text-align: center;
     cursor: pointer;
-    transition: .3s;
+    transition: .3s ease;
+}
+
+.folder::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: rgba(255, 130, 215, .08);
+    border-radius: 50%;
+    top: -60px;
+    right: -40px;
 }
 
 .folder:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px);
     border-color: #ff9ddd;
-    background: #30243c;
-    box-shadow: 0 15px 35px rgba(255,157,221,.2);
+    box-shadow:
+        0 15px 40px rgba(255, 100, 210, .16),
+        inset 0 0 25px rgba(255, 100, 210, .04);
 }
 
 .icon {
-    font-size: 58px;
-    margin-bottom: 15px;
+    font-size: 55px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 10px rgba(255, 150, 220, .2));
 }
 
 .folder h2 {
-    font-size: 23px;
+    color: #fff;
+    font-size: 22px;
 }
+
+.folder p {
+    color: #a99bb0;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* GALLERY */
 
 .gallery {
     display: none;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.gallery-header h2 {
+    color: #ffb6e6;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    color: #a99bb0;
 }
 
 .back {
     display: inline-block;
     margin-bottom: 30px;
     padding: 11px 22px;
-    background: #352640;
-    border: 1px solid #5b4267;
+    background: #30213b;
+    border: 1px solid #594467;
     border-radius: 12px;
+    color: #fff;
     cursor: pointer;
     transition: .3s;
 }
 
 .back:hover {
     background: #ff9ddd;
-    color: #211625;
+    color: #201524;
+    border-color: #ff9ddd;
 }
 
-.gallery h2 {
-    color: #ffb6e6;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
+/* IMAGES */
 
 .images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 24px;
 }
 
-.images img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 18px;
-    border: 2px solid #4b3858;
+.image-card {
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #4b3858;
+    background: #17101f;
+    cursor: pointer;
     transition: .3s;
-    background: #211827;
 }
 
-.images img:hover {
-    transform: scale(1.03);
+.image-card:hover {
+    transform: translateY(-5px);
     border-color: #ff9ddd;
-    box-shadow: 0 10px 30px rgba(255,157,221,.18);
+    box-shadow: 0 12px 35px rgba(255, 120, 210, .15);
 }
+
+.image-card img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.image-card:hover img {
+    transform: scale(1.035);
+}
+
+/* FULLSCREEN IMAGE */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(5, 3, 8, .94);
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(255, 130, 215, .2);
+}
+
+.close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    color: white;
+    font-size: 42px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close:hover {
+    color: #ff9ddd;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    color: #76677f;
+    padding: 55px 10px 15px;
+    font-size: 14px;
+}
+
+/* MOBILE */
 
 @media (max-width: 800px) {
     .folders {
@@ -128,17 +249,33 @@ h1 {
 }
 
 @media (max-width: 550px) {
-    .folders,
+
+    body {
+        padding: 20px 14px;
+    }
+
+    .logo-text {
+        font-size: 48px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .folders {
+        grid-template-columns: 1fr;
+    }
+
     .images {
         grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 38px;
+    .image-card img {
+        height: 320px;
     }
 
-    .images img {
-        height: 320px;
+    .gallery-header h2 {
+        font-size: 34px;
     }
 }
 </style>
@@ -148,51 +285,67 @@ h1 {
 
 <div class="container">
 
-<!-- HOME -->
+<!-- HEADER -->
 
-<div id="home">
+<div class="header" id="home">
 
-    <h1>My Creative Portfolio</h1>
+    <div class="logo-text">WOXIN</div>
 
-    <p class="subtitle">
+    <div class="tagline">
         VTuber • Design • 3D • Creative Work
-    </p>
+    </div>
+
+    <div class="line"></div>
+
+</div>
+
+
+<!-- HOME FOLDERS -->
+
+<div id="homeFolders">
 
     <div class="folders">
 
         <div class="folder" onclick="openGallery('vtuber')">
             <div class="icon">📁</div>
             <h2>VTuber</h2>
+            <p>VTuber Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('logo')">
             <div class="icon">📁</div>
             <h2>Logo</h2>
+            <p>Logo Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('banner')">
             <div class="icon">📁</div>
             <h2>Banner</h2>
+            <p>Banner Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('emotes')">
             <div class="icon">📁</div>
             <h2>Emotes</h2>
+            <p>Stream Emotes</p>
         </div>
 
         <div class="folder" onclick="openGallery('art3d')">
             <div class="icon">📁</div>
             <h2>3D Art Room</h2>
+            <p>3D Room Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('artscene')">
             <div class="icon">📁</div>
             <h2>Art Scene</h2>
+            <p>Scene Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('overlay')">
             <div class="icon">📁</div>
             <h2>Overlay</h2>
+            <p>Stream Overlays</p>
         </div>
 
     </div>
@@ -206,22 +359,25 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>VTuber</h2>
+    <div class="gallery-header">
+        <h2>VTuber</h2>
+        <p>VTuber character and model designs</p>
+    </div>
 
     <div class="images">
 
-        <img src="Chibi%20model.jpeg" alt="Chibi Model">
-        <img src="model%201.jpeg" alt="Model 1">
-        <img src="Character.jpeg" alt="Character">
-        <img src="Vtuber%20model.jpeg" alt="VTuber Model">
+        <div class="image-card"><img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Character.jpeg" alt="Character" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)"></div>
 
-        <img src="Vtuber%2011.jpeg" alt="VTuber 11">
-        <img src="Vtuber%2010.jpeg" alt="VTuber 10">
-        <img src="Vtuber%209.jpeg" alt="VTuber 9">
-        <img src="Vtuber%208.jpeg" alt="VTuber 8">
-        <img src="Vtuber%207.jpeg" alt="VTuber 7">
-        <img src="Vtuber%206%20.jpeg" alt="VTuber 6">
-        <img src="Vtuber%205%20.jpeg" alt="VTuber 5">
+        <div class="image-card"><img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -234,19 +390,22 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>Logo</h2>
+    <div class="gallery-header">
+        <h2>Logo</h2>
+        <p>Logo design collection</p>
+    </div>
 
     <div class="images">
 
-        <img src="Logo%202.jpeg" alt="Logo 2">
-        <img src="logo1.jpeg" alt="Logo 1">
-        <img src="logo%209.jpeg" alt="Logo 9">
-        <img src="logo%208.jpeg" alt="Logo 8">
-        <img src="logo%207.jpeg" alt="Logo 7">
-        <img src="logo%206.jpeg" alt="Logo 6">
-        <img src="logo5.jpeg" alt="Logo 5">
-        <img src="logo%204.jpeg" alt="Logo 4">
-        <img src="Logo3.jpeg" alt="Logo 3">
+        <div class="image-card"><img src="Logo%202.jpeg" alt="Logo 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo1.jpeg" alt="Logo 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo%209.jpeg" alt="Logo 9" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo%208.jpeg" alt="Logo 8" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo%207.jpeg" alt="Logo 7" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo%206.jpeg" alt="Logo 6" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo5.jpeg" alt="Logo 5" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="logo%204.jpeg" alt="Logo 4" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Logo3.jpeg" alt="Logo 3" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -259,20 +418,23 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>Banner</h2>
+    <div class="gallery-header">
+        <h2>Banner</h2>
+        <p>Banner design collection</p>
+    </div>
 
     <div class="images">
 
-        <img src="Banner%201.jpeg" alt="Banner 1">
-        <img src="Banner%202.jpeg" alt="Banner 2">
-        <img src="Banner%204.jpeg" alt="Banner 4">
-        <img src="Banner%205.jpeg" alt="Banner 5">
-        <img src="Banner%206.jpeg" alt="Banner 6">
-        <img src="Banner%207.jpeg" alt="Banner 7">
-        <img src="Banner%209.jpeg" alt="Banner 9">
-        <img src="Banner%2010.jpeg" alt="Banner 10">
-        <img src="Banner%2011.jpeg" alt="Banner 11">
-        <img src="Banner%2012.jpeg" alt="Banner 12">
+        <div class="image-card"><img src="Banner%201.jpeg" alt="Banner 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%202.jpeg" alt="Banner 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%204.jpeg" alt="Banner 4" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%205.jpeg" alt="Banner 5" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%206.jpeg" alt="Banner 6" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%207.jpeg" alt="Banner 7" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%209.jpeg" alt="Banner 9" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%2010.jpeg" alt="Banner 10" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%2011.jpeg" alt="Banner 11" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Banner%2012.jpeg" alt="Banner 12" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -285,21 +447,24 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>Emotes</h2>
+    <div class="gallery-header">
+        <h2>Emotes</h2>
+        <p>VTuber and stream emotes</p>
+    </div>
 
     <div class="images">
 
-        <img src="Emotes%201.jpeg" alt="Emotes 1">
-        <img src="Emote%202.jpeg" alt="Emote 2">
-        <img src="Emotes%203.jpeg" alt="Emotes 3">
-        <img src="Emotes%204.jpeg" alt="Emotes 4">
-        <img src="Emotes%205.jpeg" alt="Emotes 5">
-        <img src="Emotes%206.jpeg" alt="Emotes 6">
-        <img src="Emotes%207.jpeg" alt="Emotes 7">
-        <img src="Emotes%208.jpeg" alt="Emotes 8">
-        <img src="Emotes%209.jpeg" alt="Emotes 9">
-        <img src="Emotes%2010.jpeg" alt="Emotes 10">
-        <img src="Emotes%2011.jpeg" alt="Emotes 11">
+        <div class="image-card"><img src="Emotes%201.jpeg" alt="Emotes 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emote%202.jpeg" alt="Emote 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%203.jpeg" alt="Emotes 3" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%204.jpeg" alt="Emotes 4" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%205.jpeg" alt="Emotes 5" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%206.jpeg" alt="Emotes 6" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%207.jpeg" alt="Emotes 7" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%208.jpeg" alt="Emotes 8" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%209.jpeg" alt="Emotes 9" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%2010.jpeg" alt="Emotes 10" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Emotes%2011.jpeg" alt="Emotes 11" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -312,14 +477,17 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>3D Art Room</h2>
+    <div class="gallery-header">
+        <h2>3D Art Room</h2>
+        <p>3D room and environment designs</p>
+    </div>
 
     <div class="images">
 
-        <img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1">
-        <img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2">
-        <img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3">
-        <img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4">
+        <div class="image-card"><img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -332,20 +500,23 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>Art Scene</h2>
+    <div class="gallery-header">
+        <h2>Art Scene</h2>
+        <p>Creative scene and environment designs</p>
+    </div>
 
     <div class="images">
 
-        <img src="Artscene%201.jpeg" alt="Art Scene 1">
-        <img src="Artscene%202.jpeg" alt="Art Scene 2">
-        <img src="Artscene%203.jpeg" alt="Art Scene 3">
-        <img src="Artscene%204.jpeg" alt="Art Scene 4">
-        <img src="Artscene%205.jpeg" alt="Art Scene 5">
-        <img src="Artscene%206.jpeg" alt="Art Scene 6">
-        <img src="Artscene%207.jpeg" alt="Art Scene 7">
-        <img src="Artscene%208.jpeg" alt="Art Scene 8">
-        <img src="Artscene%209.jpeg" alt="Art Scene 9">
-        <img src="Artscene%2010.jpeg" alt="Art Scene 10">
+        <div class="image-card"><img src="Artscene%201.jpeg" alt="Art Scene 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%202.jpeg" alt="Art Scene 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%203.jpeg" alt="Art Scene 3" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%204.jpeg" alt="Art Scene 4" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%205.jpeg" alt="Art Scene 5" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%206.jpeg" alt="Art Scene 6" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%207.jpeg" alt="Art Scene 7" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%208.jpeg" alt="Art Scene 8" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%209.jpeg" alt="Art Scene 9" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Artscene%2010.jpeg" alt="Art Scene 10" onclick="showImage(this.src)"></div>
 
     </div>
 
@@ -358,17 +529,39 @@ h1 {
 
     <div class="back" onclick="goHome()">← Back</div>
 
-    <h2>Overlay</h2>
+    <div class="gallery-header">
+        <h2>Overlay</h2>
+        <p>Stream overlay designs</p>
+    </div>
 
     <div class="images">
 
-        <img src="Overlay%201.jpeg" alt="Overlay 1">
-        <img src="Overlay%202.jpeg" alt="Overlay 2">
-        <img src="Overlay%203.jpeg" alt="Overlay 3">
+        <div class="image-card"><img src="Overlay%201.jpeg" alt="Overlay 1" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Overlay%202.jpeg" alt="Overlay 2" onclick="showImage(this.src)"></div>
+        <div class="image-card"><img src="Overlay%203.jpeg" alt="Overlay 3" onclick="showImage(this.src)"></div>
 
     </div>
 
 </div>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+
+    <span class="close">&times;</span>
+
+    <img id="lightboxImage" src="" alt="Full Preview">
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+    © 2026 Woxin • Creative Portfolio
+</div>
+
 
 </div>
 
@@ -378,6 +571,7 @@ h1 {
 function openGallery(name) {
 
     document.getElementById("home").style.display = "none";
+    document.getElementById("homeFolders").style.display = "none";
 
     document.querySelectorAll(".gallery").forEach(function(page) {
         page.style.display = "none";
@@ -388,6 +582,7 @@ function openGallery(name) {
     window.scrollTo(0, 0);
 }
 
+
 function goHome() {
 
     document.querySelectorAll(".gallery").forEach(function(page) {
@@ -395,8 +590,25 @@ function goHome() {
     });
 
     document.getElementById("home").style.display = "block";
+    document.getElementById("homeFolders").style.display = "block";
 
     window.scrollTo(0, 0);
+}
+
+
+function showImage(src) {
+
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightboxImage").src = src;
+
+}
+
+
+function closeImage() {
+
+    document.getElementById("lightbox").style.display = "none";
+    document.getElementById("lightboxImage").src = "";
+
 }
 
 </script>
