@@ -19,54 +19,64 @@ html {
 
 body {
     min-height: 100vh;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 30px 20px;
     overflow-x: hidden;
 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
     background:
-        radial-gradient(circle at 15% 15%, rgba(255, 100, 210, .16), transparent 25%),
-        radial-gradient(circle at 85% 25%, rgba(140, 90, 255, .15), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(255, 90, 190, .08), transparent 30%),
-        linear-gradient(135deg, #09070d, #17101f 50%, #0b0810);
+        radial-gradient(circle at 10% 10%, rgba(255, 95, 205, .16), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(145, 90, 255, .15), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(255, 80, 190, .10), transparent 30%),
+        linear-gradient(135deg, #09070d, #17101f 50%, #0a0710);
+
+    padding: 25px 18px;
 }
 
-/* GLOWING BACKGROUND */
+/* =========================
+   ANIMATED GLOW
+========================= */
 
 body::before,
 body::after {
     content: "";
     position: fixed;
-    width: 260px;
-    height: 260px;
+
+    width: 300px;
+    height: 300px;
+
     border-radius: 50%;
-    filter: blur(70px);
+
+    filter: blur(90px);
     opacity: .22;
+
     pointer-events: none;
     z-index: -1;
-    animation: floatGlow 7s ease-in-out infinite alternate;
+
+    animation: floatingGlow 8s ease-in-out infinite alternate;
 }
 
 body::before {
-    background: #ff5dcc;
-    top: 10%;
-    left: -100px;
+    background: #ff4fc8;
+    top: 5%;
+    left: -130px;
 }
 
 body::after {
-    background: #8b5cff;
-    right: -100px;
-    bottom: 10%;
+    background: #8955ff;
+    right: -130px;
+    bottom: 5%;
     animation-delay: 2s;
 }
 
-@keyframes floatGlow {
+@keyframes floatingGlow {
+
     from {
-        transform: translateY(-20px) scale(1);
+        transform: translateY(-25px) scale(1);
     }
 
     to {
-        transform: translateY(30px) scale(1.2);
+        transform: translateY(35px) scale(1.25);
     }
 }
 
@@ -76,28 +86,32 @@ body::after {
     margin: auto;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     text-align: center;
-    padding: 35px 20px 30px;
+    padding: 35px 15px 15px;
 }
 
-.logo-text {
-    font-size: 72px;
+.logo {
+    font-size: 76px;
     font-weight: 900;
-    letter-spacing: 7px;
-    color: #ffb8e8;
+    letter-spacing: 8px;
+
+    color: #ffb9e9;
 
     text-shadow:
-        0 0 8px rgba(255, 130, 220, .8),
-        0 0 25px rgba(255, 100, 210, .5),
-        0 0 55px rgba(255, 80, 200, .25);
+        0 0 8px rgba(255, 130, 220, .9),
+        0 0 25px rgba(255, 100, 210, .6),
+        0 0 55px rgba(180, 90, 255, .35);
 
     animation: logoGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes logoGlow {
+
     from {
         text-shadow:
             0 0 8px rgba(255,130,220,.7),
@@ -107,36 +121,43 @@ body::after {
     to {
         text-shadow:
             0 0 15px rgba(255,160,230,1),
-            0 0 40px rgba(255,100,210,.65),
-            0 0 70px rgba(180,90,255,.35);
+            0 0 40px rgba(255,100,210,.7),
+            0 0 70px rgba(170,90,255,.4);
     }
 }
 
-.tagline {
+.subtitle {
     margin-top: 12px;
-    color: #d2c4d8;
+
+    color: #d0c1d8;
+
     font-size: 17px;
     letter-spacing: 2px;
 }
 
-.line {
-    width: 110px;
+.gradient-line {
+    width: 120px;
     height: 3px;
-    margin: 22px auto;
-    border-radius: 10px;
 
-    background: linear-gradient(
-        90deg,
-        #ff76d5,
-        #a66cff,
-        #ff76d5
-    );
+    margin: 22px auto;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff73d3,
+            #a66cff,
+            #ff73d3
+        );
 
     background-size: 200% 100%;
-    animation: lineMove 3s linear infinite;
+
+    animation: movingLine 3s linear infinite;
 }
 
-@keyframes lineMove {
+@keyframes movingLine {
+
     from {
         background-position: 0%;
     }
@@ -146,47 +167,118 @@ body::after {
     }
 }
 
-/* COMMISSION BUTTON */
+/* =========================
+   ABOUT
+========================= */
 
-.commission-area {
+.about {
+    max-width: 800px;
+
+    margin: 20px auto 25px;
+
+    padding: 25px;
+
     text-align: center;
-    margin: 5px 0 45px;
+
+    background: rgba(29, 20, 39, .72);
+
+    border: 1px solid #493652;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 30px rgba(255, 100, 210, .06);
 }
 
-.commission-button {
+.about h2 {
+    color: #ffb6e7;
+
+    margin-bottom: 12px;
+
+    font-size: 26px;
+}
+
+.about p {
+    color: #bdb0c5;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.status {
     display: inline-block;
-    padding: 15px 32px;
+
+    margin-top: 18px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    color: #ffd9f3;
+
+    background: rgba(255, 100, 210, .10);
+
+    border: 1px solid rgba(255, 130, 220, .3);
+
+    font-size: 13px;
+
+    box-shadow:
+        0 0 15px rgba(255,100,210,.08);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin: 25px 0 45px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 27px;
+
     border-radius: 50px;
 
     color: white;
+
     text-decoration: none;
-    font-size: 17px;
+
     font-weight: bold;
 
-    background: linear-gradient(
-        135deg,
-        #ff6dcc,
-        #a66cff
-    );
-
-    box-shadow:
-        0 0 15px rgba(255,100,210,.45),
-        0 0 35px rgba(170,100,255,.22);
+    border: 1px solid rgba(255,255,255,.12);
 
     transition: .3s ease;
-
-    animation: buttonGlow 2.5s ease-in-out infinite alternate;
 }
 
-.commission-button:hover {
-    transform: translateY(-4px) scale(1.04);
+.commission {
+    background:
+        linear-gradient(
+            135deg,
+            #ff67cc,
+            #a464ff
+        );
 
     box-shadow:
-        0 0 20px rgba(255,120,220,.7),
-        0 0 50px rgba(160,100,255,.4);
+        0 0 15px rgba(255,100,210,.4),
+        0 0 35px rgba(160,90,255,.18);
+
+    animation: buttonPulse 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes buttonGlow {
+@keyframes buttonPulse {
+
     from {
         box-shadow:
             0 0 12px rgba(255,100,210,.4);
@@ -194,57 +286,78 @@ body::after {
 
     to {
         box-shadow:
-            0 0 25px rgba(255,100,210,.7),
-            0 0 45px rgba(160,100,255,.35);
+            0 0 28px rgba(255,100,210,.65),
+            0 0 50px rgba(150,90,255,.25);
     }
 }
 
-/* FOLDERS */
+.email {
+    background: #30213b;
+    border-color: #5a4366;
+}
+
+.button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* =========================
+   PORTFOLIO FOLDERS
+========================= */
 
 .folders {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+
+    gap: 22px;
 }
 
 .folder {
     position: relative;
+
     overflow: hidden;
 
-    background: rgba(31, 22, 41, .88);
-    border: 1px solid #513c60;
-    border-radius: 24px;
-
     padding: 38px 20px;
+
     text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(38,27,50,.95),
+            rgba(22,15,29,.95)
+        );
+
+    border: 1px solid #4f3a5b;
+
+    border-radius: 24px;
 
     cursor: pointer;
 
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+    transition: .3s ease;
 }
 
 .folder::before {
     content: "";
+
     position: absolute;
 
     width: 130px;
     height: 130px;
 
-    background: rgba(255, 120, 215, .08);
+    right: -55px;
+    top: -60px;
+
     border-radius: 50%;
 
-    top: -65px;
-    right: -40px;
+    background: rgba(255,100,210,.08);
 
-    transition: .4s;
+    transition: .5s ease;
 }
 
 .folder:hover::before {
     transform: scale(2);
-    background: rgba(255, 120, 215, .13);
+    background: rgba(255,100,210,.13);
 }
 
 .folder:hover {
@@ -253,30 +366,36 @@ body::after {
     border-color: #ff9ddd;
 
     box-shadow:
-        0 10px 30px rgba(255, 100, 210, .16),
-        0 0 20px rgba(255, 100, 210, .08);
+        0 15px 40px rgba(255,100,210,.15),
+        0 0 20px rgba(170,90,255,.08);
 }
 
-.icon {
-    font-size: 55px;
+.folder-icon {
+    font-size: 52px;
+
     margin-bottom: 15px;
 
     filter:
-        drop-shadow(0 0 8px rgba(255, 150, 220, .35));
+        drop-shadow(
+            0 0 10px rgba(255,150,220,.35)
+        );
 }
 
-.folder h2 {
-    font-size: 22px;
-    color: #fff;
+.folder h3 {
+    font-size: 21px;
 }
 
 .folder p {
     margin-top: 8px;
-    color: #a99bb0;
+
+    color: #a99bad;
+
     font-size: 14px;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERIES
+========================= */
 
 .gallery {
     display: none;
@@ -284,33 +403,40 @@ body::after {
 
 .gallery-header {
     text-align: center;
-    margin-bottom: 35px;
+
+    margin-bottom: 32px;
 }
 
 .gallery-header h2 {
-    color: #ffb6e6;
+    color: #ffb5e6;
+
     font-size: 42px;
-    margin-bottom: 10px;
 
     text-shadow:
-        0 0 15px rgba(255,100,210,.3);
+        0 0 18px rgba(255,100,210,.3);
 }
 
 .gallery-header p {
-    color: #a99bb0;
+    margin-top: 8px;
+
+    color: #a99bad;
 }
 
 .back {
     display: inline-block;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+
     padding: 11px 22px;
 
-    background: #30213b;
-    border: 1px solid #594467;
     border-radius: 12px;
 
-    color: #fff;
+    color: white;
+
+    background: #30213b;
+
+    border: 1px solid #594367;
+
     cursor: pointer;
 
     transition: .3s;
@@ -318,28 +444,31 @@ body::after {
 
 .back:hover {
     background: #ff9ddd;
-    color: #201524;
+
+    color: #211523;
+
     border-color: #ff9ddd;
 
     box-shadow:
         0 0 20px rgba(255,100,210,.3);
 }
 
-/* IMAGES */
-
 .images {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+
+    gap: 22px;
 }
 
 .image-card {
     overflow: hidden;
 
-    border-radius: 20px;
-    border: 1px solid #4b3858;
+    background: #16101d;
 
-    background: #17101f;
+    border: 1px solid #4b3756;
+
+    border-radius: 20px;
 
     cursor: pointer;
 
@@ -370,22 +499,25 @@ body::after {
     transform: scale(1.035);
 }
 
-/* LIGHTBOX */
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox {
     display: none;
 
     position: fixed;
+
     inset: 0;
 
     z-index: 9999;
 
-    background: rgba(5,3,8,.95);
-
     align-items: center;
     justify-content: center;
 
-    padding: 25px;
+    padding: 20px;
+
+    background: rgba(3,2,6,.96);
 }
 
 .lightbox img {
@@ -397,18 +529,19 @@ body::after {
     border-radius: 15px;
 
     box-shadow:
-        0 0 30px rgba(255,120,220,.3),
+        0 0 35px rgba(255,110,215,.3),
         0 0 70px rgba(140,90,255,.18);
 }
 
 .close {
     position: fixed;
 
-    top: 18px;
-    right: 28px;
+    top: 15px;
+    right: 25px;
+
+    font-size: 45px;
 
     color: white;
-    font-size: 44px;
 
     cursor: pointer;
 }
@@ -417,112 +550,92 @@ body::after {
     color: #ff9ddd;
 }
 
-/* COMMISSION POPUP */
-
-.commission-popup {
-    display: none;
-
-    position: fixed;
-    inset: 0;
-
-    z-index: 10000;
-
-    background: rgba(5,3,8,.88);
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.commission-box {
-    width: 100%;
-    max-width: 500px;
-
-    padding: 40px 30px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #24172e,
-            #15101c
-        );
-
-    border: 1px solid #704c78;
-    border-radius: 25px;
-
-    box-shadow:
-        0 0 35px rgba(255,100,210,.2);
-}
-
-.commission-box h2 {
-    color: #ffb6e6;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.commission-box p {
-    color: #c8bacf;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.close-popup {
-    display: inline-block;
-
-    padding: 11px 24px;
-
-    border-radius: 12px;
-
-    background: #3a2945;
-    border: 1px solid #63476e;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.close-popup:hover {
-    background: #ff9ddd;
-    color: #211625;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
+    margin-top: 60px;
+
+    padding: 25px 10px;
+
     text-align: center;
 
-    color: #76677f;
-
-    padding: 55px 10px 15px;
+    color: #75677d;
 
     font-size: 14px;
 }
 
-/* MOBILE */
+.footer-name {
+    color: #d6a5ca;
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+.top-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff67cc,
+            #965fff
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,100,210,.3);
+
+    z-index: 1000;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
 
     .folders {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (max-width: 550px) {
 
     body {
-        padding: 20px 14px;
+        padding: 18px 12px;
     }
 
-    .logo-text {
+    .logo {
         font-size: 48px;
-        letter-spacing: 4px;
+        letter-spacing: 5px;
     }
 
-    .tagline {
+    .subtitle {
         font-size: 13px;
+    }
+
+    .about {
+        padding: 20px 15px;
     }
 
     .folders {
@@ -541,10 +654,12 @@ body::after {
         font-size: 34px;
     }
 
-    .commission-button {
-        font-size: 15px;
-        padding: 14px 25px;
+    .button {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
+
 }
 </style>
 </head>
@@ -553,78 +668,114 @@ body::after {
 
 <div class="container">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<div class="header" id="home">
+<header class="header" id="home">
 
-    <div class="logo-text">WOXIN</div>
+    <div class="logo">WOXIN</div>
 
-    <div class="tagline">
+    <div class="subtitle">
         VTuber • Design • 3D • Creative Work
     </div>
 
-    <div class="line"></div>
+    <div class="gradient-line"></div>
 
-</div>
+</header>
 
 
-<!-- COMMISSION BUTTON -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-<div class="commission-area">
+<section class="about">
 
-    <a href="#" class="commission-button"
-       onclick="openCommission(event)">
+    <h2>✦ Welcome to Woxin's Portfolio ✦</h2>
+
+    <p>
+        Welcome! I'm Woxin, a creative artist specializing in
+        VTuber designs, logos, banners, emotes, overlays,
+        3D art rooms and creative scenes.
+    </p>
+
+    <div class="status">
+        ✦ Available for Commissions ✦
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BUTTONS
+========================= -->
+
+<div class="buttons">
+
+    <a
+        class="button commission"
+        href="mailto:Gfx1628@gmail.com?subject=Commission%20Inquiry"
+    >
         💌 Commission Me
+    </a>
+
+    <a
+        class="button email"
+        href="mailto:Gfx1628@gmail.com"
+    >
+        📧 Email Woxin
     </a>
 
 </div>
 
 
-<!-- HOME -->
+<!-- =========================
+     HOME FOLDERS
+========================= -->
 
 <div id="homeFolders">
 
     <div class="folders">
 
         <div class="folder" onclick="openGallery('vtuber')">
-            <div class="icon">📁</div>
-            <h2>VTuber</h2>
+            <div class="folder-icon">📁</div>
+            <h3>VTuber</h3>
             <p>VTuber Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('logo')">
-            <div class="icon">📁</div>
-            <h2>Logo</h2>
+            <div class="folder-icon">📁</div>
+            <h3>Logo</h3>
             <p>Logo Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('banner')">
-            <div class="icon">📁</div>
-            <h2>Banner</h2>
+            <div class="folder-icon">📁</div>
+            <h3>Banner</h3>
             <p>Banner Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('emotes')">
-            <div class="icon">📁</div>
-            <h2>Emotes</h2>
+            <div class="folder-icon">📁</div>
+            <h3>Emotes</h3>
             <p>Stream Emotes</p>
         </div>
 
         <div class="folder" onclick="openGallery('art3d')">
-            <div class="icon">📁</div>
-            <h2>3D Art Room</h2>
+            <div class="folder-icon">📁</div>
+            <h3>3D Art Room</h3>
             <p>3D Room Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('artscene')">
-            <div class="icon">📁</div>
-            <h2>Art Scene</h2>
+            <div class="folder-icon">📁</div>
+            <h3>Art Scene</h3>
             <p>Scene Designs</p>
         </div>
 
         <div class="folder" onclick="openGallery('overlay')">
-            <div class="icon">📁</div>
-            <h2>Overlay</h2>
+            <div class="folder-icon">📁</div>
+            <h3>Overlay</h3>
             <p>Stream Overlays</p>
         </div>
 
@@ -633,230 +784,239 @@ body::after {
 </div>
 
 
-<!-- VTUBER -->
+<!-- =========================
+     VTUBER
+========================= -->
 
 <div id="vtuber" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>VTuber</h2>
-        <p>VTuber character and model designs</p>
-    </div>
+<div class="gallery-header">
+    <h2>VTuber</h2>
+    <p>VTuber character and model designs</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card">
-            <img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Chibi%20model.jpeg" alt="Chibi Model" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="model%201.jpeg" alt="Model 1" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Character.jpeg" alt="Character" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Character.jpeg" alt="Character" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%20model.jpeg" alt="VTuber Model" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%2011.jpeg" alt="VTuber 11" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%2010.jpeg" alt="VTuber 10" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%209.jpeg" alt="VTuber 9" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%208.jpeg" alt="VTuber 8" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%207.jpeg" alt="VTuber 7" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%206%20.jpeg" alt="VTuber 6" onclick="showImage(this.src)">
+</div>
 
-        <div class="image-card">
-            <img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)">
-        </div>
+<div class="image-card">
+<img src="Vtuber%205%20.jpeg" alt="VTuber 5" onclick="showImage(this.src)">
+</div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- LOGO -->
+<!-- =========================
+     LOGO
+========================= -->
 
 <div id="logo" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>Logo</h2>
-        <p>Logo design collection</p>
-    </div>
+<div class="gallery-header">
+    <h2>Logo</h2>
+    <p>Logo design collection</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="Logo%202.jpeg" alt="Logo 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo1.jpeg" alt="Logo 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo%209.jpeg" alt="Logo 9" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo%208.jpeg" alt="Logo 8" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo%207.jpeg" alt="Logo 7" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo%206.jpeg" alt="Logo 6" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo5.jpeg" alt="Logo 5" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="logo%204.jpeg" alt="Logo 4" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Logo3.jpeg" alt="Logo 3" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Logo%202.jpeg" alt="Logo 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo1.jpeg" alt="Logo 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo%209.jpeg" alt="Logo 9" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo%208.jpeg" alt="Logo 8" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo%207.jpeg" alt="Logo 7" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo%206.jpeg" alt="Logo 6" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo5.jpeg" alt="Logo 5" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="logo%204.jpeg" alt="Logo 4" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Logo3.jpeg" alt="Logo 3" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- BANNER -->
+<!-- =========================
+     BANNER
+========================= -->
 
 <div id="banner" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>Banner</h2>
-        <p>Banner design collection</p>
-    </div>
+<div class="gallery-header">
+    <h2>Banner</h2>
+    <p>Banner design collection</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="Banner%201.jpeg" alt="Banner 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%202.jpeg" alt="Banner 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%204.jpeg" alt="Banner 4" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%205.jpeg" alt="Banner 5" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%206.jpeg" alt="Banner 6" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%207.jpeg" alt="Banner 7" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%209.jpeg" alt="Banner 9" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%2010.jpeg" alt="Banner 10" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%2011.jpeg" alt="Banner 11" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Banner%2012.jpeg" alt="Banner 12" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%201.jpeg" alt="Banner 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%202.jpeg" alt="Banner 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%204.jpeg" alt="Banner 4" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%205.jpeg" alt="Banner 5" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%206.jpeg" alt="Banner 6" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%207.jpeg" alt="Banner 7" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%209.jpeg" alt="Banner 9" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%2010.jpeg" alt="Banner 10" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%2011.jpeg" alt="Banner 11" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Banner%2012.jpeg" alt="Banner 12" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- EMOTES -->
+<!-- =========================
+     EMOTES
+========================= -->
 
 <div id="emotes" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>Emotes</h2>
-        <p>VTuber and stream emotes</p>
-    </div>
+<div class="gallery-header">
+    <h2>Emotes</h2>
+    <p>VTuber and stream emotes</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="Emotes%201.jpeg" alt="Emotes 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emote%202.jpeg" alt="Emote 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%203.jpeg" alt="Emotes 3" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%204.jpeg" alt="Emotes 4" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%205.jpeg" alt="Emotes 5" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%206.jpeg" alt="Emotes 6" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%207.jpeg" alt="Emotes 7" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%208.jpeg" alt="Emotes 8" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%209.jpeg" alt="Emotes 9" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%2010.jpeg" alt="Emotes 10" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Emotes%2011.jpeg" alt="Emotes 11" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%201.jpeg" alt="Emotes 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emote%202.jpeg" alt="Emote 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%203.jpeg" alt="Emotes 3" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%204.jpeg" alt="Emotes 4" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%205.jpeg" alt="Emotes 5" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%206.jpeg" alt="Emotes 6" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%207.jpeg" alt="Emotes 7" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%208.jpeg" alt="Emotes 8" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%209.jpeg" alt="Emotes 9" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%2010.jpeg" alt="Emotes 10" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Emotes%2011.jpeg" alt="Emotes 11" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- 3D ART ROOM -->
+<!-- =========================
+     3D ART ROOM
+========================= -->
 
 <div id="art3d" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>3D Art Room</h2>
-        <p>3D room and environment designs</p>
-    </div>
+<div class="gallery-header">
+    <h2>3D Art Room</h2>
+    <p>3D room and environment designs</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="3D%20art%20room%201.jpeg" alt="3D Art Room 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="3D%20art%20room%202.jpeg" alt="3D Art Room 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="3D%20art%20room%203.jpeg" alt="3D Art Room 3" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="3D%20art%20room%204.jpeg" alt="3D Art Room 4" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- ART SCENE -->
+<!-- =========================
+     ART SCENE
+========================= -->
 
 <div id="artscene" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>Art Scene</h2>
-        <p>Creative scene and environment designs</p>
-    </div>
+<div class="gallery-header">
+    <h2>Art Scene</h2>
+    <p>Creative scene and environment designs</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="Artscene%201.jpeg" alt="Art Scene 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%202.jpeg" alt="Art Scene 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%203.jpeg" alt="Art Scene 3" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%204.jpeg" alt="Art Scene 4" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%205.jpeg" alt="Art Scene 5" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%206.jpeg" alt="Art Scene 6" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%207.jpeg" alt="Art Scene 7" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%208.jpeg" alt="Art Scene 8" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%209.jpeg" alt="Art Scene 9" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Artscene%2010.jpeg" alt="Art Scene 10" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%201.jpeg" alt="Art Scene 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%202.jpeg" alt="Art Scene 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%203.jpeg" alt="Art Scene 3" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%204.jpeg" alt="Art Scene 4" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%205.jpeg" alt="Art Scene 5" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%206.jpeg" alt="Art Scene 6" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%207.jpeg" alt="Art Scene 7" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%208.jpeg" alt="Art Scene 8" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%209.jpeg" alt="Art Scene 9" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Artscene%2010.jpeg" alt="Art Scene 10" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- OVERLAY -->
+<!-- =========================
+     OVERLAY
+========================= -->
 
 <div id="overlay" class="gallery">
 
-    <div class="back" onclick="goHome()">← Back</div>
+<div class="back" onclick="goHome()">← Back to Portfolio</div>
 
-    <div class="gallery-header">
-        <h2>Overlay</h2>
-        <p>Stream overlay designs</p>
-    </div>
+<div class="gallery-header">
+    <h2>Overlay</h2>
+    <p>Stream overlay designs</p>
+</div>
 
-    <div class="images">
+<div class="images">
 
-        <div class="image-card"><img src="Overlay%201.jpeg" alt="Overlay 1" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Overlay%202.jpeg" alt="Overlay 2" onclick="showImage(this.src)"></div>
-        <div class="image-card"><img src="Overlay%203.jpeg" alt="Overlay 3" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Overlay%201.jpeg" alt="Overlay 1" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Overlay%202.jpeg" alt="Overlay 2" onclick="showImage(this.src)"></div>
+<div class="image-card"><img src="Overlay%203.jpeg" alt="Overlay 3" onclick="showImage(this.src)"></div>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- IMAGE LIGHTBOX -->
+<!-- =========================
+     FULLSCREEN IMAGE
+========================= -->
 
 <div class="lightbox" id="lightbox" onclick="closeImage()">
 
@@ -867,51 +1027,61 @@ body::after {
 </div>
 
 
-<!-- COMMISSION POPUP -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-<div class="commission-popup" id="commissionPopup">
+<footer class="footer">
 
-    <div class="commission-box">
+    <p>
+        © 2026
+        <span class="footer-name">Woxin</span>
+        • Creative Portfolio
+    </p>
 
-        <h2>💌 Commissions</h2>
+    <p style="margin-top:8px;">
+        ✦ VTuber • Design • 3D • Creative Work ✦
+    </p>
 
-        <p>
-            Interested in working with Woxin?
-            <br><br>
-            Commission information and contact details will be added here.
-            <br>
-            Feel free to contact me for your next creative project!
-        </p>
+</footer>
 
-        <div class="close-popup" onclick="closeCommission()">
-            Close
-        </div>
-
-    </div>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     TOP BUTTON
+========================= -->
 
-<div class="footer">
-    © 2026 Woxin • Creative Portfolio
-</div>
-
+<div
+    class="top-button"
+    id="topButton"
+    onclick="goTop()"
+>
+    ↑
 </div>
 
 
 <script>
 
-/* OPEN GALLERY */
+/* =========================
+   OPEN GALLERY
+========================= */
 
 function openGallery(name) {
 
     document.getElementById("home").style.display = "none";
+
+    document.querySelector(".about").style.display = "none";
+
+    document.querySelector(".buttons").style.display = "none";
+
     document.getElementById("homeFolders").style.display = "none";
 
     document.querySelectorAll(".gallery").forEach(function(page) {
+
         page.style.display = "none";
+
     });
 
     document.getElementById(name).style.display = "block";
@@ -920,22 +1090,33 @@ function openGallery(name) {
 }
 
 
-/* GO HOME */
+/* =========================
+   GO HOME
+========================= */
 
 function goHome() {
 
     document.querySelectorAll(".gallery").forEach(function(page) {
+
         page.style.display = "none";
+
     });
 
     document.getElementById("home").style.display = "block";
+
+    document.querySelector(".about").style.display = "block";
+
+    document.querySelector(".buttons").style.display = "flex";
+
     document.getElementById("homeFolders").style.display = "block";
 
     window.scrollTo(0, 0);
 }
 
 
-/* FULLSCREEN IMAGE */
+/* =========================
+   IMAGE FULLSCREEN
+========================= */
 
 function showImage(src) {
 
@@ -946,7 +1127,9 @@ function showImage(src) {
 }
 
 
-/* CLOSE IMAGE */
+/* =========================
+   CLOSE IMAGE
+========================= */
 
 function closeImage() {
 
@@ -957,32 +1140,46 @@ function closeImage() {
 }
 
 
-/* COMMISSION */
+/* =========================
+   TOP BUTTON
+========================= */
 
-function openCommission(event) {
+window.addEventListener("scroll", function() {
 
-    event.preventDefault();
+    const button = document.getElementById("topButton");
 
-    document.getElementById("commissionPopup").style.display = "flex";
+    if (window.scrollY > 400) {
+
+        button.style.display = "flex";
+
+    } else {
+
+        button.style.display = "none";
+
+    }
+
+});
+
+
+function goTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 
-function closeCommission() {
-
-    document.getElementById("commissionPopup").style.display = "none";
-
-}
-
-
-/* ESC KEY */
+/* =========================
+   ESCAPE KEY
+========================= */
 
 document.addEventListener("keydown", function(event) {
 
     if (event.key === "Escape") {
 
         closeImage();
-        closeCommission();
 
     }
 
